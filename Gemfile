@@ -47,7 +47,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-yahoo'
-gem 'omniauth-google'
+gem 'omniauth-google-oauth2'
 
 # Authorization system
 gem 'cancan'

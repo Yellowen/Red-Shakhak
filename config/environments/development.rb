@@ -1,6 +1,8 @@
 Darbasti::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  TWITTER_KEY = 'NZpjZRQul2a4idNTPB3XYQ'
+  TWITTER_SECRET = 'sRiQp8gULJYhUGbhsdmLRVsimgbt2k5G5r7beHZkA'
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
