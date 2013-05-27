@@ -1,4 +1,6 @@
 Darbasti::Application.routes.draw do
+  resources :advertises
+
   get "/auth/:provider/callback" => "services#create"
   resources :services, only: [:index, :destory]
 
