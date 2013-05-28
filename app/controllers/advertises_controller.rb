@@ -1,10 +1,11 @@
 class AdvertisesController < ApplicationController
   before_action :set_advertise, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /advertises
   # GET /advertises.json
   def index
-    @advertises = Advertise.all
+    @advertises = current_user.advertises.all
   end
 
   # GET /advertises/1
@@ -15,6 +16,7 @@ class AdvertisesController < ApplicationController
   # GET /advertises/new
   def new
     @advertise = Advertise.new
+    @advertise.user = current_user
   end
 
   # GET /advertises/1/edit
@@ -25,6 +27,7 @@ class AdvertisesController < ApplicationController
   # POST /advertises.json
   def create
     @advertise = Advertise.new(advertise_params)
+    @advertise.user = current_user
 
     respond_to do |format|
       if @advertise.save
@@ -41,12 +44,16 @@ class AdvertisesController < ApplicationController
   # PATCH/PUT /advertises/1.json
   def update
     respond_to do |format|
-      if @advertise.update(advertise_params)
-        format.html { redirect_to @advertise, notice: 'Advertise was successfully updated.' }
-        format.json { head :no_content }
+      if @advertise.user == current_user
+        if @advertise.update(advertise_params)
+          format.html { redirect_to @advertise, notice: 'Advertise was successfully updated.' }
+          format.json { head :no_content }
+        else
+          format.html { render action: 'edit' }
+          format.json { render json: @advertise.errors, status: :unprocessable_entity }
+        end
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @advertise.errors, status: :unprocessable_entity }
+        return forbidden
       end
     end
   end
@@ -54,7 +61,11 @@ class AdvertisesController < ApplicationController
   # DELETE /advertises/1
   # DELETE /advertises/1.json
   def destroy
-    @advertise.destroy
+    if @advertise.user == current_user
+      @advertise.destroy
+    else
+      return forbidden
+    end
     respond_to do |format|
       format.html { redirect_to advertises_url }
       format.json { head :no_content }
@@ -70,5 +81,11 @@ class AdvertisesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def advertise_params
       params.require(:advertise).permit(:title, :description, :show_for_days, :cost)
+    end
+
+    private
+
+    def forbidden
+      render text: "You don't have access to this resource", status: :forbidden
     end
 end

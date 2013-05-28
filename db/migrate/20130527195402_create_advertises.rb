@@ -5,6 +5,7 @@ class CreateAdvertises < ActiveRecord::Migration
       t.string :description
       t.integer :show_for_days
       t.integer :cost
+      t.integer :user_id
 
       t.timestamps
     end

@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :services
-  has_many :adverties
+  has_many :advertises
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -15,8 +15,8 @@ class User < ActiveRecord::Base
   end
 
   #devise :omniauthable,
-  attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :credit
+  #attr_accessible :email, :password, :password_confirmation, :remember_me,
+  #                :credit
 
   def create_from_oauth(oauth)
     services.build(provider: oauth["provider"],

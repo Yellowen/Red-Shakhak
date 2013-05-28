@@ -42,7 +42,7 @@ gem 'devise', ">= 3.0.0.rc"
 
 # Devis did not supports strong parameters in its models yet. So we have to use this gem
 # to use the old approach
-gem 'protected_attributes'
+#gem 'protected_attributes'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'

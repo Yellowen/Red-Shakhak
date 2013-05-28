@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20130527195402) do
     t.string   "description"
     t.integer  "show_for_days"
     t.integer  "cost"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
