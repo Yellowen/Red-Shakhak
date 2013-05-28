@@ -1,0 +1,5 @@
+<%= link_to t(:dashboard), new_advertise_url %>
+<% @advertises.each do |advertise| %>
+  <p><%= advertise.title %>  show for  <%= advertise.show_for_days %> days for <%= advertise.cost %> Beli each day.</p>
+
+<% end %>

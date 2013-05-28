@@ -27,4 +27,7 @@ Darbasti::Application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   config.assets.debug = true
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # Number of advertises to showen in first page.
+  config.first_page_advertises = 20
 end
