@@ -1,7 +1,6 @@
 class Advertise < ActiveRecord::Base
-  belongs_to :user
 
-  attr_accessible :title, :description, :show_for_days, :cost
+  belongs_to :user
 
   validates :title, presence: true, length: { maximum: 200 }
   validates :show_for_days, numericality: {
