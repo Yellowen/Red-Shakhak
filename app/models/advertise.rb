@@ -2,6 +2,8 @@ class Advertise < ActiveRecord::Base
 
   belongs_to :user
 
+  acts_as_taggable
+
   validates :title, presence: true, length: { maximum: 200 }
   validates :show_for_days, numericality: {
     only_integer: true,

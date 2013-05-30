@@ -51,3 +51,6 @@ gem 'omniauth-google-oauth2'
 
 # Authorization system
 gem 'cancan'
+
+# Tagging
+gem 'acts-as-taggable-on'
