@@ -17,7 +17,13 @@
   </div>
   <div class="field">
     <%= f.label :show_for_days %><br />
-    <%= f.number_field :show_for_days %>
+
+    <% if @advertise.new_record? %>
+      <%= f.number_field :show_for_days %>
+    <% else %>
+      <%= f.number_field :show_for_days, disabled: true %>
+    <% end %>
+
   </div>
   <div class="field">
     <%= f.label :cost %><br />

@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130530082420) do
+ActiveRecord::Schema.define(version: 20130602190836) do
 
   create_table "advertises", force: true do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "show_for_days"
-    t.integer  "cost"
+    t.integer  "show_for_days", default: 0
+    t.integer  "cost",          default: 0
     t.integer  "user_id"
     t.datetime "deactive_date"
     t.float    "cost_per_day"
@@ -26,6 +26,18 @@ ActiveRecord::Schema.define(version: 20130530082420) do
   end
 
   add_index "advertises", ["cost_per_day"], name: "index_advertises_on_cost_per_day"
+
+  create_table "logs", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "logable_id"
+    t.string   "logable_type"
+    t.string   "msg"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "logs", ["logable_id", "logable_type"], name: "index_logs_on_logable_id_and_logable_type"
+  add_index "logs", ["user_id"], name: "index_logs_on_user_id"
 
   create_table "services", force: true do |t|
     t.integer  "user_id"

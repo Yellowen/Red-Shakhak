@@ -1,11 +1,12 @@
 class AdvertisesController < ApplicationController
+  # TODO: Remove index from routes
   before_action :set_advertise, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
 
   # GET /advertises
   # GET /advertises.json
   def index
-    @advertises = current_user.advertises.all
+    @advertises = current_user.advertises
   end
 
   # GET /advertises/1
@@ -31,6 +32,10 @@ class AdvertisesController < ApplicationController
 
     respond_to do |format|
       if @advertise.save
+
+        Log.create(:logable => @advertise, :user => current_user,
+                   :msg => t(:new_advertise_created, :id => @advertise.id))
+
         format.html { redirect_to target_url || @advertise, notice: 'Advertise was successfully created.' }
         format.json { render action: 'show', status: :created, location: @advertise }
       else
@@ -46,6 +51,9 @@ class AdvertisesController < ApplicationController
     respond_to do |format|
       if @advertise.user == current_user
         if @advertise.update(advertise_params)
+          Log.create(:logable => @advertise, :user => current_user,
+                     :msg => t(:advertise_updated, :changes => @advertise.changes))
+
           format.html { redirect_to target_url || @advertise, notice: 'Advertise was successfully updated.' }
           format.json { head :no_content }
         else
@@ -62,8 +70,12 @@ class AdvertisesController < ApplicationController
   # DELETE /advertises/1.json
   def destroy
     if @advertise.user == current_user
+      # BUG: Log entry should contains the removed advertise
+      #      id even after its removal.
+      Log.create(:logable => @advertise, :user => current_user,
+                 :msg => t(:advertise_deleted, :id => @advertise.id))
       @advertise.destroy
-    else
+   else
       return forbidden
     end
     respond_to do |format|

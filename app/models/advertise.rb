@@ -1,12 +1,10 @@
-require 'date'
-
-
 class Advertise < ActiveRecord::Base
 
   # Callbacks
   before_save :calculate_deactive_date
   # Relations
   belongs_to :user
+  has_many :logs, :as => :logable
 
   acts_as_taggable
 
@@ -23,8 +21,8 @@ class Advertise < ActiveRecord::Base
 
   def remaining_days
     if is_active?
-      days = self.deactive_date - DateTime.now
-      return days.to_i
+      d = self.deactive_date - DateTime.now
+      return (d.to_i / 86400).to_i + 1
 
     else
       return 0
@@ -41,13 +39,15 @@ class Advertise < ActiveRecord::Base
   end
 
   def calculate_deactive_date
-
     if self.new_record?
       calc_date
     else
+      if self.show_for_days_change
+        return false
+      end
 
-      if self.show_for_days_change || self.cost_change
-        calc_date
+      if self.cost_change
+        self.cost_per_day = cost.to_f / show_for_days.to_f
       end
 
     end
@@ -63,10 +63,12 @@ class Advertise < ActiveRecord::Base
 
     if show_for_days > 0
       self.cost_per_day = cost.to_f / show_for_days.to_f
-      self.deactive_date += show_for_days
+      self.deactive_date += show_for_days.days
+
     else
       self.cost_per_day = 0
     end
+
   end
 
 end
