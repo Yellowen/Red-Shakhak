@@ -30,6 +30,9 @@ GEM
     arel (4.0.0)
     atomic (1.1.9)
     bcrypt-ruby (3.0.1)
+    bootstrap-sass-rails-rtl (2.3.1.0)
+      railties (>= 3.1.0)
+      sass-rails (>= 3.1.0)
     builder (3.1.4)
     cancan (1.6.10)
     coffee-rails (4.0.0)
@@ -49,6 +52,7 @@ GEM
       multi_json (~> 1.0)
     faraday (0.8.7)
       multipart-post (~> 1.1)
+    flat-ui-rails (0.0.2)
     hashie (2.0.5)
     hike (1.2.2)
     httpauth (0.2.0)
@@ -153,9 +157,12 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  bcrypt-ruby (~> 3.0.0)
+  bootstrap-sass-rails-rtl
   cancan
   coffee-rails (~> 4.0.0.beta1)
   devise (>= 3.0.0.rc)
+  flat-ui-rails
   jbuilder (~> 1.0.1)
   jquery-rails
   omniauth

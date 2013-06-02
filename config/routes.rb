@@ -1,4 +1,6 @@
 Darbasti::Application.routes.draw do
+  get "dashboard" => "dashboard#index", :as => :dashboard_index
+
   resources :advertises
 
   get "/auth/:provider/callback" => "services#create"

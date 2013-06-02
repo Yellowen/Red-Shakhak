@@ -31,7 +31,7 @@ class AdvertisesController < ApplicationController
 
     respond_to do |format|
       if @advertise.save
-        format.html { redirect_to @advertise, notice: 'Advertise was successfully created.' }
+        format.html { redirect_to target_url || @advertise, notice: 'Advertise was successfully created.' }
         format.json { render action: 'show', status: :created, location: @advertise }
       else
         format.html { render action: 'new' }
@@ -46,7 +46,7 @@ class AdvertisesController < ApplicationController
     respond_to do |format|
       if @advertise.user == current_user
         if @advertise.update(advertise_params)
-          format.html { redirect_to @advertise, notice: 'Advertise was successfully updated.' }
+          format.html { redirect_to target_url || @advertise, notice: 'Advertise was successfully updated.' }
           format.json { head :no_content }
         else
           format.html { render action: 'edit' }
@@ -67,7 +67,7 @@ class AdvertisesController < ApplicationController
       return forbidden
     end
     respond_to do |format|
-      format.html { redirect_to advertises_url }
+      format.html { redirect_to target_url || advertises_url }
       format.json { head :no_content }
     end
   end
