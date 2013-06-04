@@ -58,5 +58,7 @@ gem 'cancan'
 # Tagging
 gem 'acts-as-taggable-on'
 
-# Scheduler
-gem "rufus-scheduler"
+# Task processing
+gem 'sidekiq'
+gem 'sinatra'
+gem 'slim'

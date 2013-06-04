@@ -1,7 +1,7 @@
 class Advertise < ActiveRecord::Base
 
   # Callbacks
-  before_save :calculate_deactive_date
+  before_save :calculate_expiration_cost_per_day_callback
   # Relations
   belongs_to :user
   has_many :logs, :as => :logable
@@ -19,6 +19,8 @@ class Advertise < ActiveRecord::Base
     greater_than_or_equal_to: 0,
   }
 
+  # Return the remaining days until expiration date of
+  # current advertise advertisement period
   def remaining_days
     if is_active?
       d = self.deactive_date - DateTime.now
@@ -30,6 +32,7 @@ class Advertise < ActiveRecord::Base
 
   end
 
+  # retuen true if advertise is not expired yet.
   def is_active?
     if self.deactive_date < DateTime.now
       return false
@@ -38,7 +41,23 @@ class Advertise < ActiveRecord::Base
     true
   end
 
-  def calculate_deactive_date
+  # Renew the current advertise for a new period of days,
+  # and with the cost
+  def renew(days, cost)
+    if is_active?
+      return nil
+    else
+      self.show_for_days = days
+      self.cost = cost
+      calc_date
+      save
+
+    end
+  end
+
+  # Calculate the expiration date of current peroid of advertise
+  # in case of a new record or re_calculate the new cost_per_date
+  def calculate_expiration_cost_per_day_callback
     if self.new_record?
       calc_date
     else
@@ -55,10 +74,9 @@ class Advertise < ActiveRecord::Base
 
   private
 
+  # Calculate the expiration date.
   def calc_date
     # Calculate the cost_per_day and deactive date
-
-    # BUG: Find a way to renew the show_for_days
     self.deactive_date = DateTime.now
 
     if show_for_days > 0

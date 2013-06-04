@@ -22,7 +22,6 @@ class AdvertisesController < ApplicationController
 
   # GET /advertise/1/renew
   def renew
-    puts ">>>>>>>> ", Shakhak::Apllication::scheduler
     begin
       @advertise = current_user.advertises.find(params[:id])
     rescue ActiveRecord::RecordNotFound
