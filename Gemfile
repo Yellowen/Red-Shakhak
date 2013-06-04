@@ -57,3 +57,6 @@ gem 'cancan'
 
 # Tagging
 gem 'acts-as-taggable-on'
+
+# Scheduler
+gem "rufus-scheduler"

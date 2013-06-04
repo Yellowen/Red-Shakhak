@@ -1,11 +1,12 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'rufus/scheduler'
 
 # Assets should be precompiled for production (so we don't need the gems loaded then)
 Bundler.require(*Rails.groups(assets: %w(development test)))
 
-module Darbasti
+module Shakhak
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -20,6 +21,8 @@ module Darbasti
     # config.i18n.default_locale = :de
     #config.active_record.whitelist_attributes = false
     ActsAsTaggableOn.force_lowercase = true
+
+    scheduler = Rufus::Scheduler::PlainScheduler.start_new
 
   end
 end

@@ -3,4 +3,8 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @advertise %> |
-<%= link_to 'Back', advertises_path %>
+<% if session[:dashboard] %>
+  <%= link_to 'Back', dashboard_index_path %>
+<% else %>
+  <%= link_to 'Back', advertises_path %>
+<% end -%>

@@ -1,8 +1,12 @@
 Darbasti::Application.routes.draw do
   get "dashboard" => "dashboard#index", :as => :dashboard_index
-
-  resources :advertises
-
+  scope "dashboard" do
+    resources :advertises do
+      member do
+        get "renew"
+      end
+    end
+  end
   get "/auth/:provider/callback" => "services#create"
   resources :services, only: [:index, :destory]
 

@@ -27,7 +27,7 @@
       <% end %>
 
       <td><%= advertise.id %></td>
-      <td><%= advertise.title %></td>
+      <td><%= link_to advertise.title, advertise %></td>
       <td><%= advertise.cost %></td>
       <td><%= advertise.show_for_days %></td>
       <td><%= advertise.cost_per_day %></td>
@@ -56,7 +56,12 @@
       <% @logs.each do |log| %>
       <tr>
 	<td><%= log.created_at %></td>
+	<% if log.logable -%>
 	<td>#<%= log.logable.id %></td>
+	<% else %>
+	<td>-</td>
+	<% end -%>
+
 	<td><%= log.msg %></td>
       </tr>
       <% end %>

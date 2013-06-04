@@ -20,6 +20,17 @@ class AdvertisesController < ApplicationController
     @advertise.user = current_user
   end
 
+  # GET /advertise/1/renew
+  def renew
+    puts ">>>>>>>> ", Shakhak::Apllication::scheduler
+    begin
+      @advertise = current_user.advertises.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      not_found
+    end
+
+  end
+
   # GET /advertises/1/edit
   def edit
   end
@@ -72,12 +83,14 @@ class AdvertisesController < ApplicationController
     if @advertise.user == current_user
       # BUG: Log entry should contains the removed advertise
       #      id even after its removal.
-      Log.create(:logable => @advertise, :user => current_user,
+      Log.create(:user => current_user,
                  :msg => t(:advertise_deleted, :id => @advertise.id))
+
       @advertise.destroy
    else
       return forbidden
     end
+
     respond_to do |format|
       format.html { redirect_to target_url || advertises_url }
       format.json { head :no_content }

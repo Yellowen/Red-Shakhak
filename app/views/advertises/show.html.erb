@@ -31,6 +31,10 @@
   <%= @advertise.description %>
 </p>
 
-
+<%= link_to t(:renew), renew_advertise_url %> |
 <%= link_to 'Edit', edit_advertise_path(@advertise) %> |
-<%= link_to 'Back', advertises_path %>
+<% if session[:dashboard] %>
+  <%= link_to 'Back', dashboard_index_path %>
+<% else %>
+  <%= link_to 'Back', advertises_path %>
+<% end -%>

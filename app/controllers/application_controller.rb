@@ -9,8 +9,12 @@ class ApplicationController < ActionController::Base
       session.delete(:dashboard)
       return dashboard_index_url
     end
-
     return nil
 
   end
+
+  def not_found
+    raise ActionController::RoutingError.new(t(:not_found))
+  end
+
 end
