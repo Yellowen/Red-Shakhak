@@ -1,4 +1,4 @@
-Darbasti::Application.routes.draw do
+Shakhak::Application.routes.draw do
   get "dashboard" => "dashboard#index", :as => :dashboard_index
   scope "dashboard" do
     resources :advertises do

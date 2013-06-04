@@ -1,4 +1,4 @@
-Darbasti::Application.configure do
+Shakhak::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   TWITTER_KEY = 'NZpjZRQul2a4idNTPB3XYQ'
