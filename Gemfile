@@ -60,5 +60,5 @@ gem 'acts-as-taggable-on'
 
 # Task processing
 gem 'sidekiq'
-gem 'sinatra'
+gem 'sinatra', require: false
 gem 'slim'

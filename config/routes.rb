@@ -1,3 +1,5 @@
+require "sidekiq/web"
+
 Shakhak::Application.routes.draw do
   get "dashboard" => "dashboard#index", :as => :dashboard_index
   scope "dashboard" do
@@ -7,15 +9,24 @@ Shakhak::Application.routes.draw do
       end
     end
   end
+
+  # Authentication ----------------------------------------------
   get "/auth/:provider/callback" => "services#create"
+
   resources :services, only: [:index, :destory]
 
+  # /users/....
   devise_for :users, controllers: {registrations: "registrations"}
+  # --------------------------------------------------------------
+
+  mount Sidekiq::Web, :at => "/admin/sidekiq"
+  root to: 'home#index'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root to: 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
