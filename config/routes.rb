@@ -6,6 +6,7 @@ Shakhak::Application.routes.draw do
     resources :advertises do
       member do
         get "renew"
+        patch "do_renew"
       end
     end
   end

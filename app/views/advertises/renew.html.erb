@@ -1,17 +1,17 @@
 
 <h1><%= @advertise.title %>sad</h1>
 
-<%= form_tag do %>
+<%= form_for @advertise, url: {action: :do_renew} do |f| %>
   <div class="field">
-    <%= label_tag  t(:show_for_days) %><br/>
-    <%= text_field_tag :show_for_days %>
+    <%= f.label  t(:show_for_days) %><br/>
+    <%= f.text_field :show_for_days %>
   </div>
   <div class="field">
-    <%= label_tag t(:cost) %><br/>
-    <%= text_field_tag :cost %>
+    <%= f.label t(:cost) %><br/>
+    <%= f.text_field :cost %>
   </div>
   <div class="actions">
-    <%= submit_tag :class => "btn btn-success" %>
+    <%= submit_tag t(:renew), :class => "btn btn-success" %>
   </div>
 
 <% end %>

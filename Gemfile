@@ -15,7 +15,7 @@ group :assets do
   gem "flat-ui-rails"
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', platforms: :ruby
+  #gem 'therubyracer', platforms: :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -32,10 +32,10 @@ gem 'jbuilder', '~> 1.0.1'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+#gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano', group: :development
+gem 'capistrano', group: :development
 
 # To use debugger
 # gem 'debugger'
@@ -62,3 +62,4 @@ gem 'acts-as-taggable-on'
 gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
+gem "pry", group: :development

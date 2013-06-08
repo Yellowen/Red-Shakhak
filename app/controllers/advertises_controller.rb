@@ -24,12 +24,26 @@ class AdvertisesController < ApplicationController
   def renew
     begin
       @advertise = current_user.advertises.find(params[:id])
+      @advertise.show_for_days = 0
+      @advertise.cost = 0
     rescue ActiveRecord::RecordNotFound
       not_found
     end
 
   end
 
+  def do_renew
+    begin
+      @advertise = current_user.advertises.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      not_found
+    end
+
+    RenewWorker.perform_at({:id => params[:id]}.update(params.require(:advertise).permit(:cost,
+                                                                                            :show_for_days)), 1)
+    flash[:notice] = t("your renew order scheduled")
+    render :dashboard_index
+  end
   # GET /advertises/1/edit
   def edit
   end

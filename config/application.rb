@@ -1,6 +1,6 @@
 require File.expand_path('../boot', __FILE__)
-
 require 'rails/all'
+
 
 # Assets should be precompiled for production (so we don't need the gems loaded then)
 Bundler.require(*Rails.groups(assets: %w(development test)))
@@ -20,5 +20,8 @@ module Shakhak
     # config.i18n.default_locale = :de
     #config.active_record.whitelist_attributes = false
     ActsAsTaggableOn.force_lowercase = true
+
+    config.autoload_paths += %W(#{Rails.root}/app/workers)
+    puts ">>>>>>>>>>>>>>>>>>>>>>>>>>> ", config.autoload_paths
   end
 end
