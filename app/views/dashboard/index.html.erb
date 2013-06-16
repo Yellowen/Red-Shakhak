@@ -44,6 +44,35 @@
 
 
 <div class="row">
+  <% if @renew_records %>
+    <p><%=t :latest_renews %></p>
+  <table class="span12 table table-striped">
+    <thead>
+      <th><%=t :created_at %></th>
+      <th><%=t :advertise %></th>
+      <th><%=t :renew_date %></th>
+      <th><%=t :show_for_days %></th>
+      <th><%=t :cost %></th>
+    </thead>
+    <tbody>
+      <% @renew_records.each do |renew| %>
+      <tr>
+	<td><%= renew.created_at %></td>
+	<td>#<%= renew.advertise.id %></td>
+	<td><%= renew.renew_date %></td>
+	<td><%= renew.show_for_days %></td>
+	<td><%= renew.cost %></td>
+
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% end %>
+
+</div>
+
+
+<div class="row">
   <% if @logs %>
     <p><%=t :latest_activities %></p>
   <table class="span12 table table-striped">

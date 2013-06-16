@@ -33,19 +33,40 @@ class AdvertisesController < ApplicationController
   end
 
   def do_renew
-    begin
-      @advertise = current_user.advertises.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      not_found
+
+    @advertise = current_user.advertises.find_by_id(params[:id].to_i)
+    if not @advertise then not_found end
+
+    renew_record = Renew.find_by_advertise(@advertise.id)
+      .order("renew_date desc")
+      .limit(1)
+
+    if renew_records
+      # Retrieve the last renew scheduled data
+      last_renew_date = renew_record.renew_data
+
+    else
+      last_renew_date = @advertise.deactive_date
+
     end
 
-    jid = RenewWorker.perform_at(@advertise.deactive_date,
+    # schedule the renew worker to run at the last expiration date
+    jid = RenewWorker.perform_at(last_renew_date,
                                  {:id => params[:id]}.update(params.require(:advertise).permit(:cost,
                                                                                                :show_for_days)), 1)
+    # Save the renew record to database so we can look back
+    # and cancel them if user want
+    renew = Renew.new(:user => current_user,
+                      :advertise => @advertise,
+                      :renew_date => last_renew_date,
+                      :jid => jid)
+    renew.save
+
 
     flash[:notice] = t("your renew order scheduled")
     redirect_to :dashboard_index
   end
+
   # GET /advertises/1/edit
   def edit
   end

@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :services
   has_many :advertises
   has_many :logs
-  has_many :renews
+  has_many :renews, :class_name => "Renew"
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,

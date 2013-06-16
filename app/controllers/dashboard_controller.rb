@@ -4,6 +4,7 @@ class DashboardController < ApplicationController
   def index
     session[:dashboard] = true
     @advertises = current_user.advertises.order("updated_at")
+    @renew_records = current_user.renews.order("renew_date desc").limit(20)
     @logs = current_user.logs.order("created_at DESC").limit(20)
   end
 
