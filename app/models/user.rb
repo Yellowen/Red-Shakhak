@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :services
   has_many :advertises
   has_many :logs
+  has_many :renews
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable

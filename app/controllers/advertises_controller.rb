@@ -39,10 +39,12 @@ class AdvertisesController < ApplicationController
       not_found
     end
 
-    RenewWorker.perform_at({:id => params[:id]}.update(params.require(:advertise).permit(:cost,
-                                                                                            :show_for_days)), 1)
+    jid = RenewWorker.perform_at(@advertise.deactive_date,
+                                 {:id => params[:id]}.update(params.require(:advertise).permit(:cost,
+                                                                                               :show_for_days)), 1)
+
     flash[:notice] = t("your renew order scheduled")
-    render :dashboard_index
+    redirect_to :dashboard_index
   end
   # GET /advertises/1/edit
   def edit

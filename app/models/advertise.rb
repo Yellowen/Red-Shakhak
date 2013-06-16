@@ -5,6 +5,7 @@ class Advertise < ActiveRecord::Base
   # Relations
   belongs_to :user
   has_many :logs, :as => :logable
+  has_many :renews
 
   acts_as_taggable
 
