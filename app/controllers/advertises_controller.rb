@@ -37,13 +37,13 @@ class AdvertisesController < ApplicationController
     @advertise = current_user.advertises.find_by_id(params[:id].to_i)
     if not @advertise then not_found end
 
-    renew_record = Renew.find_by_advertise(@advertise.id)
-      .order("renew_date desc")
-      .limit(1)
+    renew = Renew.where(:advertise_id => @advertise.id).order("renew_date desc").limit(1).select("renew_date, show_for_days")
 
-    if renew_records
-      # Retrieve the last renew scheduled data
-      last_renew_date = renew_record.renew_data
+    if not renew.empty?
+      # Retrieve the last renew scheduled date
+      last_renew = renew[0].renew_date
+      last_renew_show_for_days = renew[0].show_for_days
+      last_renew_date = last_renew + last_renew_show_for_days.days
 
     else
       last_renew_date = @advertise.deactive_date
@@ -59,6 +59,8 @@ class AdvertisesController < ApplicationController
     renew = Renew.new(:user => current_user,
                       :advertise => @advertise,
                       :renew_date => last_renew_date,
+                      :show_for_days => params[:advertise][:show_for_days],
+                      :cost => params[:advertise][:cost],
                       :jid => jid)
     renew.save
 

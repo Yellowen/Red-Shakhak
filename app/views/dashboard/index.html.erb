@@ -44,7 +44,7 @@
 
 
 <div class="row">
-  <% if @renew_records %>
+  <% if @renew_records.exists? %>
     <p><%=t :latest_renews %></p>
   <table class="span12 table table-striped">
     <thead>
@@ -73,7 +73,7 @@
 
 
 <div class="row">
-  <% if @logs %>
+  <% if @logs.exists? %>
     <p><%=t :latest_activities %></p>
   <table class="span12 table table-striped">
     <thead>
