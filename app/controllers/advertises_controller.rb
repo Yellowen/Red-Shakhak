@@ -135,6 +135,36 @@ class AdvertisesController < ApplicationController
     end
   end
 
+  # DELETE /advertises/1/renew/1
+  # DELETE /advertises/renew/1.json
+  def destroy_renew
+    @renew = Renew.find_by_id(params[:renew_id].to_i)
+    if not @renew then not_found end
+
+    @advertise = Advertise.find_by_id(params[:id].to_i)
+    if not @advertise then not_found end
+
+    if @renew.user != current_user or @renew.advertise != @advertise
+      forbidden
+    end
+
+    Log.create(:user => current_user,
+               :msg => t(:renew_deleted, :id => @advertise.id,
+                         :renew_id => @renew.id))
+
+    # Delete the scheduled job
+    queue = Sidekiq::ScheduledSet.new
+    renew_job = queue.find_job(@renew.jid)
+    if renew_job
+      renew_job.delete
+    end
+
+    @renew.destroy
+
+    flash[:notice] = t(:renew_removed)
+    redirect_to :dashboard_index
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_advertise

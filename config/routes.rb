@@ -7,7 +7,9 @@ Shakhak::Application.routes.draw do
       member do
         get "renew"
         patch "do_renew"
+        delete "renew/:renew_id/", :action => :destroy_renew, :as => :delete_renew
       end
+
     end
   end
 
