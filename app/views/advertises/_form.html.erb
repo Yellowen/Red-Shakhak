@@ -29,6 +29,11 @@
     <%= f.label :cost %><br />
     <%= f.number_field :cost %>
   </div>
+
+  <div class="field">
+    <%= f.label :size %>
+    <%= f.select :size, options_for_select(Advertise.get_sizes) %>
+  </div>
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>

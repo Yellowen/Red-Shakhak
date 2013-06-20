@@ -1,5 +1,17 @@
 class Advertise < ActiveRecord::Base
 
+  SIZES = {
+    1 => "1x1",
+    2 => "1x2",
+    3 => "2x1",
+    4 => "2x2",
+    5 => "2x3",
+    6 => "3x2",
+    7 => "3x1",
+    8 => "1x3",
+    9 => "3x3",
+  }
+
   # Callbacks
   before_save :calculate_expiration_cost_per_day_callback
   # Relations
@@ -20,6 +32,15 @@ class Advertise < ActiveRecord::Base
     greater_than_or_equal_to: 0,
   }
 
+  validates_inclusion_of :size, :in => SIZES.keys
+
+  def self.get_sizes
+    SIZES.to_a.reverse_each {|x| x.reverse!}
+  end
+
+  def get_size
+    SIZES[size]
+  end
   # Return the remaining days until expiration date of
   # current advertise advertisement period
   def remaining_days

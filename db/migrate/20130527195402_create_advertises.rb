@@ -8,6 +8,7 @@ class CreateAdvertises < ActiveRecord::Migration
       t.integer :user_id
       t.datetime :deactive_date
       t.float :cost_per_day
+      t.integer :size
 
       t.timestamps
     end

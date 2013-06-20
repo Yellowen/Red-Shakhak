@@ -19,7 +19,7 @@ module Shakhak
     # config.i18n.default_locale = :de
     #config.active_record.whitelist_attributes = false
     ActsAsTaggableOn.force_lowercase = true
-
+    config.ad_unit_size = 100
     config.autoload_paths += %W(#{Rails.root}/app/workers)
   end
 end

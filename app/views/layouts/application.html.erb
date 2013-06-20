@@ -6,40 +6,11 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body dir="rtl">
 
-  <div class="navbar navbar-inverse">
-    <div class="navbar-inner">
-      <div class="container">
-	<div class="row">
-	  <div class="span12">
+  <%= render "shared/navbar" %>
 
-	    <ul class="nav">
-	      <li>
-		<%= link_to t(:home), root_url %>
-	      </li>
-	    </ul>
-	  </div>
-	</div>
-
-      </div>
-
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="row">
-
-      <div class="span4">
-      </div>
-
-      <div class="span8">
-	<p class="text-success"><%= notice %></p>
-	<p class="text-error"><%= alert %></p>
-
-	<%= yield %>
-      </div>
-    </div>
-  </div>
+  <%= yield %>
 </body>
 </html>

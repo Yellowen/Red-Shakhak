@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20130616120752) do
     t.integer  "user_id"
     t.datetime "deactive_date"
     t.float    "cost_per_day"
+    t.integer  "size"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
