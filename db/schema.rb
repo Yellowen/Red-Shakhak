@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130616120752) do
+ActiveRecord::Schema.define(version: 20130620174559) do
 
   create_table "advertises", force: true do |t|
     t.string   "title"
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 20130616120752) do
   end
 
   add_index "advertises", ["cost_per_day"], name: "index_advertises_on_cost_per_day"
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.string   "verbose_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "logs", force: true do |t|
     t.integer  "user_id"

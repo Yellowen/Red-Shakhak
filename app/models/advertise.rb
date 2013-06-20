@@ -16,6 +16,7 @@ class Advertise < ActiveRecord::Base
   before_save :calculate_expiration_cost_per_day_callback
   # Relations
   belongs_to :user
+  belongs_to :categories, :class => :Category
   has_many :logs, :as => :logable
   has_many :renews
 
