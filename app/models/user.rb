@@ -44,4 +44,7 @@ class User < ActiveRecord::Base
     false
   end
 
+  def role_name
+    ROLES[role]
+  end
 end
