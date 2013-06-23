@@ -1,5 +1,13 @@
 class User < ActiveRecord::Base
 
+  ROLES = {
+    0 => "guest",
+    1 => "user",
+    2 => "moderator",
+    3 => "banned",
+    99 => "admin",
+  }
+
   has_many :services
   has_many :advertises
   has_many :logs
@@ -27,6 +35,13 @@ class User < ActiveRecord::Base
 
   def password_required?
     (services.empty? || !password.blank?) && super
+  end
+
+  def role?(role_)
+    if role_.to_s == ROLES[role]
+      return true
+    end
+    false
   end
 
 end

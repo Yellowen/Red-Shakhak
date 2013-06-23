@@ -12,4 +12,5 @@
  *= require_tree .
  *= require twitter/bootstrap_rtl
  *= require flat-ui
+ *= require font-awesome
  */

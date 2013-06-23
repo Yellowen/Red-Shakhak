@@ -10,6 +10,8 @@ class RegistrationsController < Devise::RegistrationsController
     # This code snippet borrowed from Devise --------------------
     build_resource(sign_up_params)
 
+    resource.role = 1 if resource.role == 0
+
     if resource.save
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_navigational_format?
@@ -36,6 +38,8 @@ class RegistrationsController < Devise::RegistrationsController
 
     # Create the user service from oauth data in session.
     if session[:oauth]
+      # Role = 1 is the normal user
+      session[:oauth].update({:role => 1})
       @user.create_from_oauth(session[:oauth])
       @user.valid?
     end
