@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError.new(t(:not_found))
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+
 end

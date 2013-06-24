@@ -1,8 +1,11 @@
 require "sidekiq/web"
 
 Shakhak::Application.routes.draw do
+
   get "dashboard" => "dashboard#index", :as => :dashboard_index
+
   scope "dashboard" do
+    resources :categories
     resources :advertises do
       member do
         get "renew"

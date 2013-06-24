@@ -8,7 +8,6 @@ class Ability
   end
 
   def user
-
   end
 
   def admin

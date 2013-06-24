@@ -11,11 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130620174559) do
+ActiveRecord::Schema.define(version: 20130624073624) do
 
   create_table "advertises", force: true do |t|
     t.string   "title"
     t.text     "description"
+    t.integer  "category_id"
     t.integer  "show_for_days", default: 0
     t.integer  "cost",          default: 0
     t.integer  "user_id"
@@ -30,7 +31,7 @@ ActiveRecord::Schema.define(version: 20130620174559) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
-    t.string   "verbose_name"
+    t.string   "cssclass"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -5,7 +5,10 @@
   <%= @advertise.title %>
 </p>
 
-
+<p>
+  <strong><%=t :category %>:</strong>
+  <%= @advertise.category.name %>
+</p>
 <p>
   <strong><%=t :show_for_days %>:</strong>
   <%= @advertise.show_for_days %>
@@ -16,6 +19,10 @@
   <%= @advertise.cost %>
 </p>
 
+<p>
+  <strong><%=t :size %>:</strong>
+  <%= @advertise.get_size %>
+</p>
 <p>
   <strong><%=t :cost_per_day %>:</strong>
   <%= @advertise.cost_per_day %>

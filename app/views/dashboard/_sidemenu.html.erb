@@ -1,13 +1,12 @@
-<div class="span4 ">
   <aside class="sidemenu">
     <div class="menuheader">
       <%=t :credit %>: 40000 B
     </div>
 
     <ul class="menu">
-      <li><a href="#"><i class="icon-inbox icon-large"></i> <%=t :advertises %></a></li>
+      <li><a href="<%=  advertises_path %>"><i class="icon-inbox icon-large"></i> <%=t :advertises %></a></li>
       <% if can? :manage, Category %>
-      <li><a href="#"><i class="icon-sitemap icon-large"></i> <%=t :category %></a></li>
+      <li><a href="<%=  categories_path %>"><i class="icon-sitemap icon-large"></i> <%=t :category %></a></li>
       <% end %>
 
       <% if can? :manage, User %>
@@ -15,6 +14,7 @@
       <% end %>
 
       <li><a href="#"><i class="icon-user icon-large"></i> <%=t :profile %></a></li>
+      <li><a href="<%=  destroy_user_session_path %>" data-method="delete"><i class="icon-signout icon-large"></i> <%=t :log_out %></a></li>
+
     </ul>
   </aside>
-</div>

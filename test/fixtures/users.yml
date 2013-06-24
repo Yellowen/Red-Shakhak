@@ -13,5 +13,12 @@ one:
   updated_at: 2013-06-23 18:01:26.363879000 Z
 # column: value
 #
-two: {}
+two:
+  id: 2
+  email: l@l.aa
+  encrypted_password: $2a$10$BNVyw245s4I6837YvKQs.uOsHC7a4euVj.Vl3tUk3O07SVkG6cbRi
+  role: 99
+  created_at: 2013-06-23 18:02:26.133718000 Z
+  updated_at: 2013-06-23 18:02:26.363879000 Z
+
 #  column: value

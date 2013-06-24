@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  verbose_name: MyString
+  cssclass: MyString
 
 two:
   name: MyString
-  verbose_name: MyString
+  cssclass: MyString

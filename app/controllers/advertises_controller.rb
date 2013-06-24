@@ -1,5 +1,6 @@
 class AdvertisesController < ApplicationController
-  # TODO: Remove index from routes
+  layout "dashboard"
+
   before_action :set_advertise, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
 
@@ -16,6 +17,7 @@ class AdvertisesController < ApplicationController
 
   # GET /advertises/new
   def new
+    @categories = Category.all
     @advertise = Advertise.new
     @advertise.user = current_user
   end
@@ -71,6 +73,7 @@ class AdvertisesController < ApplicationController
 
   # GET /advertises/1/edit
   def edit
+    @categories = Category.all
   end
 
   # POST /advertises
@@ -78,6 +81,7 @@ class AdvertisesController < ApplicationController
   def create
     @advertise = Advertise.new(advertise_params)
     @advertise.user = current_user
+    @advertise.category = Category.find(params.require(:advertise).permit(:category)[:category].to_i)
 
     respond_to do |format|
       if @advertise.save
@@ -99,7 +103,9 @@ class AdvertisesController < ApplicationController
   def update
     respond_to do |format|
       if @advertise.user == current_user
-        if @advertise.update(advertise_params)
+        category = Category.find(params.require(:advertise).permit(:category)[:category].to_i)
+        update_hash = advertise_params().update({:category => category})
+        if @advertise.update(update_hash)
           Log.create(:logable => @advertise, :user => current_user,
                      :msg => t(:advertise_updated, :changes => @advertise.changes))
 
