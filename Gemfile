@@ -64,3 +64,5 @@ gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
 gem "pry", group: :development
+
+gem "kaminari", :git => "http://github.com/amatsuda/kaminari.git", :branch => "rails4"

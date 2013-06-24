@@ -8,6 +8,9 @@ class Ability
   end
 
   def user
+    can :manage, Advertise do |advertise|
+      advertise.try(:user) == @user || @user.role?(:moderator)
+    end
   end
 
   def admin
