@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :category %>
-    <%= f.select :category, options_for_select(@categories.collect {|x| [x.name, x.id]}), :selected => 2 %>
+    <%= f.select :category_id, options_for_select(@categories.collect {|x| [x.name, x.id]}, @advertise.category.try(:id)), prompt: "---" %>
   </div>
 
   <div class="field">
@@ -38,7 +38,7 @@
 
   <div class="field">
     <%= f.label :size %>
-    <%= f.select :size, options_for_select(Advertise.get_sizes) %>
+    <%= f.select :size, options_for_select(Advertise.get_sizes, @advertise.size) %>
   </div>
   <div class="field">
     <%= f.label :description %><br />

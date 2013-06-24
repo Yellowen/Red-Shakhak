@@ -81,7 +81,6 @@ class AdvertisesController < ApplicationController
   def create
     @advertise = Advertise.new(advertise_params)
     @advertise.user = current_user
-    @advertise.category = Category.find(params.require(:advertise).permit(:category)[:category].to_i)
 
     respond_to do |format|
       if @advertise.save
@@ -92,6 +91,7 @@ class AdvertisesController < ApplicationController
         format.html { redirect_to target_url || @advertise, notice: 'Advertise was successfully created.' }
         format.json { render action: 'show', status: :created, location: @advertise }
       else
+        @categories = Category.all
         format.html { render action: 'new' }
         format.json { render json: @advertise.errors, status: :unprocessable_entity }
       end
@@ -103,9 +103,8 @@ class AdvertisesController < ApplicationController
   def update
     respond_to do |format|
       if @advertise.user == current_user
-        category = Category.find(params.require(:advertise).permit(:category)[:category].to_i)
-        update_hash = advertise_params().update({:category => category})
-        if @advertise.update(update_hash)
+
+        if @advertise.update(advertise_params)
           Log.create(:logable => @advertise, :user => current_user,
                      :msg => t(:advertise_updated, :changes => @advertise.changes))
 
@@ -181,7 +180,7 @@ class AdvertisesController < ApplicationController
     def advertise_params
       params.require(:advertise).permit(:title, :description,
                                         :show_for_days, :cost,
-                                        :size)
+                                        :size, :category_id)
     end
 
     private

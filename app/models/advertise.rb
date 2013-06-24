@@ -23,6 +23,7 @@ class Advertise < ActiveRecord::Base
   acts_as_taggable
 
   validates :title, presence: true, length: { maximum: 200 }
+  validates :category_id, presence: true
   validates :show_for_days, numericality: {
     only_integer: true,
     greater_than_or_equal_to: 0,
