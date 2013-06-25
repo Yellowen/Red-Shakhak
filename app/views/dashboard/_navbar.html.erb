@@ -1,15 +1,23 @@
 <header>
   <div class="container">
     <nav>
-      <ul>
+      <ul class="pull-right">
+
 	<li>
 	   <a href="<%= root_url %>"><i class="icon-home"></i> <%=t :home %></a>
 	</li>
 	<li>
 	   <a href="<%= dashboard_index_url %>"><i class="icon-th-large"></i> <%=t :dashboard %></a>
 	</li>
+      </ul>
+
+      <ul class="pull-left">
+	<li>
+	  <a href="<%= root_url %>"><i class="icon-cog icon-large"></i></a>
+	</li>
 
       </ul>
+
     </nav>
   </div>
 </header>

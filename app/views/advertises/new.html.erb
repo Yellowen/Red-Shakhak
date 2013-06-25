@@ -1,5 +1,5 @@
-<h1>New advertise</h1>
+<h1><%=t :new_advertise %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', advertises_path %>
+<a href="<%= advertises_path %>" class="btn btn-warning"><i class="icon-back"></i> <%=t :back %></a>
