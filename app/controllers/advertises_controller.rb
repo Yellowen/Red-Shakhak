@@ -67,7 +67,7 @@ class AdvertisesController < ApplicationController
     renew.save
 
 
-    flash[:notice] = t("your renew order scheduled")
+    flash[:notice] = _("your renew order scheduled")
     redirect_to :dashboard_index
   end
 
@@ -86,7 +86,7 @@ class AdvertisesController < ApplicationController
       if @advertise.save
 
         Log.create(:logable => @advertise, :user => current_user,
-                   :msg => t(:new_advertise_created, :id => @advertise.id))
+                   :msg => _("new advertise created", :id => @advertise.id))
 
         format.html { redirect_to target_url || @advertise, notice: 'Advertise was successfully created.' }
         format.json { render action: 'show', status: :created, location: @advertise }
@@ -106,7 +106,7 @@ class AdvertisesController < ApplicationController
 
         if @advertise.update(advertise_params)
           Log.create(:logable => @advertise, :user => current_user,
-                     :msg => t(:advertise_updated, :changes => @advertise.changes))
+                     :msg => _("advertise updated", :changes => @advertise.changes))
 
           format.html { redirect_to target_url || @advertise, notice: 'Advertise was successfully updated.' }
           format.json { head :no_content }
@@ -127,7 +127,7 @@ class AdvertisesController < ApplicationController
       # BUG: Log entry should contains the removed advertise
       #      id even after its removal.
       Log.create(:user => current_user,
-                 :msg => t(:advertise_deleted, :id => @advertise.id))
+                 :msg => _("advertise deleted", :id => @advertise.id))
 
       @advertise.destroy
    else
@@ -154,7 +154,7 @@ class AdvertisesController < ApplicationController
     end
 
     Log.create(:user => current_user,
-               :msg => t(:renew_deleted, :id => @advertise.id,
+               :msg => _("renew deleted", :id => @advertise.id,
                          :renew_id => @renew.id))
 
     # Delete the scheduled job
@@ -166,7 +166,7 @@ class AdvertisesController < ApplicationController
 
     @renew.destroy
 
-    flash[:notice] = t(:renew_removed)
+    flash[:notice] = _("renew removed")
     redirect_to :dashboard_index
   end
 

@@ -1,47 +1,47 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong><%=t :title %>:</strong>
+  <strong><%= _("title") %>:</strong>
   <%= @advertise.title %>
 </p>
 
 <p>
-  <strong><%=t :category %>:</strong>
+  <strong><%= _("category") %>:</strong>
   <%= @advertise.category.name %>
 </p>
 <p>
-  <strong><%=t :show_for_days %>:</strong>
+  <strong><%= _("show for days") %>:</strong>
   <%= @advertise.show_for_days %>
 </p>
 
 <p>
-  <strong><%=t :cost %>:</strong>
+  <strong><%= _("cost") %>:</strong>
   <%= @advertise.cost %>
 </p>
 
 <p>
-  <strong><%=t :size %>:</strong>
+  <strong><%= _("size") %>:</strong>
   <%= @advertise.get_size %>
 </p>
 <p>
-  <strong><%=t :cost_per_day %>:</strong>
+  <strong><%= _("cost per day") %>:</strong>
   <%= @advertise.cost_per_day %>
 </p>
 <p>
-  <strong><%=t :deactive_date %>:</strong>
+  <strong><%= _("deactive date") %>:</strong>
   <%= @advertise.deactive_date %>
 </p>
 
 
 <p>
-  <strong><%=t :description %>:</strong>
+  <strong><%= _("description") %>:</strong>
   <%= @advertise.description %>
 </p>
 
-<%= link_to t(:renew), renew_advertise_url %> |
-<%= link_to 'Edit', edit_advertise_path(@advertise) %> |
+<%= link_to _("Renew"), renew_advertise_url, class: "btn btn-success", icons: "icon-ok" %>
+<%= link_to _('Edit'), edit_advertise_path(@advertise), class: edit_btn_class, icons: edit_btn_icon %>
 <% if session[:dashboard] %>
-  <%= link_to 'Back', dashboard_index_path %>
+  <%= link_to _('Back'), dashboard_index_path, class: back_btn_class, icons: back_btn_icon %>
 <% else %>
-  <%= link_to 'Back', advertises_path %>
+  <%= link_to _('Back'), advertises_path, class: back_btn_class, icons: back_btn_icon %>
 <% end -%>

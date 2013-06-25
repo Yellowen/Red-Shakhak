@@ -20,7 +20,7 @@ class ServicesController < ApplicationController
     if service
       # Service are already registered for user
       logger.debug("Logging in the user using exists service data.")
-      flash[:info] = "You successfully logged in."
+      flash[:info] = _("You successfully logged in.")
       sign_in_and_redirect :user, service.user
 
     elsif current_user
@@ -28,7 +28,7 @@ class ServicesController < ApplicationController
       logger.debug("User already logged in. Storing service data to database.")
       current_user.services.create!(provider: oauth["provider"],
                                     uid: oauth["uid"])
-      flash[:info] = "You authenticated successfully.\n"
+      flash[:info] = _("You authenticated successfully.")
       redirect_to services_url
 
     else
@@ -49,7 +49,7 @@ class ServicesController < ApplicationController
   def destroy
     @servoce = current_user.services.find(params[:id])
     @service.destroy
-    flash[:notice] = "Service removed successfully"
+    flash[:notice] = _("Service removed successfully")
 
     redirect_to services_url
   end

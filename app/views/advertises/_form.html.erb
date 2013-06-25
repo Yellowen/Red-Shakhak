@@ -12,17 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label _("title") %><br />
     <%= f.text_field :title %>
   </div>
 
   <div class="field">
-    <%= f.label :category %>
+    <%= f.label _("category") %>
     <%= f.select :category_id, options_for_select(@categories.collect {|x| [x.name, x.id]}, @advertise.category.try(:id)), prompt: "---" %>
   </div>
 
   <div class="field">
-    <%= f.label :show_for_days %><br />
+    <%= f.label _("show for days") %><br />
 
     <% if @advertise.new_record? %>
       <%= f.number_field :show_for_days %>
@@ -32,19 +32,19 @@
 
   </div>
   <div class="field">
-    <%= f.label :cost %><br />
+    <%= f.label _("cost") %><br />
     <%= f.number_field :cost %>
   </div>
 
   <div class="field">
-    <%= f.label :size %>
+    <%= f.label _("size") %>
     <%= f.select :size, options_for_select(Advertise.get_sizes, @advertise.size) %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label _("description") %><br />
     <%= f.text_area :description %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-success" %>
   </div>
 <% end %>

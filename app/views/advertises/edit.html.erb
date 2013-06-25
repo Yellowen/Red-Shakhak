@@ -1,10 +1,10 @@
-<h1>Editing advertise</h1>
+<h1><%= _("Editing advertise") %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @advertise %> |
+<%= link_to _('Show'), @advertise, class: show_btn_class, icons: show_btn_icon %>
 <% if session[:dashboard] %>
-  <%= link_to 'Back', dashboard_index_path %>
+  <%= link_to 'Back', dashboard_index_path, class: back_btn_class, icons: back_btn_icon  %>
 <% else %>
-  <%= link_to 'Back', advertises_path %>
+  <%= link_to 'Back', advertises_path,  class: back_btn_class, icons: back_btn_icon  %>
 <% end -%>

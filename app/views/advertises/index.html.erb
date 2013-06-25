@@ -1,13 +1,13 @@
-<h1>Listing advertises</h1>
+<h1><%= _("Listing advertises") %></h1>
 <table>
   <thead>
     <tr>
-      <th><%=t :title %></th>
-      <th><%=t :description %></th>
-      <th><%=t :show_for_days %></th>
-      <th><%=t :cost %></th>
-      <th><%=t :cost_per_day %></th>
-      <th><%=t :deactive_date %></th>
+      <th><%= _("title") %></th>
+      <th><%= _("description") %></th>
+      <th><%= _("show for days") %></th>
+      <th><%= _("cost") %></th>
+      <th><%= _("cost per day") %></th>
+      <th><%= _("deactive date") %></th>
       <th></th>
       <th></th>
       <th></th>
@@ -23,9 +23,9 @@
       <td><%= advertise.cost %></td>
       <td><%= advertise.cost_per_day %></td>
       <td><%= advertise.deactive_date %></td>
-      <td><%= link_to 'Show', advertise %></td>
-      <td><%= link_to 'Edit', edit_advertise_path(advertise) %></td>
-      <td><%= link_to 'Destroy', advertise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to '', advertise, class: show_btn_class, icons: show_btn_icon %></td>
+      <td><%= link_to '', edit_advertise_path(advertise), class: edit_btn_class, icons: edit_btn_icon %></td>
+      <td><%= link_to '', advertise, method: :delete, data: { confirm: 'Are you sure?' }, class: del_btn_class, icons: del_btn_icon %></td>
     </tr>
     <% end %>
   </tbody>
@@ -33,4 +33,4 @@
 
 <br />
 
-<%= link_to 'New Advertise', new_advertise_path %>
+<%= link_to _('New Advertise'), new_advertise_path, class: add_btn_class, icons: add_btn_icon %>
