@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%=t :shakhak %></title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
+  <head>
+    <title><%=t :shakhak %></title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<body dir="rtl">
+  <body dir="rtl">
+    <%= render "shared/navbar" %>
 
-  <%= render "shared/navbar" %>
-
-<div class="container-fluid">
-  <div class="row-fluid">
-
-    <div class="span12">
+    <div class="container-fluid">
       <div class="row-fluid">
+
 	<div class="span12">
-	  <p class="text-success"><%= notice %></p>
-	  <p class="text-error"><%= alert %></p>
+	  <div class="row-fluid">
+	    <div class="span12">
+	      <p class="text-success"><%= notice %></p>
+	      <p class="text-error"><%= alert %></p>
+	    </div>
+	  </div>
+	  <%= yield %>
 	</div>
+
       </div>
-    <%= yield %>
     </div>
 
-  </div>
-</div>
-
-</body>
+  </body>
 </html>

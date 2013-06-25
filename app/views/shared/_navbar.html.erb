@@ -1,12 +1,25 @@
 <header>
-<div class="container">
-  <ul class="nav">
-    <li>
-      <%= link_to t(:home), root_url %>
-    </li>
-    <li>
-      <%= link_to t(:dashboard), dashboard_index_url %>
-    </li>
-  </ul>
-</div>
+
+    <nav>
+      <ul class="pull-right">
+	<li>
+	  <a href="<%= root_url %>"><i class="icon-home"></i> <%=t :home %></a>
+	</li>
+	<li>
+	  <a href="<%= dashboard_index_url %>"><i class="icon-th-large"></i> <%=t :dashboard %></a>
+	</li>
+
+      </ul>
+
+      <ul class="pull-left">
+	<li>
+	  <a href="<%= root_url %>"><i class="icon-cog icon-large"></i></a>
+	</li>
+	<li>
+	  <a href="<%= dashboard_index_url %>"><i class="icon-filter icon-large"></i></a>
+	</li>
+
+      </ul>
+
+    </nav>
 </header>
