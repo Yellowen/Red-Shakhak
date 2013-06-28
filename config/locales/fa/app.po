@@ -1,0 +1,274 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: version 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-26 15:13+0430\n"
+"PO-Revision-Date: 2013-06-25 23:58+0430\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+msgid "Acts as taggable on/tag"
+msgstr ""
+
+msgid "Acts as taggable on/tagging"
+msgstr ""
+
+msgid "ActsAsTaggableOn::Tagging|Context"
+msgstr ""
+
+msgid "ActsAsTaggableOn::Tagging|Taggable type"
+msgstr ""
+
+msgid "ActsAsTaggableOn::Tagging|Tagger type"
+msgstr ""
+
+msgid "ActsAsTaggableOn::Tag|Name"
+msgstr ""
+
+msgid "Advertise"
+msgstr ""
+
+msgid "Advertise|Cost"
+msgstr ""
+
+msgid "Advertise|Cost per day"
+msgstr ""
+
+msgid "Advertise|Deactive date"
+msgstr ""
+
+msgid "Advertise|Description"
+msgstr ""
+
+msgid "Advertise|Show for days"
+msgstr ""
+
+msgid "Advertise|Size"
+msgstr ""
+
+msgid "Advertise|Title"
+msgstr "عنوان"
+
+msgid "Back"
+msgstr "برگشت"
+
+msgid "Category"
+msgstr "دسته بندی"
+
+msgid "Category was successfully created."
+msgstr ""
+
+msgid "Category was successfully updated."
+msgstr ""
+
+msgid "Category|Cssclass"
+msgstr ""
+
+msgid "Category|Name"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Editing advertise"
+msgstr ""
+
+msgid "Listing advertises"
+msgstr ""
+
+msgid "Log"
+msgstr ""
+
+msgid "Log|Logable type"
+msgstr ""
+
+msgid "Log|Msg"
+msgstr ""
+
+msgid "New Advertise"
+msgstr "آگهی جدید"
+
+msgid "New advertise"
+msgstr "آگهی جدید"
+
+msgid "Renew"
+msgstr ""
+
+msgid "Renew|Cost"
+msgstr ""
+
+msgid "Renew|Jid"
+msgstr ""
+
+msgid "Renew|Renew date"
+msgstr ""
+
+msgid "Renew|Show for days"
+msgstr ""
+
+msgid "Service"
+msgstr ""
+
+msgid "Service removed successfully"
+msgstr ""
+
+msgid "Service|Provider"
+msgstr ""
+
+msgid "Service|Uid"
+msgstr ""
+
+msgid "Show"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "User|Current sign in at"
+msgstr ""
+
+msgid "User|Current sign in ip"
+msgstr ""
+
+msgid "User|Email"
+msgstr ""
+
+msgid "User|Encrypted password"
+msgstr ""
+
+msgid "User|Last sign in at"
+msgstr ""
+
+msgid "User|Last sign in ip"
+msgstr ""
+
+msgid "User|Remember created at"
+msgstr ""
+
+msgid "User|Reset password sent at"
+msgstr ""
+
+msgid "User|Reset password token"
+msgstr ""
+
+msgid "User|Role"
+msgstr ""
+
+msgid "User|Sign in count"
+msgstr ""
+
+msgid "You authenticated successfully."
+msgstr ""
+
+msgid "You successfully logged in."
+msgstr ""
+
+msgid "active"
+msgstr ""
+
+msgid "activity"
+msgstr ""
+
+msgid "advertise"
+msgstr ""
+
+msgid "advertise deleted"
+msgstr ""
+
+msgid "advertise updated"
+msgstr ""
+
+msgid "advertises"
+msgstr ""
+
+msgid "category"
+msgstr ""
+
+msgid "cost"
+msgstr ""
+
+msgid "cost per day"
+msgstr ""
+
+msgid "created at"
+msgstr ""
+
+msgid "credit"
+msgstr ""
+
+msgid "dashboard"
+msgstr ""
+
+msgid "deactive date"
+msgstr ""
+
+msgid "description"
+msgstr ""
+
+msgid "home"
+msgstr ""
+
+msgid "latest activities"
+msgstr ""
+
+msgid "latest renews"
+msgstr ""
+
+msgid "log_out"
+msgstr ""
+
+msgid "new advertise"
+msgstr ""
+
+msgid "new advertise #%{id} created"
+msgstr "آگهی جدید با شماره #%{id} ساخته شد."
+
+msgid "not found"
+msgstr ""
+
+msgid "profile"
+msgstr ""
+
+msgid "remaining days"
+msgstr ""
+
+msgid "renew date"
+msgstr ""
+
+msgid "renew deleted"
+msgstr ""
+
+msgid "renew removed"
+msgstr ""
+
+msgid "show for days"
+msgstr ""
+
+msgid "size"
+msgstr ""
+
+msgid "tags"
+msgstr ""
+
+msgid "timestamp"
+msgstr ""
+
+msgid "title"
+msgstr ""
+
+msgid "users"
+msgstr ""
+
+msgid "your renew order scheduled"
+msgstr ""

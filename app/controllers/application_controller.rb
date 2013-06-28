@@ -1,5 +1,13 @@
 class ApplicationController < ActionController::Base
-  before_filter :set_gettext_locale
+  before_filter :set_gettext_locale_from_config
+
+  def set_gettext_locale_from_config
+    requested_locale = I18n.default_locale
+    locale = FastGettext.set_locale(requested_locale)
+    session[:locale] = locale
+    I18n.locale = locale # some weird overwriting in action-controller makes this necessary ... see I18nProxy
+
+  end
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.

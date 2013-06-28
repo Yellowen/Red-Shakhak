@@ -86,7 +86,7 @@ class AdvertisesController < ApplicationController
       if @advertise.save
 
         Log.create(:logable => @advertise, :user => current_user,
-                   :msg => _("new advertise created", :id => @advertise.id))
+                   :msg => p_("new advertise \#%{id} created", :id => @advertise.id, asdasD: "Asd"))
 
         format.html { redirect_to target_url || @advertise, notice: 'Advertise was successfully created.' }
         format.json { render action: 'show', status: :created, location: @advertise }
@@ -180,7 +180,7 @@ class AdvertisesController < ApplicationController
     def advertise_params
       params.require(:advertise).permit(:title, :description,
                                         :show_for_days, :cost,
-                                        :size, :category_id)
+                                        :size, :category_id, :tag_list)
     end
 
     private
