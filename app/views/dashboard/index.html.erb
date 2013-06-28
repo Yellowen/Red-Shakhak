@@ -1,8 +1,8 @@
 <div class="row dashbody">
   <%= link_to _("New advertise"), new_advertise_path,  class: add_btn_class + " btn-large", icons: add_btn_icon %>
 
-  <%= pp_("new advertise \#%{id} created", :id => 1) %>
-  <%= pp_("new advertise \#%{id} created", :id => 44) %>
+  <%= d_("new advertise \#%{id} created", :id => 1) %>
+  <%= d_("new advertise \#%{id} created", :id => 44) %>
 
   <% if not @advertises.empty? %>
     <table class="table table-striped span12">

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-26 15:13+0430\n"
-"PO-Revision-Date: 2013-06-25 23:58+0430\n"
+"POT-Creation-Date: 2013-06-28 17:27+0430\n"
+"PO-Revision-Date: 2013-06-28 17:27+0430\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,257 +18,209 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-msgid "Acts as taggable on/tag"
-msgstr ""
-
-msgid "Acts as taggable on/tagging"
-msgstr ""
-
-msgid "ActsAsTaggableOn::Tagging|Context"
-msgstr ""
-
-msgid "ActsAsTaggableOn::Tagging|Taggable type"
-msgstr ""
-
-msgid "ActsAsTaggableOn::Tagging|Tagger type"
-msgstr ""
-
-msgid "ActsAsTaggableOn::Tag|Name"
-msgstr ""
-
-msgid "Advertise"
-msgstr ""
-
-msgid "Advertise|Cost"
-msgstr ""
-
-msgid "Advertise|Cost per day"
-msgstr ""
-
-msgid "Advertise|Deactive date"
-msgstr ""
-
-msgid "Advertise|Description"
-msgstr ""
-
-msgid "Advertise|Show for days"
-msgstr ""
-
-msgid "Advertise|Size"
-msgstr ""
-
-msgid "Advertise|Title"
-msgstr "عنوان"
-
-msgid "Back"
-msgstr "برگشت"
-
-msgid "Category"
-msgstr "دسته بندی"
-
-msgid "Category was successfully created."
-msgstr ""
-
-msgid "Category was successfully updated."
-msgstr ""
-
-msgid "Category|Cssclass"
-msgstr ""
-
-msgid "Category|Name"
-msgstr ""
-
-msgid "Edit"
-msgstr ""
-
-msgid "Editing advertise"
-msgstr ""
-
-msgid "Listing advertises"
-msgstr ""
-
-msgid "Log"
-msgstr ""
-
-msgid "Log|Logable type"
-msgstr ""
-
-msgid "Log|Msg"
-msgstr ""
-
-msgid "New Advertise"
-msgstr "آگهی جدید"
-
-msgid "New advertise"
-msgstr "آگهی جدید"
-
-msgid "Renew"
-msgstr ""
-
-msgid "Renew|Cost"
-msgstr ""
-
-msgid "Renew|Jid"
-msgstr ""
-
-msgid "Renew|Renew date"
-msgstr ""
-
-msgid "Renew|Show for days"
-msgstr ""
-
-msgid "Service"
-msgstr ""
-
-msgid "Service removed successfully"
-msgstr ""
-
-msgid "Service|Provider"
-msgstr ""
-
-msgid "Service|Uid"
-msgstr ""
-
-msgid "Show"
-msgstr ""
-
-msgid "User"
-msgstr ""
-
-msgid "User|Current sign in at"
-msgstr ""
-
-msgid "User|Current sign in ip"
-msgstr ""
-
-msgid "User|Email"
-msgstr ""
-
-msgid "User|Encrypted password"
-msgstr ""
-
-msgid "User|Last sign in at"
-msgstr ""
-
-msgid "User|Last sign in ip"
-msgstr ""
-
-msgid "User|Remember created at"
-msgstr ""
-
-msgid "User|Reset password sent at"
-msgstr ""
-
-msgid "User|Reset password token"
-msgstr ""
-
-msgid "User|Role"
-msgstr ""
-
-msgid "User|Sign in count"
-msgstr ""
-
-msgid "You authenticated successfully."
-msgstr ""
-
+#: app/controllers/services_controller.rb:23
 msgid "You successfully logged in."
 msgstr ""
 
-msgid "active"
+#: app/controllers/services_controller.rb:31
+msgid "You authenticated successfully."
 msgstr ""
 
-msgid "activity"
+#: app/controllers/services_controller.rb:52
+msgid "Service removed successfully"
 msgstr ""
 
-msgid "advertise"
-msgstr ""
-
-msgid "advertise deleted"
-msgstr ""
-
-msgid "advertise updated"
-msgstr ""
-
-msgid "advertises"
-msgstr ""
-
-msgid "category"
-msgstr ""
-
-msgid "cost"
-msgstr ""
-
-msgid "cost per day"
-msgstr ""
-
-msgid "created at"
-msgstr ""
-
-msgid "credit"
-msgstr ""
-
-msgid "dashboard"
-msgstr ""
-
-msgid "deactive date"
-msgstr ""
-
-msgid "description"
-msgstr ""
-
-msgid "home"
-msgstr ""
-
-msgid "latest activities"
-msgstr ""
-
-msgid "latest renews"
-msgstr ""
-
-msgid "log_out"
-msgstr ""
-
-msgid "new advertise"
-msgstr ""
-
-msgid "new advertise #%{id} created"
-msgstr "آگهی جدید با شماره #%{id} ساخته شد."
-
+#: app/controllers/application_controller.rb:27
 msgid "not found"
 msgstr ""
 
-msgid "profile"
+#: app/controllers/categories_controller.rb:39
+msgid "Category was successfully created."
 msgstr ""
 
-msgid "remaining days"
+#: app/controllers/categories_controller.rb:55
+msgid "Category was successfully updated."
 msgstr ""
 
-msgid "renew date"
+#: app/controllers/advertises_controller.rb:70
+msgid "your renew order scheduled"
 msgstr ""
 
+#: app/controllers/advertises_controller.rb:109
+msgid "advertise updated"
+msgstr ""
+
+#: app/controllers/advertises_controller.rb:130
+msgid "advertise deleted"
+msgstr ""
+
+#: app/controllers/advertises_controller.rb:157
 msgid "renew deleted"
 msgstr ""
 
+#: app/controllers/advertises_controller.rb:169
 msgid "renew removed"
 msgstr ""
 
-msgid "show for days"
-msgstr ""
-
-msgid "size"
-msgstr ""
-
-msgid "tags"
-msgstr ""
-
-msgid "timestamp"
-msgstr ""
-
+#: app/views/advertises/show.html.erb:4
+#: app/views/advertises/_form.html.erb:15
+#: app/views/advertises/index.html.erb:5
+#: app/views/dashboard/index.html.erb:12
 msgid "title"
 msgstr ""
 
+#: app/views/advertises/show.html.erb:9
+#: app/views/advertises/_form.html.erb:20
+#: app/views/dashboard/index.html.erb:14
+#: app/views/dashboard/_sidemenu.html.erb:9
+msgid "category"
+msgstr ""
+
+#: app/views/advertises/show.html.erb:13
+#: app/views/advertises/_form.html.erb:25
+#: app/views/advertises/renew.html.erb:6
+#: app/views/advertises/index.html.erb:7
+#: app/views/dashboard/index.html.erb:15
+#: app/views/dashboard/index.html.erb:64
+msgid "show for days"
+msgstr ""
+
+#: app/views/advertises/show.html.erb:18
+#: app/views/advertises/_form.html.erb:35
+#: app/views/advertises/renew.html.erb:10
+#: app/views/advertises/index.html.erb:8
+#: app/views/dashboard/index.html.erb:13
+#: app/views/dashboard/index.html.erb:65
+msgid "cost"
+msgstr ""
+
+#: app/views/advertises/show.html.erb:23
+#: app/views/advertises/_form.html.erb:40
+#: app/views/dashboard/index.html.erb:18
+msgid "size"
+msgstr ""
+
+#: app/views/advertises/show.html.erb:27
+#: app/views/advertises/index.html.erb:9
+#: app/views/dashboard/index.html.erb:16
+msgid "cost per day"
+msgstr ""
+
+#: app/views/advertises/show.html.erb:31
+#: app/views/advertises/index.html.erb:10
+msgid "deactive date"
+msgstr ""
+
+#: app/views/advertises/show.html.erb:37
+#: app/views/advertises/_form.html.erb:50
+#: app/views/advertises/index.html.erb:6
+msgid "description"
+msgstr ""
+
+#: app/views/advertises/show.html.erb:41
+#: app/views/advertises/renew.html.erb:14
+msgid "Renew"
+msgstr ""
+
+#: app/views/advertises/show.html.erb:42
+msgid "Edit"
+msgstr ""
+
+#: app/views/advertises/show.html.erb:44
+#: app/views/advertises/show.html.erb:46
+#: app/views/advertises/new.html.erb:5
+msgid "Back"
+msgstr ""
+
+#: app/views/advertises/_form.html.erb:45
+msgid "tags"
+msgstr ""
+
+#: app/views/advertises/edit.html.erb:1
+msgid "Editing advertise"
+msgstr ""
+
+#: app/views/advertises/edit.html.erb:5
+msgid "Show"
+msgstr ""
+
+#: app/views/advertises/index.html.erb:1
+msgid "Listing advertises"
+msgstr ""
+
+#: app/views/advertises/index.html.erb:36
+msgid "New Advertise"
+msgstr ""
+
+#: app/views/advertises/new.html.erb:1
+msgid "new advertise"
+msgstr ""
+
+#: app/views/dashboard/_navbar.html.erb:7
+msgid "home"
+msgstr ""
+
+#: app/views/dashboard/_navbar.html.erb:10
+msgid "dashboard"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:2
+msgid "New advertise"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:17
+msgid "remaining days"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:19
+msgid "active"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:58
+msgid "latest renews"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:61
+msgid "created at"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:62
+#: app/views/dashboard/index.html.erb:93
+msgid "advertise"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:63
+msgid "renew date"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:89
+msgid "latest activities"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:92
+msgid "timestamp"
+msgstr ""
+
+#: app/views/dashboard/index.html.erb:94
+msgid "activity"
+msgstr ""
+
+#: app/views/dashboard/_sidemenu.html.erb:3
+msgid "credit"
+msgstr ""
+
+#: app/views/dashboard/_sidemenu.html.erb:7
+msgid "advertises"
+msgstr ""
+
+#: app/views/dashboard/_sidemenu.html.erb:13
 msgid "users"
 msgstr ""
 
-msgid "your renew order scheduled"
+#: app/views/dashboard/_sidemenu.html.erb:16
+msgid "profile"
+msgstr ""
+
+#: app/views/dashboard/_sidemenu.html.erb:17
+msgid "log_out"
 msgstr ""

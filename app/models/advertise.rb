@@ -82,27 +82,21 @@ class Advertise < ActiveRecord::Base
   # Calculate the expiration date of current peroid of advertise
   # in case of a new record or re_calculate the new cost_per_date
   def calculate_expiration_cost_per_day_callback
-    puts "-------------- 1", is_renewing?
+
     if self.new_record? or is_renewing?
-      puts "-------------- 2"
       calc_date
     else
-      puts "-------------- 3"
+
       if is_active?
-        puts "-------------- 4"
         if self.show_for_days_change
-          puts "-------------- 5"
           return false
         end
       end
-      puts "-------------- 6"
+
       if self.cost_change
-        puts "-------------- 7"
         self.cost_per_day = cost.to_f / show_for_days.to_f
       end
-
     end
-    puts "-------------- 8"
   end
 
   private
@@ -111,15 +105,12 @@ class Advertise < ActiveRecord::Base
   def calc_date
     # Calculate the cost_per_day and deactive date
     self.deactive_date = DateTime.now
-    puts "-------------- 9", self.deactive_date
 
     if show_for_days > 0
       self.cost_per_day = cost.to_f / show_for_days.to_f
       self.deactive_date += show_for_days.days
-      puts "-------------- 10", self.cost_per_day, self.deactive_date
 
     else
-      puts "-------------- 11"
       self.cost_per_day = 0
     end
 

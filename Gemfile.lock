@@ -9,9 +9,9 @@ GIT
 
 GIT
   remote: http://github.com/lxsameer/fast_gettext.git
-  revision: 15921ce50db133c32b375f238435c565a88c88f8
+  revision: 25984c8731aeb59a7d6d4ccd7d229068bbf022f1
   specs:
-    fast_gettext (0.7.1)
+    fast_gettext (0.8.1)
 
 GEM
   remote: http://rubygems.org/
@@ -43,7 +43,7 @@ GEM
     acts-as-taggable-on (2.4.1)
       rails (>= 3, < 5)
     arel (4.0.0)
-    atomic (1.1.9)
+    atomic (1.1.10)
     bcrypt-ruby (3.0.1)
     bootstrap-sass-rails-rtl (2.3.1.0)
       railties (>= 3.1.0)
@@ -126,7 +126,7 @@ GEM
       rack
     omniauth-facebook (1.4.1)
       omniauth-oauth2 (~> 1.1.0)
-    omniauth-google-oauth2 (0.1.19)
+    omniauth-google-oauth2 (0.2.0)
       omniauth (~> 1.0)
       omniauth-oauth2
     omniauth-oauth (1.0.1)

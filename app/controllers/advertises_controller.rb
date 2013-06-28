@@ -86,7 +86,7 @@ class AdvertisesController < ApplicationController
       if @advertise.save
 
         Log.create(:logable => @advertise, :user => current_user,
-                   :msg => p_("new advertise \#%{id} created", :id => @advertise.id, asdasD: "Asd"))
+                   :msg => d_("new advertise \#%{id} created", :id => @advertise.id, asdasD: "Asd"))
 
         format.html { redirect_to target_url || @advertise, notice: 'Advertise was successfully created.' }
         format.json { render action: 'show', status: :created, location: @advertise }
