@@ -7,12 +7,6 @@ GIT
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
 
-GIT
-  remote: http://github.com/lxsameer/fast_gettext.git
-  revision: 25984c8731aeb59a7d6d4ccd7d229068bbf022f1
-  specs:
-    fast_gettext (0.8.1)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -77,6 +71,7 @@ GEM
       multi_json (~> 1.0)
     faraday (0.8.7)
       multipart-post (~> 1.1)
+    fast_gettext (0.7.1)
     flat-ui-rails (0.0.2)
     font-awesome-rails (3.2.1.1)
       railties (>= 3.2, < 5.0)
@@ -230,7 +225,7 @@ DEPENDENCIES
   capistrano
   coffee-rails (~> 4.0.0.beta1)
   devise (>= 3.0.0.rc)
-  fast_gettext!
+  fast_gettext
   flat-ui-rails
   font-awesome-rails
   gettext

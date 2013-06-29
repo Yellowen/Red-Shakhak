@@ -68,7 +68,7 @@ gem "pry", group: :development
 gem "kaminari", :git => "http://github.com/amatsuda/kaminari.git", :branch => "rails4"
 
 # i18n
-gem "fast_gettext", :git => "http://github.com/lxsameer/fast_gettext.git"
+gem "fast_gettext"
 gem "gettext"
 gem "ruby_parser"
 gem 'gettext_i18n_rails'

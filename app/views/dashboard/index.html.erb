@@ -1,9 +1,6 @@
 <div class="row dashbody">
   <%= link_to _("New advertise"), new_advertise_path,  class: add_btn_class + " btn-large", icons: add_btn_icon %>
 
-  <%= d_("new advertise \#%{id} created", :id => 1) %>
-  <%= d_("new advertise \#%{id} created", :id => 44) %>
-
   <% if not @advertises.empty? %>
     <table class="table table-striped span12">
       <thead>
@@ -48,6 +45,7 @@
 <% end %>
 </tbody>
 </table>
+<%= paginate @advertises %>
 
 <% end %>
 
@@ -73,7 +71,7 @@
 	    <td><%= renew.renew_date %></td>
 	    <td><%= renew.show_for_days %></td>
 	    <td><%= renew.cost %></td>
-	    <td><%= link_to "",  delete_renew_advertise_path(renew.advertise_id, renew.id), method: :delete, data: { confirm: 'Are you sure?' }, class: del_btn_class, icons: del_btn_icon %></td>
+	    <td><%= link_to "",  delete_renew_advertise_path(renew.advertise_id, renew.id), method: :delete, data: { confirm: _('Are you sure?') }, class: del_btn_class, icons: del_btn_icon %></td>
 
 	  </tr>
 	<% end %>

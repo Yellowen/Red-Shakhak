@@ -1,0 +1,7 @@
+<li class="previous">
+  <% unless current_page.last? -%>
+    <%= link_to "", url, :rel => "next", :remote => remote, :class => "icon-chevron-left" %>
+  <% else %>
+    <%= link_to "", "#", :rel => "next", :remote => remote, :class => "icon-chevron-left" %>
+  <% end -%>
+</li>

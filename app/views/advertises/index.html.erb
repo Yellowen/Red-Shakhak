@@ -1,5 +1,6 @@
 <h1><%= _("Listing advertises") %></h1>
-<table>
+<div class="row dashbody">
+<table class="table table-striped span12">
   <thead>
     <tr>
       <th><%= _("title") %></th>
@@ -30,7 +31,12 @@
     <% end %>
   </tbody>
 </table>
-
 <br />
 
+
+
 <%= link_to _('New Advertise'), new_advertise_path, class: add_btn_class, icons: add_btn_icon %>
+<br />
+
+</div>
+<%= paginate @advertises %>

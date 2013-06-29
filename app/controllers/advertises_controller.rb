@@ -8,6 +8,10 @@ class AdvertisesController < ApplicationController
   # GET /advertises.json
   def index
     @advertises = current_user.advertises.page(params[:page])
+    respond_to do |format|
+        format.html
+        format.json
+    end
   end
 
   # GET /advertises/1
@@ -86,7 +90,7 @@ class AdvertisesController < ApplicationController
       if @advertise.save
 
         Log.create(:logable => @advertise, :user => current_user,
-                   :msg => d_("new advertise \#%{id} created", :id => @advertise.id, asdasD: "Asd"))
+                   :msg => _("new advertise \#%{id} created", :id => @advertise.id, asdasD: "Asd"))
 
         format.html { redirect_to target_url || @advertise, notice: 'Advertise was successfully created.' }
         format.json { render action: 'show', status: :created, location: @advertise }
