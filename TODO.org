@@ -1,4 +1,8 @@
 * Tasks
 ** TODO provide a suitable message for advertise update message with list of changes.
+** TODO create a rake task for release time
+
 * Bugs
 ** TODO Back button on advertise/index returns to dashboard
+* Releases
+** TODO replace the omnit auth services keys with secure versions

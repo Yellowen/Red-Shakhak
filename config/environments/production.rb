@@ -1,6 +1,9 @@
 Shakhak::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  TWITTER_KEY = 'NZpjZRQul2a4idNTPB3XYQ'
+  TWITTER_SECRET = 'sRiQp8gULJYhUGbhsdmLRVsimgbt2k5G5r7beHZkA'
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -77,4 +80,6 @@ Shakhak::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  config.action_mailer.default_url_options = { :host => 'shakhak-yellowen.rhcloud.com/' }
+
 end
