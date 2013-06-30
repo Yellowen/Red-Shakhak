@@ -90,7 +90,7 @@ class AdvertisesController < ApplicationController
       if @advertise.save
 
         Log.create(:logable => @advertise, :user => current_user,
-                   :msg => _("new advertise \#%{id} created", :id => @advertise.id, asdasD: "Asd"))
+                   :msg => _("new advertise \#%{id} created") % {:id => @advertise.id, asdasD: "Asd"})
 
         format.html { redirect_to target_url || @advertise, notice: 'Advertise was successfully created.' }
         format.json { render action: 'show', status: :created, location: @advertise }
@@ -110,7 +110,8 @@ class AdvertisesController < ApplicationController
 
         if @advertise.update(advertise_params)
           Log.create(:logable => @advertise, :user => current_user,
-                     :msg => _("advertise updated", :changes => @advertise.changes))
+                     :msg => _("\#%{id} advertise updated") % {:id => @advertise.id})
+                     #:changes => @advertise.changes))
 
           format.html { redirect_to target_url || @advertise, notice: 'Advertise was successfully updated.' }
           format.json { head :no_content }

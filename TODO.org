@@ -1,2 +1,4 @@
-* BUGS
+* Tasks
+** TODO provide a suitable message for advertise update message with list of changes.
+* Bugs
 ** TODO Back button on advertise/index returns to dashboard

@@ -2,7 +2,7 @@
 <div id="adbox">
     <% @advertises.each do |advertise| %>
 
-      <div class="box box<%= advertise.get_size %> palette-carrot">
+      <div class="box box<%= advertise.get_size %> <%= advertise.category.cssclass %>">
 	<div class="palette  innerbox">
 	<%= advertise.title %>  show for  <%= advertise.show_for_days %> days for <%= advertise.cost %> Beli each day.
 	</div>
