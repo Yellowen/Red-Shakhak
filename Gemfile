@@ -36,7 +36,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 #gem 'unicorn'
 
 # Deploy with Capistrano
-gem 'capistrano', group: :development
 
 # To use debugger
 # gem 'debugger'
@@ -63,7 +62,6 @@ gem 'acts-as-taggable-on'
 gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
-gem "pry", group: :development
 
 gem "kaminari", :git => "http://github.com/amatsuda/kaminari.git", :branch => "rails4"
 
@@ -72,3 +70,10 @@ gem "fast_gettext"
 gem "gettext"
 gem "ruby_parser"
 gem 'gettext_i18n_rails'
+
+group :development do
+  gem "pry"
+  gem 'capistrano'
+  gem "better_errors"
+  gem "binding_of_caller"
+end

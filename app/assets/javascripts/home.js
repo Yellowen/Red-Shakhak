@@ -1,3 +1,5 @@
+//= require lib/masonry.pkgd
+
 $(function(){
     var $container = $('#adbox');
 
@@ -7,4 +9,5 @@ $(function(){
 	isOriginLeft: false,
 	itemSelector: '.box'
     });
+
 });
