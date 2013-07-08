@@ -1,21 +1,22 @@
 var page = 1;
 
 function load_page(page_number) {
-    var a = new Advertises();
+    var advertises = new Advertises();
 
-    a.fetch({
+    advertises.fetch({
 	data: {page: page},
 	success: function(data, res, opts){
-	    console.log(">>>>>>>>>>>>>");
-	    console.log(data);
 	    var $container = $('#adbox');
+	    var elems = [];
+	    var fragment = document.createDocumentFragment();
 
 	    data.each(function(x){
-		console.log("<div class='box box1x1 employee'><div class='palette innerbox'>" + x.get("title") + " " + x.get("cost_per_day") + "</div></div>");
-		console.log(x);
+ 		var template = $(_.template($("#boxtemplate").html(), {ad: x}));
+		elems.push($(template).get(0));
+		$container.append(template).masonry("appended", template);
 
-		//$container.masonry( 'addItems', "<div class='box box1x1 employee'><div class='palette innerbox'>" + x.title + " " + x.cost_per_day + "</div></div>");
 	    });
+
 	},
 	error: function(){
 	    console.log("failed");
@@ -42,6 +43,8 @@ function check_scroll_position (){
     if (is_near_to_end()){
 	load_page(page);
 	page++;
+	setTimeout("check_scroll_position()", 1000);
+
     }
     else {
 	setTimeout("check_scroll_position()", 1000);
@@ -49,4 +52,4 @@ function check_scroll_position (){
 }
 
 
-//$(check_scroll_position);
+$(check_scroll_position);

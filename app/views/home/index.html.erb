@@ -1,6 +1,13 @@
 <%= javascript_include_tag  "endless_page" %>
 
 <%= link_to_function "click here", "load_page(3)" %>
+<script type="text/html" id="boxtemplate">
+  <div class='box box{{ print(ad.get("get_size")) }} {{ print(ad.get("category").cssclass) }}' id="ad{{ print(ad.get("id"))}}">
+    <div class='palette innerbox'>
+      {{ print(ad.get("title")) }} - {{ print(ad.get("cost_per_day")) }}
+    </div>
+  </div>
+</script>
 
 <div id="adbox">
     <% @advertises.each do |advertise| %>
