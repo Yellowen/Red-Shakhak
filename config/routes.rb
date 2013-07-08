@@ -27,7 +27,7 @@ Shakhak::Application.routes.draw do
 
   mount Sidekiq::Web, :at => "/admin/sidekiq"
   root to: 'home#index'
-
+  get "/advertises" => "home#advertises", :as => "global_advertises"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

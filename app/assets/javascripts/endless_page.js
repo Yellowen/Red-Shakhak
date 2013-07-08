@@ -1,20 +1,27 @@
 var page = 1;
 
 function load_page(page_number) {
-    $.ajax({url: "/", type: "GET", data: {page: page_number}, dataType: "json"})
-	.fail(function(){
-	    console.log("Fetch failed");
-	})
-	.done(function(data){
-	    console.log("Successful fetch");
+    var a = new Advertises();
 
-	    _.each(data, function(ad){
+    a.fetch({
+	data: {page: page},
+	success: function(data, res, opts){
+	    console.log(">>>>>>>>>>>>>");
+	    console.log(data);
+	    var $container = $('#adbox');
 
+	    data.each(function(x){
+		console.log("<div class='box box1x1 employee'><div class='palette innerbox'>" + x.get("title") + " " + x.get("cost_per_day") + "</div></div>");
+		console.log(x);
 
+		//$container.masonry( 'addItems', "<div class='box box1x1 employee'><div class='palette innerbox'>" + x.title + " " + x.cost_per_day + "</div></div>");
 	    });
-	})
-	.always(function(){
-	});
+	},
+	error: function(){
+	    console.log("failed");
+
+	}
+    });
 }
 
 function is_near_to_end() {
