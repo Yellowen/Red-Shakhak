@@ -11,20 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130624073624) do
+ActiveRecord::Schema.define(version: 20130801090755) do
 
   create_table "advertises", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.integer  "category_id"
-    t.integer  "show_for_days", default: 0
-    t.integer  "cost",          default: 0
+    t.integer  "show_for_days",        default: 0
+    t.integer  "cost",                 default: 0
     t.integer  "user_id"
     t.datetime "deactive_date"
     t.float    "cost_per_day"
     t.integer  "size"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   add_index "advertises", ["cost_per_day"], name: "index_advertises_on_cost_per_day"
