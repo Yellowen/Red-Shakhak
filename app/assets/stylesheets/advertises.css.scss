@@ -24,7 +24,11 @@
             background: $emerald;
             position: relative;
             padding: 15px 10px 10px;
-
+	    border-radius: 0 0 5px 5px;
+	    span{
+		color: white;
+		text-decoration: none;
+	    }
         }
     }
 }
