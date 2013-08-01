@@ -1,3 +1,16 @@
+<%= content_for :sidebar do %>
+  <%= render "dashboard/sidemenu" %>
+
+  <div id="simulator" >
+    <div class="cost">
+      <h1>234</h1>
+      <div class="link_section">
+        <a href="#"><%=t :rial %></a>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <h1><%=  _("new advertise") %></h1>
 
 <%= render 'form' %>
