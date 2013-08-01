@@ -73,6 +73,7 @@ gem "ruby_parser"
 gem 'gettext_i18n_rails'
 
 # Forms
+gem 'formtastic'
 
 # Attechments
 gem "paperclip"

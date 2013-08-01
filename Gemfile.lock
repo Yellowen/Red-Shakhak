@@ -85,6 +85,8 @@ GEM
     flat-ui-rails (0.0.2)
     font-awesome-rails (3.2.1.1)
       railties (>= 3.2, < 5.0)
+    formtastic (2.2.1)
+      actionpack (>= 3.0)
     gettext (2.3.9)
       locale
       text
@@ -245,6 +247,7 @@ DEPENDENCIES
   fast_gettext
   flat-ui-rails
   font-awesome-rails
+  formtastic
   gettext
   gettext_i18n_rails
   jbuilder (~> 1.0.1)
