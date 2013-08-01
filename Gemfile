@@ -64,7 +64,7 @@ gem 'sinatra', require: false
 gem 'slim'
 
 # Pagination
-gem "kaminari", :git => "http://github.com/amatsuda/kaminari.git", :branch => "rails4"
+gem "kaminari", :git => "http://github.com/amatsuda/kaminari.git"
 
 # i18n
 gem "fast_gettext"

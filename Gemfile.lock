@@ -1,7 +1,6 @@
 GIT
   remote: http://github.com/amatsuda/kaminari.git
-  revision: 1c9bcb05d5f10040eb707f252f6ec43efda906b3
-  branch: rails4
+  revision: 2ed8adfe378594ae1585ac4a457a6d01f04478eb
   specs:
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
