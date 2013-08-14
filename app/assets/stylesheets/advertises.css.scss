@@ -4,10 +4,10 @@
 
 @import "variables.css.scss";
 
-#simulator {
+.sidebox {
     text-align: center;
     width: 100%;
-    .cost {
+    .top-section {
         width: 100%;
         background: $clouds;
         border-radius: 5px;
@@ -19,9 +19,8 @@
 
         }
 
-        .link_section {
+        .link-section {
             font-size: 20px;
-            background: $emerald;
             position: relative;
             padding: 15px 10px 10px;
 	    border-radius: 0 0 5px 5px;
@@ -31,4 +30,9 @@
 	    }
         }
     }
+}
+
+.hintbox {
+    padding: 50px 20px;
+    Background: $clouds;
 }

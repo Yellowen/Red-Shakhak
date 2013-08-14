@@ -1,15 +1,24 @@
 <%= content_for :sidebar do %>
   <%= render "dashboard/sidemenu" %>
 
-  <div id="simulator" >
-    <div class="cost">
+  <div id="simulator" class="sidebox">
+    <div class="top-section">
       <h1>234</h1>
-      <div class="link_section">
+      <div class="link-section emerald">
         <span><%=t :rial %></span1>
       </div>
     </div>
   </div>
 
+  <div class="sidebox">
+      <div class="top-section">
+        <h1>453</h1>
+      <div class="link-section orange">
+        <span><%= _("Score") %></span>
+      </div>
+
+      </div>
+  </div>
 <% end %>
 
 <h1><%=  _("new advertise") %></h1>

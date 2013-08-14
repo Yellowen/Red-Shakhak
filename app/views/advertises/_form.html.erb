@@ -1,12 +1,76 @@
+<%= semantic_form_for @advertise do |f| %>
+  <%= f.inputs :name => _("Basic Information") do %>
+  <div class="row">
+
+    <div class="span4">
+      <%= f.input :title, :label => false, :placeholder => _("title") + " ..."  %>
+    </div>
+    <div class="span4">
+      <div class="hintbox">
+        <p>sdf sdfsd fsdf;g dfg dfgsdf gsdfl;gjn</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+
+    <div class="span4">
+      <%= f.input :category_id, :label => false, :placeholder => _("category") + " ..." %>
+    </div>
+    <div class="span4">
+
+    </div>
+  </div>
+
+  <% end %>
+  <br /><br />
+  <%= f.inputs :name => _("Cost Related Information") do %>
+  <div class="row">
+
+    <div class="span4">
+    <%= f.input :show_for_days, :label => false, :placeholder => _("show for days") + " ..." %>
+    </div>
+    <div class="span4">
+    <%= f.input :cost, :label => false, :placeholder => _("cost") + " ..." %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <%= f.input :size, :label => false, :placeholder => _("size") + " ..." %>
+    </div>
+  </div>
+  <% end %>
+  <br /><br />
+  <%= f.inputs :name => _("Details") do %>
+  <div class="row">
+    <div class="span4">
+      <%= f.input :tag_list, :label => false, :placeholder => _("Tags") + " ..." %>
+    </div>
+    <div class="span4">
+      <%= f.input :picture, :label => false, :placeholder => _("Picture") + " ..." %>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="span8">
+      <%= f.input :description, :html_input => { :class => "span7" }, :label => false, :placeholder => _("Description") + " ..." %>
+    </div>
+  </div>
+
+  <% end %>
+<% end %>
+
 <%= form_for(@advertise) do |f| %>
   <% if @advertise.errors.any? %>
     <div id="error_explanation">
       <h2><%= @advertise.errors.count %><%=t :error_prohibited_this_advertise_from_being_saved %>:</h2>
 
       <ul>
-      <% @advertise.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @advertise.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
