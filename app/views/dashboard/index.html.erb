@@ -1,6 +1,7 @@
 <div class="row dashbody">
-  <%= link_to _("New advertise"), new_advertise_path,  class: add_btn_class + " btn-large", icons: add_btn_icon %>
+  <%= link_to _("New advertise"), new_advertise_path,  class: add_btn_class + " button", icons: add_btn_icon %>
 
+  <div class="small-12 columns large-9">
   <% if not @advertises.empty? %>
     <table class="table table-striped span12">
       <thead>
@@ -12,8 +13,8 @@
 	  <th><%= _("show for days") %></th>
 	  <th><%= _("cost per day") %></th>
 	  <th><%= _("remaining days") %></th>
-	  <th><%= _("size") %></th>
-	  <th><%= _("active") %></th>
+	  <th class="hide-for-small"><%= _("size") %></th>
+	  <th class="hide-for-small"><%= _("active") %></th>
 	  <th></th>
 	  <th></th>
 	</tr>
@@ -36,8 +37,8 @@
 	<td><%= advertise.show_for_days %></td>
 	<td><%= advertise.cost_per_day %></td>
 	<td><%= advertise.remaining_days %></td>
-	<td><%= advertise.get_size %></td>
-	<td><%= advertise.is_active? %></td>
+	<td class="hide-for-small"><%= advertise.get_size %></td>
+	<td class="hide-for-small"><%= advertise.is_active? %></td>
 	<td><%= link_to "", edit_advertise_path(advertise), class: edit_btn_class, icons: edit_btn_icon %></td>
 	<td><%= link_to '', advertise, method: :delete, data: { confirm: 'Are you sure?'}, class: del_btn_class, icons: del_btn_icon %></td>
 </tr>
@@ -107,5 +108,5 @@
       </tbody>
     </table>
   <% end %>
-
+</div>
 </div>

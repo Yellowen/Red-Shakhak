@@ -7,19 +7,17 @@ gem 'sqlite3'
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 4.0.0.beta1'
-  gem 'coffee-rails', '~> 4.0.0.beta1'
 
-  gem 'bootstrap-sass-rails-rtl'
-  gem "flat-ui-rails"
-  gem "font-awesome-rails"
+gem 'sass-rails',   '~> 4.0.0'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'compass-rails' # you need this or you get an err
+gem 'zurb-foundation', '~> 4.0.0'
+gem "font-awesome-rails"
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  #gem 'therubyracer', platforms: :ruby
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+#gem 'therubyracer', platforms: :ruby
 
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'uglifier', '>= 1.0.3'
 
 gem 'jquery-rails'
 

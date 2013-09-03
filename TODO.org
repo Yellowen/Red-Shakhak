@@ -4,5 +4,6 @@
 
 * Bugs
 ** TODO Back button on advertise/index returns to dashboard
+** TODO Infinite page script run on dashboard too
 * Releases
 ** TODO replace the omnit auth services keys with secure versions

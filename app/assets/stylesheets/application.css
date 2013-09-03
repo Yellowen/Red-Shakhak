@@ -10,7 +10,6 @@
  *
  *= require_self
  *= require_tree .
- *= require twitter/bootstrap_rtl
- *= require flat-ui
+ *= require foundation_and_overrides
  *= require font-awesome
  */

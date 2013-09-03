@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="fa" dir="rtl"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="fa" dir="rtl"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="fa" dir="rtl"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9" lang="fa" dir="rtl"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="fa" dir="rtl"> <!--<![endif]-->
 <head>
   <title><%=t :shakhak %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -7,14 +12,14 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body dir="rtl">
+<body>
 
   <%= render "dashboard/navbar" %>
 
-<div class="container">
+
   <div class="row">
 
-    <div class="span3 ">
+    <div class="hide-for-small large-3 columns ">
 
     <% if content_for?(:sidebar) %>
       <%= yield(:sidebar) %>
@@ -26,9 +31,9 @@
 
     </div>
 
-    <div class="span9">
+    <div class="small-12 large-9 columns">
       <div class="row">
-	<div class="span8">
+	<div class="small-12 large-9">
 	  <p class="text-success"><%= notice %></p>
 	  <p class="text-error"><%= alert %></p>
 	</div>
@@ -37,7 +42,6 @@
     </div>
 
   </div>
-</div>
 
 </body>
 </html>
