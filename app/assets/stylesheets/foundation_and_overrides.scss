@@ -794,18 +794,18 @@ $text-direction: rtl;
 
 // We use these to set padding and hover factor
 // $section-padding: emCalc(15px);
-// $section-function-factor: 10%;
+$section-function-factor: 5%;
 
 // These style the titles
 // $section-title-color: #333;
-// $section-title-bg: #efefef;
+$section-title-bg: #f5f5f5;
 // $section-title-bg-active: darken($section-title-bg, $section-function-factor);
 // $section-title-bg-active-tabs: #fff;
 
 // Want to control border size, here ya go!
 // $section-border-size: 1px;
 // $section-border-style: solid;
-// $section-border-color: #ccc;
+$section-border-color: #dfdfdf;
 
 // Control the color of the background and some size options
 // $section-content-bg: #fff;
@@ -1005,8 +1005,8 @@ $text-direction: rtl;
 
 // Transitions and breakpoint styles
 // $topbar-transition-speed: 300ms;
-// $topbar-breakpoint: emCalc(940px); // Change to 9999px for always mobile layout
-// $topbar-media-query: "only screen and (min-width "#{$topbar-breakpoint}")";
+$topbar-breakpoint: emCalc(768px); // Change to 9999px for always mobile layout
+//$topbar-media-query: "only screen and (min-width "#{$topbar-breakpoint}")";
 
 
 @import 'foundation';

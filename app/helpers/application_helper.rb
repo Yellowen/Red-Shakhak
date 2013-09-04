@@ -40,7 +40,7 @@ module ApplicationHelper
   end
 
   def add_btn_class
-    "btn btn-success"
+    "button success"
   end
 
   def add_btn_icon

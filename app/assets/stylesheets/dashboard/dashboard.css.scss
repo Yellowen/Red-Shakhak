@@ -1,0 +1,53 @@
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "variables";
+
+
+
+.sidemenu {
+    border-radius: 4px;
+    width: 100%;
+    background: #2c3e50;
+
+    font-size: 16px;
+    .menuheader {
+	border-radius: 4px 4px 0 0;
+	Background: #27ae60;
+	color: white;
+	padding: 15px;
+    }
+
+    .menu {
+	list-style: none;
+	width: 100%;
+	color: white;
+	li {
+	    padding: 15px 25px;
+	    a {
+		text-decoration: none;
+		font-size: 16px;
+		color: $silver;
+		width: 100%;
+	    }
+	    a:hover {
+		Background: none;
+	    }
+	}
+	li:hover {
+	    Background: #34495e;
+	    a {
+		color: white;
+	    }
+	}
+
+    }
+}
+
+.silver {
+    color: $silver;
+}
+.dashbody {
+    padding: 0 20px 0 0;
+}

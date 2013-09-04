@@ -7,8 +7,9 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="fa" dir="rtl"> <!--<![endif]-->
 <head>
   <title><%=t :shakhak %></title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%= stylesheet_link_tag    "dashboard/application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "dashboard/application" %>
   <%= csrf_meta_tags %>
 </head>
 

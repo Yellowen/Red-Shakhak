@@ -1,23 +1,29 @@
 <header>
-  <div class="container">
-    <nav>
-      <ul class="pull-right">
+  <nav class="top-bar" data-options="is_hover:false">
+    <ul class="title-area">
 
+      <li class="name"><h1><a href="#"  class="logo"><%= _("Shakhak") %></a></h1></li>
+
+      <li class="toggle-topbar"><a href="#"><i class="icon-cog icon-large"></i></a></li>
+    </ul>
+    <section class="top-bar-section">
+      <ul class="right">
 	<li>
-	   <a href="<%= root_url %>"><i class="icon-home"></i> <%= _("home") %></a>
+	  <a href="<%= root_url %>"><i class="icon-home"></i> <%= _("home") %></a>
 	</li>
 	<li>
-	   <a href="<%= dashboard_index_url %>"><i class="icon-th-large"></i> <%= _("dashboard") %></a>
+	  <a href="<%= dashboard_index_url %>"><i class="icon-th-large"></i> <%= _("dashboard") %></a>
 	</li>
       </ul>
 
-      <ul class="pull-left">
+      <ul class="left">
 	<li>
 	  <a href="<%= root_url %>"><i class="icon-cog icon-large"></i></a>
 	</li>
 
       </ul>
 
-    </nav>
-  </div>
+
+    </section>
+  </nav>
 </header>

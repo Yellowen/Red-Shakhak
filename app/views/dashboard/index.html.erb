@@ -1,46 +1,58 @@
 <div class="row dashbody">
-  <%= link_to _("New advertise"), new_advertise_path,  class: add_btn_class + " button", icons: add_btn_icon %>
 
-  <div class="small-12 columns large-9">
-  <% if not @advertises.empty? %>
-    <table class="table table-striped span12">
-      <thead>
-	<tr>
-	  <th>#</th>
-	  <th><%= _("title") %></th>
-	  <th><%= _("cost") %></th>
-	  <th><%= _("category") %></th>
-	  <th><%= _("show for days") %></th>
-	  <th><%= _("cost per day") %></th>
-	  <th><%= _("remaining days") %></th>
-	  <th class="hide-for-small"><%= _("size") %></th>
-	  <th class="hide-for-small"><%= _("active") %></th>
-	  <th></th>
-	  <th></th>
-	</tr>
+  <div class="large-12 small-12 columns">
+  <div class="section-container tabs" data-section>
+    <section>
+      <p class="title" data-section-title><a href="#panel1"><%= _("Advertises") %></a></p>
+      <div class="content" data-section-content>
 
-      </thead>
-      <tbody>
-	<% @advertises.each do |advertise| %>
-	  <% if advertise.is_active? and advertise.remaining_days < 3 %>
-	  <tr class="warning">
-	  <% elsif advertise.is_active? %>
-	  <tr>
-	  <% else %>
-	  <tr class="error">
-	<% end %>
 
-	<td><%= advertise.id %></td>
-	<td><%= link_to advertise.title, advertise %></td>
-	<td><%= advertise.cost %></td>
-	<td><%= advertise.category.name %></td>
-	<td><%= advertise.show_for_days %></td>
-	<td><%= advertise.cost_per_day %></td>
-	<td><%= advertise.remaining_days %></td>
-	<td class="hide-for-small"><%= advertise.get_size %></td>
-	<td class="hide-for-small"><%= advertise.is_active? %></td>
-	<td><%= link_to "", edit_advertise_path(advertise), class: edit_btn_class, icons: edit_btn_icon %></td>
-	<td><%= link_to '', advertise, method: :delete, data: { confirm: 'Are you sure?'}, class: del_btn_class, icons: del_btn_icon %></td>
+	<div class="row">
+	  <div class="small-12 columns large-9">
+	    <%= link_to _("New advertise"), new_advertise_path,  class: add_btn_class + " radius small", icons: add_btn_icon %>
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="small-12 columns large-9">
+	    <% if not @advertises.empty? %>
+	      <table class="table table-striped span12">
+		<thead>
+		  <tr>
+		    <th>#</th>
+		    <th><%= _("title") %></th>
+		    <th><%= _("cost") %></th>
+		    <th><%= _("category") %></th>
+		    <th><%= _("show for days") %></th>
+		    <th><%= _("cost per day") %></th>
+		    <th><%= _("remaining days") %></th>
+		    <th class="hide-for-small"><%= _("size") %></th>
+		    <th class="hide-for-small"><%= _("active") %></th>
+		    <th></th>
+		    <th></th>
+		  </tr>
+
+		</thead>
+		<tbody>
+		  <% @advertises.each do |advertise| %>
+		    <% if advertise.is_active? and advertise.remaining_days < 3 %>
+		    <tr class="warning">
+		    <% elsif advertise.is_active? %>
+		    <tr>
+		    <% else %>
+		    <tr class="error">
+		  <% end %>
+
+		  <td><%= advertise.id %></td>
+		  <td><%= link_to advertise.title, advertise %></td>
+		  <td><%= advertise.cost %></td>
+		  <td><%= advertise.category.name %></td>
+		  <td><%= advertise.show_for_days %></td>
+		  <td><%= advertise.cost_per_day %></td>
+		  <td><%= advertise.remaining_days %></td>
+		  <td class="hide-for-small"><%= advertise.get_size %></td>
+		  <td class="hide-for-small"><%= advertise.is_active? %></td>
+		  <td><%= link_to "", edit_advertise_path(advertise), class: edit_btn_class, icons: edit_btn_icon %></td>
+		  <td><%= link_to '', advertise, method: :delete, data: { confirm: 'Are you sure?'}, class: del_btn_class, icons: del_btn_icon %></td>
 </tr>
 
 <% end %>
@@ -52,61 +64,85 @@
 
 </div>
 
-<div class="row">
-  <% if @renew_records.exists? %>
-    <p><%= _("latest renews") %></p>
-    <table class="span12 table table-striped">
-      <thead>
-	<th><%= _("created at") %></th>
-	<th><%= _("advertise") %></th>
-	<th><%= _("renew date") %></th>
-	<th><%= _("show for days") %></th>
-	<th><%= _("cost") %></th>
-	<th></th>
-      </thead>
-      <tbody>
-	<% @renew_records.each do |renew| %>
-	  <tr>
-	    <td><%= renew.created_at %></td>
-	    <td>#<%= renew.advertise.id %></td>
-	    <td><%= renew.renew_date %></td>
-	    <td><%= renew.show_for_days %></td>
-	    <td><%= renew.cost %></td>
-	    <td><%= link_to "",  delete_renew_advertise_path(renew.advertise_id, renew.id), method: :delete, data: { confirm: _('Are you sure?') }, class: del_btn_class, icons: del_btn_icon %></td>
 
-	  </tr>
-	<% end %>
-      </tbody>
-    </table>
-  <% end %>
+
+
 
 </div>
+</section>
+<section>
+  <p class="title" data-section-title><a href="#panel-renews"><%= _("Renews") %></a></p>
+  <div class="content" data-section-content>
+
+    <div class="row">
+      <% if @renew_records.exists? %>
+	<p><%= _("latest renews") %></p>
+	<table class="span12 table table-striped">
+	  <thead>
+	    <th><%= _("created at") %></th>
+	    <th><%= _("advertise") %></th>
+	    <th><%= _("renew date") %></th>
+	    <th><%= _("show for days") %></th>
+	    <th><%= _("cost") %></th>
+	    <th></th>
+	  </thead>
+	  <tbody>
+	    <% @renew_records.each do |renew| %>
+	      <tr>
+		<td><%= renew.created_at %></td>
+		<td>#<%= renew.advertise.id %></td>
+		<td><%= renew.renew_date %></td>
+		<td><%= renew.show_for_days %></td>
+		<td><%= renew.cost %></td>
+		<td><%= link_to "",  delete_renew_advertise_path(renew.advertise_id, renew.id), method: :delete, data: { confirm: _('Are you sure?') }, class: del_btn_class, icons: del_btn_icon %></td>
+
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+      <% end %>
+
+    </div>
 
 
-<div class="row">
-  <% if @logs.exists? %>
-    <p><%= _("latest activities") %></p>
-    <table class="span12 table table-striped">
-      <thead>
-	<th><%= _("timestamp") %></th>
-	<th><%= _("advertise") %></th>
-	<th><%= _("activity") %></th>
-      </thead>
-      <tbody>
-	<% @logs.each do |log| %>
-	  <tr>
-	    <td><%= log.created_at %></td>
-	    <% if log.logable -%>
-	      <td>#<%= log.logable.id %></td>
-	    <% else %>
-	      <td>-</td>
-	    <% end -%>
+  </div>
+</section>
 
-	    <td><%= log.msg %></td>
-	  </tr>
-	<% end %>
-      </tbody>
-    </table>
-  <% end %>
+<section>
+  <p class="title" data-section-title><a href="#panel-logs"><%= _("Logs") %></a></p>
+  <div class="content" data-section-content>
+
+
+
+
+
+    <div class="row">
+      <% if @logs.exists? %>
+	<p><%= _("latest activities") %></p>
+	<table class="span12 table table-striped">
+	  <thead>
+	    <th><%= _("timestamp") %></th>
+	    <th><%= _("advertise") %></th>
+	    <th><%= _("activity") %></th>
+	  </thead>
+	  <tbody>
+	    <% @logs.each do |log| %>
+	      <tr>
+		<td><%= log.created_at %></td>
+		<% if log.logable -%>
+		  <td>#<%= log.logable.id %></td>
+		<% else %>
+		  <td>-</td>
+		<% end -%>
+
+		<td><%= log.msg %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+      <% end %>
+    </div>
+</section>
+</div>
 </div>
 </div>
