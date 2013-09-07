@@ -6,20 +6,18 @@
 
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
       <div class="row">
-	<div><%= f.email_field :email, :autofocus => true, :placeholder => _("Email ...."), :class => "small-10 small-centered columns" %></div>
+	<div><%= f.email_field :email, :autofocus => true, :placeholder => _("Email ...."), :class => "small-10 small-centered columns", :dir => "ltr" %></div>
       </div>
 
       <div class="row">
-	<div><%= f.password_field :password, :placeholder => _("Password ...."), :class => "small-10 small-centered columns" %></div>
+	<div><%= f.password_field :password, :placeholder => _("Password ...."), :class => "small-10 small-centered columns", :dir => "ltr" %></div>
       </div>
       <br />
-      <% if devise_mapping.rememberable? -%>
-        <div class="row">
-	  <div class="small-10 small-centered columns"><%= f.check_box :remember_me %><span class="small-text"><%= _("Remember me") %></span></div>
-	</div>
-      <% end -%>
       <div class="row">
-	<div><%= f.submit "Sign in", :class => "button medium success radius large-centered small-offset-8 small-3" %></div>
+      <% if devise_mapping.rememberable? -%>
+	  <div class="small-4 small-offset-1 columns"><%= f.check_box :remember_me %><span class="small-text"><%= _("Remember me") %></span></div>
+      <% end -%>
+	<div><%= f.submit "Sign in", :class => "button medium success radius  small-offset-8 small-3 columns" %></div>
       </div>
     <% end %>
 

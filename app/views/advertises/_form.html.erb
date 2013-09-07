@@ -1,63 +1,60 @@
 <%= semantic_form_for @advertise do |f| %>
   <%= f.inputs :name => _("Basic Information") do %>
-  <div class="row">
+    <div class="row">
 
-    <div class="span4">
-      <%= f.input :title, :label => false, :placeholder => _("title") + " ..."  %>
-    </div>
-    <div class="span4">
-      <div class="hintbox">
-        <p>sdf sdfsd fsdf;g dfg dfgsdf gsdfl;gjn</p>
+      <div class="small-10 small-centered large-uncentered columns large-5">
+	asdasd
+      </div>
+
+      <div class="small-10 small-centered large-uncentered columns large-5">
+	<div class="row">
+	  <div class="small-10 small-centered large-6 columns">
+	    <%= f.input :title, :label => false, :placeholder => _("title") + " ..."  %>
+	  </div>
+	</div>
+
+	<div class="row">
+	  <div class="small-10 small-centered large-6 columns">
+	    <%= f.input :category_id, :label => false, :placeholder => _("category") + " ..." %>
+	  </div>
+	</div>
       </div>
     </div>
-  </div>
-
-
-  <div class="row">
-
-    <div class="span4">
-      <%= f.input :category_id, :label => false, :placeholder => _("category") + " ..." %>
-    </div>
-    <div class="span4">
-
-    </div>
-  </div>
-
   <% end %>
   <br /><br />
   <%= f.inputs :name => _("Cost Related Information") do %>
-  <div class="row">
+    <div class="row">
 
-    <div class="span4">
-    <%= f.input :show_for_days, :label => false, :placeholder => _("show for days") + " ..." %>
+      <div class="span4">
+	<%= f.input :show_for_days, :label => false, :placeholder => _("show for days") + " ..." %>
+      </div>
+      <div class="span4">
+	<%= f.input :cost, :label => false, :placeholder => _("cost") + " ..." %>
+      </div>
     </div>
-    <div class="span4">
-    <%= f.input :cost, :label => false, :placeholder => _("cost") + " ..." %>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="span4">
-      <%= f.input :size, :label => false, :placeholder => _("size") + " ..." %>
+    <div class="row">
+      <div class="span4">
+	<%= f.input :size, :label => false, :placeholder => _("size") + " ..." %>
+      </div>
     </div>
-  </div>
   <% end %>
   <br /><br />
   <%= f.inputs :name => _("Details") do %>
-  <div class="row">
-    <div class="span4">
-      <%= f.input :tag_list, :label => false, :placeholder => _("Tags") + " ..." %>
+    <div class="row">
+      <div class="span4">
+	<%= f.input :tag_list, :label => false, :placeholder => _("Tags") + " ..." %>
+      </div>
+      <div class="span4">
+	<%= f.input :picture, :label => false, :placeholder => _("Picture") + " ..." %>
+      </div>
     </div>
-    <div class="span4">
-      <%= f.input :picture, :label => false, :placeholder => _("Picture") + " ..." %>
+    <br />
+    <div class="row">
+      <div class="span8">
+	<%= f.input :description, :html_input => { :class => "span7" }, :label => false, :placeholder => _("Description") + " ..." %>
+      </div>
     </div>
-  </div>
-  <br />
-  <div class="row">
-    <div class="span8">
-      <%= f.input :description, :html_input => { :class => "span7" }, :label => false, :placeholder => _("Description") + " ..." %>
-    </div>
-  </div>
 
   <% end %>
 <% end %>
