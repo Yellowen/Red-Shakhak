@@ -39,15 +39,20 @@ function page_height() {
 }
 
 function check_scroll_position (){
+    if ($("#adbox").length) {
+	console.log($("#adbox").length);
+	console.log(">>>>>>>>>>>>>");
+	if (is_near_to_end()){
+	    load_page(page);
+	    page++;
+	    setTimeout("check_scroll_position()", 1000);
 
-    if (is_near_to_end()){
-	load_page(page);
-	page++;
-	setTimeout("check_scroll_position()", 1000);
-
+	}
+	else {
+	    setTimeout("check_scroll_position()", 1000);
+	}
     }
     else {
-	setTimeout("check_scroll_position()", 1000);
     }
 }
 
