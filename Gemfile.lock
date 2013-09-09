@@ -257,7 +257,6 @@ DEPENDENCIES
   binding_of_caller
   cancan
   capistrano
-  coffee-rails (~> 4.0.0)
   compass-rails
   devise (>= 3.0.0.rc)
   fast_gettext

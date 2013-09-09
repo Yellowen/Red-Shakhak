@@ -3,35 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "variables.css.scss";
-$text-direction: rtl;
 
-.sidebox {
-    text-align: center;
-    width: 100%;
-    .top-section {
-        width: 100%;
-        background: $clouds;
-        border-radius: 5px;
-
-        h1 {
-            font-size: 30px;
-            padding: 15px 10px 10px;
-            position: relative;
-
-        }
-
-        .link-section {
-            font-size: 20px;
-            position: relative;
-            padding: 15px 10px 10px;
-	    border-radius: 0 0 5px 5px;
-	    span{
-		color: white;
-		text-decoration: none;
-	    }
-        }
-    }
-}
 
 .hintbox {
     padding: 50px 20px;

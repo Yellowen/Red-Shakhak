@@ -15,26 +15,26 @@
 
 <body>
 
-  <%= render "dashboard/navbar" %>
 
+  <%= render "dashboard/navbar" %>
+  <%= yield :top_toolbar %>
 
   <div class="row">
 
-    <div class="hide-for-small large-3 columns ">
 
     <% if content_for?(:sidebar) %>
       <%= yield(:sidebar) %>
     <% else %>
+      <div class="hide-for-small large-3 columns ">
+	<%= render "dashboard/sidemenu" %>
+      </div>
+      <div class="small-12 large-9 columns">
 
-      <%= render "dashboard/sidemenu" %>
     <% end %>
 
 
-    </div>
-
-    <div class="small-12 large-9 columns">
       <div class="row">
-	<div class="small-12 large-9">
+	<div class="small-12 large-12">
 	  <p class="text-success"><%= notice %></p>
 	  <p class="text-error"><%= alert %></p>
 	</div>

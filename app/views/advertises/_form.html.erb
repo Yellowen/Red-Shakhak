@@ -1,11 +1,6 @@
-<%= semantic_form_for @advertise do |f| %>
+<%= semantic_form_for @advertise, :validate => true do |f| %>
   <%= f.inputs :name => _("Basic Information") do %>
     <div class="row">
-
-      <div class="small-10 small-centered large-uncentered columns large-5">
-	asdasd
-      </div>
-
       <div class="small-10 small-centered large-uncentered columns large-5">
 	<div class="row">
 	  <div class="small-10 small-centered large-6 columns">
@@ -17,11 +12,12 @@
 	  <div class="small-10 small-centered large-6 columns">
 	    <%= f.input :category_id, :label => false, :placeholder => _("category") + " ..." %>
 	  </div>
-	</div>
+ 	</div>
       </div>
     </div>
   <% end %>
   <br /><br />
+
   <%= f.inputs :name => _("Cost Related Information") do %>
     <div class="row">
 
@@ -57,61 +53,4 @@
     </div>
 
   <% end %>
-<% end %>
-
-<%= form_for(@advertise) do |f| %>
-  <% if @advertise.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @advertise.errors.count %><%=t :error_prohibited_this_advertise_from_being_saved %>:</h2>
-
-      <ul>
-        <% @advertise.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label _("title") %><br />
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label _("category") %>
-    <%= f.select :category_id, options_for_select(@categories.collect {|x| [x.name, x.id]}, @advertise.category.try(:id)), prompt: "---" %>
-  </div>
-
-  <div class="field">
-    <%= f.label _("show for days") %><br />
-
-    <% if @advertise.new_record? %>
-      <%= f.number_field :show_for_days %>
-    <% else %>
-      <%= f.number_field :show_for_days, disabled: true %>
-    <% end %>
-
-  </div>
-  <div class="field">
-    <%= f.label _("cost") %><br />
-    <%= f.number_field :cost %>
-  </div>
-
-  <div class="field">
-    <%= f.label _("size") %>
-    <%= f.select :size, options_for_select(Advertise.get_sizes, @advertise.size) %>
-  </div>
-
-  <div class="field">
-    <%= f.label _("tags") %><br />
-    <%= f.text_field :tag_list %>
-  </div>
-
-  <div class="field">
-    <%= f.label _("description") %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit class: "btn btn-success" %>
-  </div>
 <% end %>
