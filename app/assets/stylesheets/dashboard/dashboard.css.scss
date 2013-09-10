@@ -5,13 +5,14 @@
 @import "variables";
 
 
-
+aside {
+    padding-left: 0;
+    padding-right: 0;
+}
 .sidemenu {
     background: #2c3e50;
-    font-size: 16px;
 
     .menuheader {
-	border-radius: 4px 4px 0 0;
 	Background: #27ae60;
 	color: white;
 	padding: 15px;
@@ -49,4 +50,17 @@
 }
 .dashbody {
     padding: 0 20px 0 0;
+}
+
+
+fieldset {
+
+
+    ol {
+	padding-top: 1em;
+	p {
+	    padding: 0 0 1em;
+	}
+	list-style: none;
+    }
 }

@@ -158,7 +158,7 @@ $text-direction: rtl;
 // $acronym-underline: 1px dotted #ddd;
 
 // We use these to control padding and margin
-// $microformat-padding: emCalc(10px) emCalc(12px);
+// $microformat-padding: emCalc(12px) emCalc(14px);
 // $microformat-margin: 0 0 emCalc(20px) 0;
 
 // We use these to control the border styles
@@ -208,8 +208,8 @@ $text-direction: rtl;
 // We use these to style the fieldset border and spacing.
 // $fieldset-border-style: solid;
 // $fieldset-border-width: 1px;
-// $fieldset-border-color: #ddd;
-// $fieldset-padding: emCalc(20px);
+$fieldset-border-color: #eee;
+$fieldset-padding: emCalc(20px) emCalc(30px) emCalc(10px);
 // $fieldset-margin: emCalc(18px) 0;
 
 // We use these to style the legends when you use them
