@@ -31,7 +31,7 @@
 	});
 
         steps.each(function(i) {
-	    var stepsheight = $("#steps").height().toString();
+	    var stepsheight = ($("#steps").height() + parseInt($("#steps").css("padding-top")) + parseInt($("#steps").css("padding-top"))).toString();
 	    var parentwidth = element.parent().width();
 	    var pl = element.parent().css("padding-left");
 	    var pr = element.parent().css("padding-right");
@@ -103,6 +103,9 @@
 		$("#prevbtn").removeClass(disableclass);
 		$("#nextbtn").removeClass(disableclass);
 	    }
+	    $(".stepdesc").removeClass("current");
+	    $("#stepDesc" + (current_step -1)).addClass("current");
+
 
 	}
 	function move_buttons(i) {

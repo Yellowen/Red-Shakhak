@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "variables";
-
+@import "foundation";
 
 aside {
     padding-left: 0;
@@ -13,7 +13,7 @@ aside {
     background: #2c3e50;
 
     .menuheader {
-	Background: #27ae60;
+	Background: $emerald;
 	color: white;
 	padding: 15px;
 	width: 100%;
@@ -62,5 +62,21 @@ fieldset {
 	    padding: 0 0 1em;
 	}
 	list-style: none;
+    }
+}
+
+.steps {
+    padding: 1em;
+    padding-right: 15px;
+    li {
+
+    }
+}
+
+#newadvertise {
+    .steps {
+	li {
+	    @include grid-column(4, false, false, false, false, false, false, right);
+	}
     }
 }

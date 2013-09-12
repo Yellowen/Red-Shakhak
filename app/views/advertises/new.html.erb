@@ -18,10 +18,12 @@
     <%= link_to _("Back"), advertises_path, class: back_btn_class, icons: back_btn_icon %>
   </div>
 
-  <div id="wizard" class="row" data-next="<%= _("Next") %> <i class='icon-chevron-left'></i>" data-prev="<i class='icon-chevron-right'></i> <%= _("Prev") %>" data-btnclass="button small radius secondary" data-steps-name="<%= _("Step") %>">
-  <div class="small-12 columns">
+  <div id="newadvertise">
+    <div id="wizard" class="row" data-next="<%= _("Next") %> <i class='icon-chevron-left'></i>" data-prev="<i class='icon-chevron-right'></i> <%= _("Prev") %>" data-btnclass="button small radius secondary" data-steps-name="<%= _("Step") %>">
+      <div class="small-12 columns">
 
-  <%= render 'form' %>
+	<%= render 'form' %>
+      </div>
+    </div>
   </div>
-</div>
 </div>

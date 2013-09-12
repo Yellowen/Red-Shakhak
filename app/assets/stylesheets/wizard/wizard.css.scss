@@ -1,11 +1,15 @@
+@import "variables";
+//@import "foundation";
+
 .steps {
     list-style: none;
     width: auto;
     li {
 	display: inline-block;
-	opacity: 0.7;
 	text-align: center;
 	padding: 1em 3em;
+	color: $darkgray;
+
 	span {
 	    font-size: 0.85em;
 
@@ -18,8 +22,9 @@
     }
 
     li.current {
-	opacity: 1;
-	h3 {
+	border-bottom: 4px solid $emerald;
+	.step-title {
+	    color: darkergray;
 
 	}
     }
