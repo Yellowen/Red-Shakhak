@@ -1,21 +1,23 @@
 <div class="row">
   <aside class="sidemenu large-11 columns">
-    <div class="menuheader">
+    <div class="row">
+    <div class="menuheader small-12 columns">
       <%= _("credit") %>: 40000 B
     </div>
+    </div>
 
-    <ul class="menu">
-      <li><a href="<%=  advertises_path %>"><i class="icon-inbox icon-large"></i> <%= _("advertises") %></a></li>
+    <ul class="menu row">
+      <li class="small-12 columns"><a href="<%=  advertises_path %>"><i class="icon-inbox icon-large"></i> <%= _("advertises") %></a></li>
       <% if can? :manage, Category %>
-	<li><a href="<%=  categories_path %>"><i class="icon-sitemap icon-large"></i> <%= _("category") %></a></li>
+	<li class="small-12 columns"><a href="<%=  categories_path %>"><i class="icon-sitemap icon-large"></i> <%= _("category") %></a></li>
       <% end %>
 
       <% if can? :manage, User %>
-	<li><a href="#"><i class="icon-group icon-large"></i> <%= _("users") %></a></li>
+	<li class="small-12 columns"><a href="#"><i class="icon-group icon-large"></i> <%= _("users") %></a></li>
       <% end %>
 
-      <li><a href="#"><i class="icon-user icon-large"></i> <%= _("profile") %></a></li>
-      <li><a href="<%=  destroy_user_session_path %>" data-method="delete"><i class="icon-signout icon-large"></i> <%= _("log_out") %></a></li>
+      <li class="small-12 columns"><a href="#"><i class="icon-user icon-large"></i> <%= _("profile") %></a></li>
+      <li class="small-12 columns"><a href="<%=  destroy_user_session_path %>" data-method="delete"><i class="icon-signout icon-large"></i> <%= _("log_out") %></a></li>
 
     </ul>
   </aside>
