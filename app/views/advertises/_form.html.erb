@@ -1,66 +1,66 @@
-
-    <%= semantic_form_for @advertise, :validate => true do |f| %>
-      <%= f.inputs :name => _("Basic Information") do %>
-	<p><%= _("basic information description") %></p>
+<%= semantic_form_for @advertise, :validate => true do |f| %>
+  <%= f.inputs :name => _("Basic Information") do %>
+    <p><%= _("basic information description") %></p>
+    <div class="row">
+      <div class="small-12 columns">
 	<div class="row">
-	  <div class="small-12 columns">
-	    <div class="row">
-	      <div class="small-6 columns">
-		<%= f.input :title, :label => _("Title"), :placeholder => _("Title of your advertise") + " ..."  %>
-	      </div>
-
-	      <div class="small-6 columns">
-		<div class="custom dropdown">
-		  <%= f.input :category, :label => _("Category"), :class => "medium", :placeholder => _("category") + " ..." %>
-		</div>
-	      </div>
- 	    </div>
+	  <div class="small-6 columns">
+	    <%= f.input :title, :label => _("Title"), :placeholder => _("Title of your advertise") + " ..."  %>
 	  </div>
-	</div>
-      <% end %>
-      <br /><br />
-
-      <%= f.inputs :name => _("Cost Related Information") do %>
-
-	<p><%= _("Cost related informations description") %></p>
-	<div class="row">
 
 	  <div class="small-6 columns">
-	    <%= f.input :show_for_days, :label => _("Show for days"), :placeholder => _("for example: 4") + " ..." %>
+	    <div class="custom dropdown">
+	      <%= f.input :category, :label => _("Category"), :class => "medium", :placeholder => _("category") + " ..." %>
+	    </div>
 	  </div>
-	  <div class="large-6 columns">
-	    <%= f.input :cost, :label => _("Cost"), :placeholder => _("for example 45000") + " ..." %>
-	  </div>
-	</div>
-
-	<div class="row">
-	  <div class="large-6 columns">
-	    <%= f.input :size, :label => _("Size"), :placeholder => _("size") + " ..." %>
-	  </div>
-	</div>
-      <% end %>
-      <br /><br />
-      <%= f.inputs :name => _("Details") do %>
-
-	<p><%= _("details description") %></p>
-	<div class="row">
-	  <div class="large-6 columns">
-	    <%= f.input :tag_list, :label => _("Tags"), :placeholder => _("Use ',' as separator") + " ..." %>
-	  </div>
-	  <div class="large-6 columns">
-	    <%= f.input :picture, :label => _("Image"), :placeholder => _("Picture") + " ..." %>
-	  </div>
-	</div>
-	<br />
-	<div class="row">
-	  <div class="large-6 columns">
-	    <%= f.input :description, :label => _("Description"), :placeholder => _("Complete description of you advertise") + " ..." %>
-	  </div>
-	</div>
-
-      <% end %>
-      <div id="wizardbuttons" class="row actions ">
-	<%= f.submit :class => "button success small radius" %>
+ 	</div>
       </div>
+    </div>
+  <% end %>
+  <br /><br />
 
-    <% end %>
+  <%= f.inputs :name => _("Cost Related Information") do %>
+
+    <p><%= _("Cost related informations description") %></p>
+    <div class="row">
+
+      <div class="small-6 columns">
+	<%= f.input :show_for_days, :label => _("Show for days"), :placeholder => _("for example: 4") + " ..." %>
+      </div>
+      <div class="large-6 columns">
+	<%= f.input :cost, :label => _("Cost"), :placeholder => _("for example 45000") + " ..." %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns">
+	<%= f.input :size, :label => _("Size"), :placeholder => _("size") + " ..." %>
+      </div>
+    </div>
+  <% end %>
+  <br /><br />
+  <%= f.inputs :name => _("Details") do %>
+
+    <p><%= _("details description") %></p>
+    <div class="row">
+      <div class="large-6 columns">
+	<%= f.input :tag_list, :label => _("Tags"), :placeholder => _("Use ',' as separator") + " ..." %>
+      </div>
+      <div class="large-6 columns">
+	<%= f.input :picture, :label => _("Image"), :placeholder => _("Picture") + " ..." %>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="large-6 columns">
+	<%= f.input :description, :label => _("Description"), :placeholder => _("Complete description of you advertise") + " ..." %>
+      </div>
+    </div>
+
+  <% end %>
+  <div id="wizardbuttons" class="row actions ">
+    <button class="button red small radius"><%= _("Preview") %></button>
+    <%= f.submit :class => "button success small radius" %>
+  </div>
+
+<% end %>
