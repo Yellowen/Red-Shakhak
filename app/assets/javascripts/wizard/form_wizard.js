@@ -8,13 +8,18 @@
 
         var steps = $(element).find("fieldset");
         var count = steps.size();
-        var submmitButtonName = "#" + options.submitButton;
+        var submit_button = $(element).find("input[type=submit]");
 	var nextName = $(this).data("next");
 	var prevName = $(this).data("prev");
 	var btnclass = $(this).data("btnclass");
 	var stepsname = $(this).data("steps-name");
+	var disableclass = $(this).data("disabledclass") || "disabled";
+	var wizardbuttons = $("#wizardbuttons");
+	var current_step = 1;
 
-        $(submmitButtonName).hide();
+	var self = this;
+
+        $(submit_button).addClass(disableclass);
 
 
         $(element).before("<ul id='steps' class='steps row'></ul>");
@@ -25,65 +30,94 @@
 
 	});
 
-
         steps.each(function(i) {
 	    var stepsheight = $("#steps").height().toString();
 	    var parentwidth = element.parent().width();
 	    var pl = element.parent().css("padding-left");
 	    var pr = element.parent().css("padding-right");
-	    console.log(element.parent());
-	    console.log(pl);
-	    console.log(parentwidth);
-	    console.log(	    (parentwidth - parseInt(pl)).toString());
 
             $(this).wrap("<div id='step" + i + "' class='stepdiv' style='width: " + (parentwidth - parseInt(pl)).toString() + "px; top: " + stepsheight + "px; right: " + pr + "px;'></div>");
 
-            $(this).append("<p id='step" + i + "commands'></p>");
+	    $("#step" + i).hide();
 
-            if (i == 0) {
-                createNextButton(i);
-                selectStep(i);
-            }
-            else if (i == count - 1) {
-                $("#step" + i).hide();
-                createPrevButton(i);
-            }
-            else {
-                $("#step" + i).hide();
-                createPrevButton(i);
-                createNextButton(i);
-            }
         });
 
-        function createPrevButton(i) {
-            var stepName = "step" + i;
-            $("#" + stepName + "commands").append("<div id='" + stepName + "Prev' class='stepbutton prev " + btnclass +"'>" + prevName + "</div>");
+	if (wizardbuttons.length < 1) {
+	    $(element).append("<div id='wizardbuttons'></div>");
+	    wizardbuttons = $("#wizardbuttons");
+	}
 
-            $("#" + stepName + "Prev").bind("click", function(e) {
-                $("#" + stepName).hide();
-                $("#step" + (i - 1)).show();
-                $(submmitButtonName).hide();
-                selectStep(i - 1);
-            });
-        }
+	if ($(this).data("step") === undefined) {
+	    $(this).data("step", current_step);
+	    $("#step0").show();
 
-        function createNextButton(i) {
-            var stepName = "step" + i;
-            $("#" + stepName + "commands").append("<div id='" + stepName + "Next' class='step button next " + btnclass +"'>" + nextName + "</div>");
+	}
+	else {
+	    current_step = $(this).data("step");
+	    $("#step" + (current_step -1).toString()).show();
+	}
 
-            $("#" + stepName + "Next").bind("click", function(e) {
-                $("#" + stepName).hide();
-                $("#step" + (i + 1)).show();
-                if (i + 2 == count)
-                    $(submmitButtonName).show();
-                selectStep(i + 1);
-            });
-        }
+	// Setup wizard buttons section
+	set_padding();
+	wizardbuttons.prepend("<div id='prevbtn' class='stepbutton prev " + btnclass +"'>" + prevName + "</div>");
+	wizardbuttons.append("<div id='nextbtn' class='stepbutton next " + btnclass +"'>" + nextName + "</div>");
+	move_buttons(wizardbuttons);
+	update_buttons_status();
 
-        function selectStep(i) {
-            $("#steps li").removeClass("current");
-            $("#stepDesc" + i).addClass("current");
-        }
+	$("#prevbtn").on("click", function(){
+	    if (current_step > 1) {
+		$(self).data("step", current_step - 1);
+		$("#step" + (current_step - 1)).hide();
+		$("#step" + (current_step - 2)).show();
+		current_step = current_step - 1;
+		move_buttons(wizardbuttons);
+		update_buttons_status();
+	    }
+	});
+
+	$("#nextbtn").on("click", function(){
+	    if (current_step < count) {
+		$(self).data("step", current_step + 1);
+		$("#step" + (current_step - 1)).hide();
+		$("#step" + (current_step)).show();
+		current_step = current_step + 1;
+		move_buttons(wizardbuttons);
+		update_buttons_status();
+	    }
+	});
+
+	function update_buttons_status() {
+	    if (current_step == 1) {
+		submit_button.addClass(disableclass);
+		submit_button.attr('disabled', true);
+		$("#prevbtn").addClass(disableclass);
+		$("#nextbtn").removeClass(disableclass);
+	    } else if (current_step == count) {
+		submit_button.removeClass(disableclass);
+		submit_button.attr('disabled', false);
+		$("#prevbtn").removeClass(disableclass);
+		$("#nextbtn").addClass(disableclass);
+	    } else {
+		submit_button.addClass(disableclass);
+		submit_button.attr('disabled', true);
+		$("#prevbtn").removeClass(disableclass);
+		$("#nextbtn").removeClass(disableclass);
+	    }
+
+	}
+	function move_buttons(i) {
+	    var height = $("#step" + (current_step -1).toString()).height();
+	    var top = parseInt($("#steps").height());
+	    var margin = height - top + 20;
+
+	    i.css("margin-top", margin);
+	}
+
+	function set_padding(){
+	    var pr = $("#steps").parent().css("padding-right");
+	    var pl = $("#steps").parent().css("padding-left");
+	    wizardbuttons.css("padding-right", pr);
+	}
 
     }
 })(jQuery);

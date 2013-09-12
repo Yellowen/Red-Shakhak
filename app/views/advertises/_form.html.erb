@@ -56,11 +56,15 @@
 	<br />
 	<div class="row">
 	  <div class="large-6 columns">
-	    <%= f.input :description, :html_input => { :class => "span7" }, :label => _("Description"), :placeholder => _("Complete description of you advertise") + " ..." %>
+	    <%= f.input :description, :label => _("Description"), :placeholder => _("Complete description of you advertise") + " ..." %>
 	  </div>
 	</div>
 
       <% end %>
+      <div id="wizardbuttons" class="row actions ">
+	<%= f.submit :class => "button success small radius" %>
+      </div>
+
     <% end %>
   </div>
 </div>
