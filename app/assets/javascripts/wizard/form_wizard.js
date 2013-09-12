@@ -19,13 +19,26 @@
 
         $(element).before("<ul id='steps' class='steps row'></ul>");
 
-        steps.each(function(i) {
-            $(this).wrap("<div id='step" + i + "' class='step'></div>");
-            $(this).append("<p id='step" + i + "commands'></p>");
-
-
+	steps.each(function(i){
             var name = $(this).find("legend").html();
             $("#steps").append("<li id='stepDesc" + i + "' class='stepdesc'><span class='step-title'>" + stepsname + " " + (i + 1) + "</span><span>" + name + "</span></li>");
+
+	});
+
+
+        steps.each(function(i) {
+	    var stepsheight = $("#steps").height().toString();
+	    var parentwidth = element.parent().width();
+	    var pl = element.parent().css("padding-left");
+	    var pr = element.parent().css("padding-right");
+	    console.log(element.parent());
+	    console.log(pl);
+	    console.log(parentwidth);
+	    console.log(	    (parentwidth - parseInt(pl)).toString());
+
+            $(this).wrap("<div id='step" + i + "' class='stepdiv' style='width: " + (parentwidth - parseInt(pl)).toString() + "px; top: " + stepsheight + "px; right: " + pr + "px;'></div>");
+
+            $(this).append("<p id='step" + i + "commands'></p>");
 
             if (i == 0) {
                 createNextButton(i);

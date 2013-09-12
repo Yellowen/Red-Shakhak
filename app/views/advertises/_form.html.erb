@@ -1,61 +1,66 @@
-<%= semantic_form_for @advertise, :validate => true do |f| %>
-  <%= f.inputs :name => _("Basic Information") do %>
-    <p><%= _("basic information description") %></p>
-    <div class="row">
-      <div class="small-12 columns">
+<div class="row">
+  <div class="small-12 columns">
+
+    <%= semantic_form_for @advertise, :validate => true do |f| %>
+      <%= f.inputs :name => _("Basic Information") do %>
+	<p><%= _("basic information description") %></p>
 	<div class="row">
-	  <div class="small-6 columns">
-	    <%= f.input :title, :label => _("Title"), :placeholder => _("Title of your advertise") + " ..."  %>
+	  <div class="small-12 columns">
+	    <div class="row">
+	      <div class="small-6 columns">
+		<%= f.input :title, :label => _("Title"), :placeholder => _("Title of your advertise") + " ..."  %>
+	      </div>
+
+	      <div class="small-6 columns">
+		<div class="custom dropdown">
+		  <%= f.input :category, :label => _("Category"), :class => "medium", :placeholder => _("category") + " ..." %>
+		</div>
+	      </div>
+ 	    </div>
 	  </div>
+	</div>
+      <% end %>
+      <br /><br />
+
+      <%= f.inputs :name => _("Cost Related Information") do %>
+
+	<p><%= _("Cost related informations description") %></p>
+	<div class="row">
 
 	  <div class="small-6 columns">
-            <div class="custom dropdown">
-	      <%= f.input :category, :label => _("Category"), :class => "medium", :placeholder => _("category") + " ..." %>
-	    </div>
+	    <%= f.input :show_for_days, :label => _("Show for days"), :placeholder => _("for example: 4") + " ..." %>
 	  </div>
- 	</div>
-      </div>
-    </div>
-  <% end %>
-  <br /><br />
+	  <div class="large-6 columns">
+	    <%= f.input :cost, :label => _("Cost"), :placeholder => _("for example 45000") + " ..." %>
+	  </div>
+	</div>
 
-  <%= f.inputs :name => _("Cost Related Information") do %>
+	<div class="row">
+	  <div class="large-6 columns">
+	    <%= f.input :size, :label => _("Size"), :placeholder => _("size") + " ..." %>
+	  </div>
+	</div>
+      <% end %>
+      <br /><br />
+      <%= f.inputs :name => _("Details") do %>
 
-    <p><%= _("Cost related informations description") %></p>
-    <div class="row">
+	<p><%= _("details description") %></p>
+	<div class="row">
+	  <div class="large-6 columns">
+	    <%= f.input :tag_list, :label => _("Tags"), :placeholder => _("Use ',' as separator") + " ..." %>
+	  </div>
+	  <div class="large-6 columns">
+	    <%= f.input :picture, :label => _("Image"), :placeholder => _("Picture") + " ..." %>
+	  </div>
+	</div>
+	<br />
+	<div class="row">
+	  <div class="large-6 columns">
+	    <%= f.input :description, :html_input => { :class => "span7" }, :label => _("Description"), :placeholder => _("Complete description of you advertise") + " ..." %>
+	  </div>
+	</div>
 
-      <div class="small-6 columns">
-	<%= f.input :show_for_days, :label => _("Show for days"), :placeholder => _("for example: 4") + " ..." %>
-      </div>
-      <div class="large-6 columns">
-	<%= f.input :cost, :label => _("Cost"), :placeholder => _("for example 45000") + " ..." %>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="large-6 columns">
-	<%= f.input :size, :label => _("Size"), :placeholder => _("size") + " ..." %>
-      </div>
-    </div>
-  <% end %>
-  <br /><br />
-  <%= f.inputs :name => _("Details") do %>
-
-    <p><%= _("details description") %></p>
-    <div class="row">
-      <div class="large-6 columns">
-	<%= f.input :tag_list, :label => _("Tags"), :placeholder => _("Use ',' as separator") + " ..." %>
-      </div>
-      <div class="large-6 columns">
-	<%= f.input :picture, :label => _("Image"), :placeholder => _("Picture") + " ..." %>
-      </div>
-    </div>
-    <br />
-    <div class="row">
-      <div class="large-6 columns">
-	<%= f.input :description, :html_input => { :class => "span7" }, :label => _("Description"), :placeholder => _("Complete description of you advertise") + " ..." %>
-      </div>
-    </div>
-
-  <% end %>
-<% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
