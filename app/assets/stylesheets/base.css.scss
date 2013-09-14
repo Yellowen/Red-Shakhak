@@ -50,6 +50,7 @@ header {
 	    display: inline;
 	    min-width:58px;
 	    a {
+		font-size:14px;
 		color: $clouds !important;
 		text-decoration: none;
 		padding: 17px 20px;
@@ -74,6 +75,7 @@ footer {
 
     div{
 	padding:20px 60px;
+	font-size:14px;
 	a{
 	     color:$lightgray;
 	}
