@@ -10,33 +10,66 @@ header {
     color: white;
     width: 100%;
     min-width: 1024px;
-    height: 43px;
+    height: 60px;
     margin-bottom: 25px;
 
     nav {
 	padding: 10px 0px;
 	width: 100%;
-	ul {
-	    list-style: none;
-	    margin: 0 10px 0 0;
-
-	    li {
-		display: inline;
-		a {
-		    color: $clouds !important;
-		    text-decoration: none;
-		    padding: 15px 10px;
+	display:inline;
+	.logo{
+	    display:inline;
+	    float:right;
+	    width:190px;
+	    height:60px;
+	    h1 {
+		display:block;
+		width:190px;
+		height:60px;
+		background-image:url("/images/logo.png");
+		a{
+		    display:block;
+		    width:190px;
+		    height:60px;
+		    span {
+			display:none;
+		    }
 		}
-		a:hover {
-		    Background: $green-sea;
+		a:hover{
+		    Background:none !important;
 		}
 	    }
 	}
 
     }
+    ul {
+	list-style: none;
+	margin: 0 30px 0 0;
+
+	li {
+	    display: inline;
+	    min-width:58px;
+	    a {
+		color: $clouds !important;
+		text-decoration: none;
+		padding: 17px 20px;
+		line-height:60px;
+	    }
+	    a:hover {
+		Background: $hover-box;
+	    }
+	}
+    }
+
 }
 
+footer {
+    Background: $darkbg;
+    width:100%;
+    width: 100%;
+    min-width: 1024px;
 
+}
 
 .btn {
     color: white !important;
