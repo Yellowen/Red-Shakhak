@@ -66,9 +66,18 @@ header {
 footer {
     Background: $darkbg;
     width:100%;
-    width: 100%;
     min-width: 1024px;
+    min-height:60px;
+    position:relative;
+    margin: 0 auto;
+    color:$lightgray;
 
+    div{
+	padding:20px 60px;
+	a{
+	     color:$lightgray;
+	}
+    }
 }
 
 .btn {
