@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag    "foundicons", media: "all", "data-turbolinks-track" => true %>
+
 <div class="row">
   <div class="small-12 large-centered large-6 columns">
     <fieldset>
@@ -21,8 +23,9 @@
       </div>
     <% end %>
 
-    <a href="/auth/twitter/">Twitter</a>
+    <a href="/auth/twitter/"><i class="social foundicon-twitter"></i></a>
     <a href="/auth/google_oauth2/">Google</a>
+    <br>
     <%= render "devise/shared/links" %>
     </fieldset>
   </div>
