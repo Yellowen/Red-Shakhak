@@ -1,32 +1,89 @@
-<%= stylesheet_link_tag    "foundicons", media: "all", "data-turbolinks-track" => true %>
-
-<div class="row">
-  <div class="small-12 large-centered large-6 columns">
-    <fieldset>
-
-    <legend><%= _("Sign in") %></legend>
-
-    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+<div class="wrapper_signin">
+  <div class="row">
+    <div class="twelve columns layout_signin">
       <div class="row">
-	<div><%= f.email_field :email, :autofocus => true, :placeholder => _("Email ...."), :class => "small-10 small-centered columns", :dir => "ltr" %></div>
-      </div>
+	<div class="eight columns">
 
-      <div class="row">
-	<div><%= f.password_field :password, :placeholder => _("Password ...."), :class => "small-10 small-centered columns", :dir => "ltr" %></div>
-      </div>
-      <br />
-      <div class="row">
-      <% if devise_mapping.rememberable? -%>
-	  <div class="small-4 small-offset-1 columns"><%= f.check_box :remember_me %><span class="small-text"><%= _("Remember me") %></span></div>
-      <% end -%>
-	<div><%= f.submit "Sign in", :class => "button medium success radius  small-offset-8 small-3 columns" %></div>
-      </div>
-    <% end %>
+          <h1>Sign in</h1>
 
-    <a href="/auth/twitter/"><i class="social foundicon-twitter"></i></a>
-    <a href="/auth/google_oauth2/">Google</a>
-    <br>
-    <%= render "devise/shared/links" %>
-    </fieldset>
+	  <div class="justify big_box inline">
+<%=image_tag("auth/one-night.jpg", :class=>"left pull_right")%>
+	    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae porta quam, a congue est. Maecenas vel tortor in sem convallis commodo. Ut pulvinar lorem tincidunt auctor molestie.
+	  </div>
+
+	  <div class="large-6 columns justify ">
+	    esque vitae in arcu. Phasellus sit amet justo vel neque interdum ornare. Etiam sodales vulputate pellentesque. Phasellus et pretium felis, semper auctor nibh. Suspendisse vive
+
+	  </div>
+
+	  <div class="large-4 columns justify ">
+	    esque vitae in arcu. Phasellus sit amet justo vel neque interdum ornare. Etiam sodales vulputate pellentesque. Phasellus et pretium felis, semper auctor nibh. Suspendisse viver
+
+	  </div>
+	</div>
+	<div class="large-4 columns">
+	  <div class="row">
+	    <section id="form_signin">
+	      <div id="formbox_login" class="form_auth rounded">
+		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+		  <%= devise_error_messages! %>
+		  <div class="field">
+		    <label><%=_("E-mail") %></label>
+		    <%= f.email_field :email, :autofocus => true, :type => "text", :class => "  input email  ", :placeholder=>_("E-mail") %>
+<% if resource.errors[:email] -%>
+		      <dd class="danger abel"><%= resource.errors[:first_name][0]%></dd>
+<% end -%>
+
+		  </div>
+
+		  <div class="field">
+		    <label><%=_("Password") %></label>
+		    <%= f.password_field :password, :class => "input password" %>
+<% if resource.errors[:first_name] -%>
+		      <dd class="danger abel"><%= resource.errors[:first_name][0] %></dd>		    <% end -%>
+
+		  </div>
+		  <div class="field">
+		    <% if devise_mapping.rememberable? -%>
+		      <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+		    <% end -%>
+		  </div>
+		  <div class="submit">
+		    <%= f.submit _("  Sign in  "), :class => "btn medium pull-right entypo info"%><br><br>
+		  </div>
+
+		<% end %>
+		<div style="text-align: center;">
+		  <%= render "devise/shared/links" %>
+		</div>
+	      </div>
+	    </section>
+	  </div>
+
+	  <br />
+	  <div class="form_auth row">
+
+	    <h3><%= _("Login using") %>:</h3>
+		<a href="/auth/google_oauth2/" class="pull_right">
+		  <%=image_tag("auth/icon-google.png") %>
+		</a>
+
+	      <a href="/auth/facebook/" class="pull_right">
+		  <%=image_tag("auth/icon-facebook.png") %>
+	      </a>
+
+	      <a href="/auth/twitter/" class="pull_right">
+		  <%=image_tag("auth/icon-twitter.png") %>
+	      </a>
+
+	  </div>
+
+	</div>
+
+      </div>
+    </div>
+
+    <br><br>
   </div>
 </div>
