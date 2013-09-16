@@ -64,6 +64,7 @@ header {
 
 }
 
+
 footer {
     Background: $darkbg;
     width:100%;
@@ -82,8 +83,22 @@ footer {
     }
 }
 
-.btn {
-    color: white !important;
+
+form, .form_box{
+    border: solid 1px $lightergray;
+    background-color: $ultra_blue;
+    padding:10px;
+    /*@include border-radius(5px);
+    @include single-box-shadow(rgba(black, 0.4));
+    */
+
+    img {
+	padding :5px;
+	border:#D9E3DC;
+    }
+    .submit{
+	text-align:center;
+    }
 }
 
 .sidemenu {
