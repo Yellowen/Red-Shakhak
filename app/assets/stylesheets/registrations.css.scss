@@ -7,11 +7,6 @@
 
 /* Auth sccs */
 
-.btn {
-    color:white;
-    padding:5px;
-}
-
 .form_auth{
     /*border: solid 1px #D9E3DC;
     background-color: #E5EDE8;*/
@@ -131,4 +126,19 @@
     height:130px;
     margin-bottom:30px;
     background-color:#F1F5F7;
+}
+
+
+.layout_signin, .layout_signup{
+    background-color:rgba(white, 0.7);
+    padding:30px;
+
+    .big_box {
+	overflow:visible;
+	padding:30px;
+	img{
+	    padding-left:50px;
+	    padding-right:30px;
+	}
+    }
 }
