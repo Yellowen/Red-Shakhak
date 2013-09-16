@@ -4,53 +4,22 @@
 
 /* Authentication sccs */
 
-
 .wrapper_signin{
     background: url('/images/bg1.jpg') no-repeat top left;
-    padding: 40px 0;
-    margin-bottom: 150px;
-    img {
-	float:right
-    }
 }
 
 .wrapper_signup{
     background: url('/images/bg2.jpg') no-repeat top left;
-    padding: 40px 0;
-    margin-bottom: 150px;
-    img {
-	float:right;
-    }
 }
-
 
 .layout_signin, .layout_signup{
     background-color:rgba(white, 0.7);
-    padding:30px;
 
     .big_box {
 	overflow:visible;
-	height:400px;
+	padding-top:20px;
 	img{
-	    padding-left:50px;
-	    padding-right:30px;
+	    padding-left:10px;
 	}
-    }
-}
-
-/*  Index scss*/
-
-.layout_signin, .layout_signup{
-    background-color:rgba(white, 0.7);
-    padding:30px;
-
-    .big_box {
-	overflow:visible;
-	padding:30px;
-	img{
-	    padding-left:50px;
-	    padding-right:30px;
-	}
-
     }
 }
