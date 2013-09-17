@@ -1,20 +1,85 @@
-<h2>Sign up</h2>
+<%=stylesheet_link_tag("registrations") %>
+<div class="wrapper_signup">
+  <div class="row">
+    <div class="layout_signup">
+      <div class="row">
+	<div class="large-7 columns">
+          <h1>Sign Up</h1>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+	  <div class="justify">
+	    <%=image_tag("auth/contact.png")%>
+	    esque vitae in arcu. Phasellus sit amet justo vel neque interdum ornare. Etiam sodales vulputate pellentesque. Phasellus et pretum felis, semper auctor nibh. Suspendisse vive
+	  </div>
 
-  <% if @user.password_required? %>
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+	  <br />
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-  <% end %>
+	  <div class="justify">
+	    <%=image_tag("auth/register.png") %>
+	    esqupe vitae in arcu. Phasellus sit amet justo vel neque interdum ornare. Etiam sodales vulputate pellentesque. Phasellus et pretium felis, semper auctor nibh. Suspendisse viver
+	  </div>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+	  <br />
 
-<%= render "devise/shared/links" %>
+	  <div class="justify">
+	    <%=image_tag("auth/slide-inception.png") %>
+	    esque vitae in arcu. Phasellus sit amet justo vel neque interdum ornare. Etiam sodales vulputate pellentesque. Phasellus et pretium felis, semp
+	  </div>
+
+	  <br />
+
+	  <div class="justify">
+	    <%=image_tag("auth/slide-passion.png") %>
+	    esque vitae in arcu. Phasellus sit amet justo vel neque interdum ornare. Etiam sodales vulputate pellentesque. Phasellus et pret
+
+	  </div>
+
+	</div>
+	<div class="large-4 columns">
+	  <div class="row">
+	    <section class="">
+	      <div class="form_auth rounded">
+		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+
+		  <div class="field">
+		    <label><%=_("Email") %></label>
+		    <%= f.email_field :email, :autofocus => true, :type => "text", :class => "input email", :placeholder=>_("E-mail") %>
+
+		    <% if resource.errors[:email] -%>
+		      <dd class="danger abel"><%= resource.errors[:email][0] %></dd>
+		    <% end -%>
+		  </div>
+
+		  <% if resource.password_required? %>
+		    <div class="field">
+		      <%=_("Password") %>
+		      <%= f.password_field :password, :class => "password input" %>
+		      <% if resource.errors[:password] -%>
+			<dd class="danger abel"><%= resource.errors[:password][0] %></dd>
+		      <% end -%>
+
+		    </div>
+
+		    <div class="field">
+		      <%=_("Confim Password") %>
+		      <%= f.password_field :password_confirmation, :class => "password input" %>
+1
+		    </div>
+
+		  <% end %>
+		  <br>
+		  <div class="submit"><%= f.submit "Sign up" , :class => "button" %></div>
+		<% end %>
+
+	      </div>
+
+	    </section>
+	  </div>
+
+
+	</div>
+
+      </div>
+    </div>
+  </div>
+</div>

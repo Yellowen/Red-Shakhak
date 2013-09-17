@@ -64,6 +64,9 @@ header {
 
 }
 
+.main {
+    min-height:525px;
+}
 
 footer {
     Background: $darkbg;
@@ -150,4 +153,8 @@ form, .form_box{
 
 .inline{
     display:inline;
+}
+
+.justify{
+    text-align:justify;
 }
