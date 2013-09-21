@@ -28,27 +28,53 @@ $lightgray: #7F8C8D;
 $lightergray: #E3E3E3;
 
 $ultra_blue: #F4F4F4;
+
 .emerald {
     background: $emerald;
 }
+
 .orange {
     Background: $orange;
 }
+
 .employment {
     Background: $nephritis;
 }
 
-.stock {
+.alizarin {
     Background: $alizarin;
 }
-.realstate {
+
+.sun_flower {
     Background: $sun_flower;
 }
-.computer {
+
+.peter_river {
     Background: $peter_river;
 }
-.finance {
+
+.wisteria {
     Background: $wisteria;
 }
 
-$text-direction: rtl;
+.amethyst {
+    Background: $amethyst;
+}
+
+.pomegranate {
+    Background: $pomegranate;
+}
+
+.belize_hole {
+    Background: $belize_hole;
+}
+
+.nephritis {
+    background: $nephritis;
+}
+
+.color-white {
+    h1, h2, h3, h4, h5, span, p {
+	color: white;
+    }
+}

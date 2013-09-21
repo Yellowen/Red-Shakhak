@@ -4,9 +4,26 @@
     <%= render "dashboard/sidemenu" %>
     <br />
     <div class="row">
-      <div class="simulator large-11 columns panel ">
+      <div id="es-cost-per-day" class="simulator orange  large-11 columns panel ">
+        <h1>0</h1>
+        <span><%= _('cost per day') %></span>
       </div>
     </div>
+
+    <div class="row">
+      <div id="es-credit" class="simulator large-11 color-white alizarin columns panel ">
+        <h1>0</h1>
+        <span><%= _('credit') %></span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="es-cost" class="simulator large-11 color-white nephritis columns panel">
+        <h1>0</h1>
+        <span><%= _('cost') %></span>
+      </div>
+    </div>
+
   </div>
   <div class="small-12 large-9 columns">
 

@@ -12,4 +12,5 @@
  *= require_tree .
  *= require foundation_and_overrides
  *= require wizard/wizard
+ *= require advertises
  */
