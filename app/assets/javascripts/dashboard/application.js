@@ -18,6 +18,7 @@
 //= require turbolinks
 //= require jquery.turbolinks
 //= require wizard/form_wizard
+//= require advertises
 //= require_tree .
 
 
