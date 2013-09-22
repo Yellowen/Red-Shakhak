@@ -34,7 +34,7 @@
 
     <div class="row">
       <div class="large-6 columns">
-	<%= f.input :size, :label => _("Size"), :placeholder => _("size") + " ..." %>
+	<%= f.input :size, :label => _("Size"), :as => :select, :collection => Advertise::SIZES.collect {|k,v| [v, k]} %>
       </div>
     </div>
   <% end %>
@@ -59,8 +59,8 @@
 
   <% end %>
   <div id="wizardbuttons" class="row actions ">
-    <button class="button red small radius"><%= _("Preview") %></button>
-    <%= f.submit :class => "button success small radius" %>
+    <button class="button red small"><%= _("Preview") %></button>
+    <%= f.submit :class => "button success small" %>
   </div>
 
 <% end %>

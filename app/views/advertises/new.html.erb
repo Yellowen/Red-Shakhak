@@ -4,21 +4,21 @@
     <%= render "dashboard/sidemenu" %>
     <br />
     <div class="row">
-      <div id="es-cost-per-day" class="simulator orange  large-11 columns panel ">
+      <div id="es-cost-per-day" data-warning="1000"  data-danger="500" class="simulator box-noproblem  large-11 columns panel ">
         <h1>0</h1>
         <span><%= _('cost per day') %></span>
       </div>
     </div>
 
     <div class="row">
-      <div id="es-credit" class="simulator large-11 color-white alizarin columns panel ">
+      <div id="es-credit" data-warning="10000" data-danger="5000" class="simulator large-11 box-noproblem columns panel ">
         <h1>0</h1>
         <span><%= _('credit') %></span>
       </div>
     </div>
 
     <div class="row">
-      <div id="es-cost" class="simulator large-11 color-white nephritis columns panel">
+      <div id="es-cost" data-warning="10000" data-danger="5000" class="simulator large-11 box-noproblem columns panel">
         <h1>0</h1>
         <span><%= _('cost') %></span>
       </div>
@@ -36,7 +36,7 @@
   </div>
 
   <div id="newadvertise">
-    <div id="wizard" class="row" data-next="<%= _("Next") %> <i class='icon-chevron-left'></i>" data-prev="<i class='icon-chevron-right'></i> <%= _("Prev") %>" data-btnclass="button small radius secondary" data-steps-name="<%= _("Step") %>">
+    <div id="wizard" class="row" data-next="<%= _("Next") %> <i class='icon-chevron-left'></i>" data-prev="<i class='icon-chevron-right'></i> <%= _("Prev") %>" data-btnclass="button small secondary" data-steps-name="<%= _("Step") %>">
       <div class="small-12 columns">
 
 	<%= render 'form' %>

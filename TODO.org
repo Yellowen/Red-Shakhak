@@ -1,7 +1,7 @@
 * Tasks
 ** TODO provide a suitable message for advertise update message with list of changes.
 ** TODO create a rake task for release time
-** TODO Use foundation js for top nav
+** DONE Use foundation js for top nav
 ** TODO create a message for logs and renews tabs in case of they were empty
 ** TODO bind foundation to page:load event of turbolink
 * Bugs

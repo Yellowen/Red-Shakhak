@@ -14,7 +14,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-
+//= require lib/humanize
 //= require turbolinks
 //= require jquery.turbolinks
 //= require wizard/form_wizard

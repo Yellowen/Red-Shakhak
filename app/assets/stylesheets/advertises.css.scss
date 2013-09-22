@@ -3,11 +3,37 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "variables.css.scss";
-
+@import "compass";
 
 .simulator {
     text-align: center;
+    border-width: 0;
     h1 {
 	font-size: 1.6em;
     }
+}
+
+.box-noproblem {
+    transition: background 300ms linear 0;
+    background: $nephritis;
+    h1, h2, h3, h4, h5, span, p {
+	color: white;
+    }
+
+}
+.box-warning {
+    transition: background 300ms linear 0;
+    background: $orange;
+    h1, h2, h3, h4, h5, span, p {
+	color: white;
+    }
+
+}
+.box-danger {
+    transition: background 300ms linear 0;
+    background: $alizarin;
+    h1, h2, h3, h4, h5, span, p {
+	color: white;
+    }
+
 }
