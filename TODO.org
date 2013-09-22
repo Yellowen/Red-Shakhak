@@ -4,6 +4,7 @@
 ** DONE Use foundation js for top nav
 ** TODO create a message for logs and renews tabs in case of they were empty
 ** TODO bind foundation to page:load event of turbolink
+** TODO fix the compass issue and use compass transition instead of row css in advertises.css.scss
 * Bugs
 ** TODO Back button on advertise/index returns to dashboard
 ** TODO Infinite page script run on dashboard too
