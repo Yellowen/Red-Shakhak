@@ -11,6 +11,8 @@ class Ability
     can :manage, Advertise do |advertise|
       advertise.try(:user) == @user || @user.role?(:moderator)
     end
+
+    can :read, Category
   end
 
   def admin

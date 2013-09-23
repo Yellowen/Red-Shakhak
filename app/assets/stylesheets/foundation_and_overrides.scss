@@ -365,8 +365,8 @@ $fieldset-padding: emCalc(20px) emCalc(30px) emCalc(10px);
 // $alert-bottom-margin: emCalc(20px);
 
 // We use these to style the close buttons
-// $alert-close-color: #333;
-// $alert-close-position: emCalc(5px);
+$alert-close-color: #fff;
+$alert-close-position: emCalc(12px);
 // $alert-close-font-size: emCalc(22px);
 // $alert-close-opacity: 0.3;
 // $alert-close-opacity-hover: 0.5;

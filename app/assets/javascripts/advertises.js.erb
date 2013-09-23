@@ -50,6 +50,7 @@ $(function (){
 
 	}
     }
+
     function update_show_for_days(cost, sfd){
 	var res;
 	if (sfd == 0) {
@@ -81,6 +82,25 @@ $(function (){
     }
 
 
+
+    // Events & handlers -------------------------
+    $("#advertise_title").on("input", function(event) {
+	$("#previewad .title").html($(this).val());
+    });
+
+    $("#advertise_category_id").on("change", function(){
+	// TODO: prevent hardcoding url in code.
+	$.ajax({url: "/dashboard/categories/" + $(this).val() + ".json"})
+	    .done(function(data){
+		$("#previewad div:first-child").removeClass().addClass(data.cssclass);
+
+	    })
+	    .fail(function(err){
+		console.dir(err);
+		$("#flash-alert p").text('<%= _("Some thing goes wrong please try again and select a category.") %>')
+		$("#flash-alert").fadeIn(300).delay(5000).fadeOut(300);
+	    });
+    });
     $("#advertise_show_for_days").on("input", function(event){
 	console.log("sfd changed");
 	var value = $(this).val();
@@ -99,4 +119,18 @@ $(function (){
 	update_credit(res);
 	update_cost(value);
     });
+
+    $("#preview").on("click", function(event) {
+	event.preventDefault();
+	$("#newadvertise").fadeOut(400);
+	$("#adpreview").delay(400).fadeIn(400);
+    });
+
+    $("#backtowizard").on("click", function(event) {
+	event.preventDefault();
+	$("#adpreview").fadeOut(400);
+	$("#newadvertise").delay(400).fadeIn(400);
+    });
+
+
 });

@@ -9,9 +9,9 @@
   <title><%=t :shakhak %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "dashboard/application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "dashboard/application" %>
-  <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    "dashboard/application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "dashboard/application" %>
+    <%= csrf_meta_tags %>
 </head>
 
 <body>
@@ -35,8 +35,14 @@
 
       <div class="row">
 	<div class="small-12 large-12">
-	  <p class="text-success"><%= notice %></p>
-	  <p class="text-error"><%= alert %></p>
+	  <div id="flash-success" class="flash flash-success"  <% if notice == nil %>style="display: none;"<% end %>>
+	    <p  class="text-success"><%= notice %></p>
+	    <span data-target="flash-sucess" class="close">&times;</span>
+	  </div>
+	  <div id="flash-alert" class="flash flash-alert" <% if alert == nil %>style="display: none;"<% end %>>
+	    <p class="text-error"><%= alert %></p>
+	    <span data-target="flash-alert" class="close">&times;</span>
+	  </div>
 	</div>
       </div>
     <%= yield %>

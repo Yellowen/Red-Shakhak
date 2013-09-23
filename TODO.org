@@ -4,6 +4,8 @@
 ** DONE Use foundation js for top nav
 ** TODO create a message for logs and renews tabs in case of they were empty
 ** TODO bind foundation to page:load event of turbolink
+** TODO add a flash UI in each layout
+*** TODO change advertise new and edit wizard (category change event) to use new flash UI
 ** TODO fix the compass issue and use compass transition instead of row css in advertises.css.scss
 * Bugs
 ** TODO Back button on advertise/index returns to dashboard

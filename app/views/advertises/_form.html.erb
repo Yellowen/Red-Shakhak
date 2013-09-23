@@ -11,6 +11,7 @@
 	  <div class="small-6 columns">
 	    <div class="custom dropdown">
 	      <%= f.input :category, :label => _("Category"), :class => "medium", :placeholder => _("category") + " ..." %>
+
 	    </div>
 	  </div>
  	</div>
@@ -58,8 +59,9 @@
     </div>
 
   <% end %>
+
   <div id="wizardbuttons" class="row actions ">
-    <button class="button red small"><%= _("Preview") %></button>
+    <button id="preview" class="button red small"><%= _("Preview") %></button>
     <%= f.submit :class => "button success small" %>
   </div>
 
