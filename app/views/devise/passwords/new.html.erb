@@ -11,11 +11,12 @@
 	</div>
 	<div class="large-5 columns">
 
-
+	  <div class="form">
 	  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
 	    <%= devise_error_messages! %>
 
-	    <div><%= f.label :email %><br />
+	    <div class="field">
+	      <label><%= f.label :email %></label>
 	      <%= f.email_field :email, :autofocus => true %></div>
 
 	    <div class="submit"><%= f.submit _("Send me reset password instructions"), :class=>"button" %>
@@ -23,7 +24,7 @@
 	      <%= render "devise/shared/links" %>
 	    </div>
 	  <% end %>
-
+	  </div>
 
 	</div>
       </div>
