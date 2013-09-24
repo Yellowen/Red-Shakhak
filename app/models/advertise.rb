@@ -31,7 +31,7 @@ class Advertise < ActiveRecord::Base
   :path => ":rails_root/public/assets/advertises/pictures/:class/:attachment/:style/:filename"
 
 
-  validates :picture, :attachment_presence => true
+  #validates :picture, :attachment_presence => true
   validates :title, presence: true, length: { maximum: 200 }
   validates :category_id, presence: true
   validates :show_for_days, numericality: {

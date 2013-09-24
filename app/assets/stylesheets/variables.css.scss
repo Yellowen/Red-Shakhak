@@ -1,3 +1,5 @@
+$base_unit: 150px;
+
 $headerbg: #242628;
 $darkbg: #202224;
 
@@ -38,7 +40,7 @@ $ultra_blue: #F4F4F4;
 }
 
 .employment {
-    Background: $nephritis;
+    border-top: 3px solid $nephritis;
 }
 
 .alizarin {

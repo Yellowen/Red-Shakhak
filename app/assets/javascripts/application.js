@@ -15,6 +15,7 @@
 //= require foundation
 //= require turbolinks
 //= require jquery.turbolinks
+//= require lib/humanize
 //= require advertises
 //= require_directory .
 

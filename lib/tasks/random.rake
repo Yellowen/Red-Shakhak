@@ -30,7 +30,7 @@ namespace :random do
 
     1.upto(1000) do |i|
       puts "Create \##{i}"
-      Advertise.create(:title => generate_random_string,
+      Advertise.create!(:title => generate_random_string,
                        :user_id => 1 + rand(user_count),
                        :category_id => 1 + rand(CATEGORIES.length),
                        :size => 1 + rand(Advertise::SIZES.length),

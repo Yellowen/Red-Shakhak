@@ -132,5 +132,9 @@ $(function (){
 	$("#newadvertise").delay(400).fadeIn(400);
     });
 
+    $("#advertise_size").on("change", function(event) {
+	var classvalue = $(this).find("option[value='" + $(this).val() + "']").text();
+	$("#previewad").removeClass().addClass("box box" + classvalue);
+    });
 
 });
