@@ -162,7 +162,7 @@ footer {
     display: block;
     overflow: hidden;
 
-    div:first-child {
+    & > div:first-child {
 	display: block;
 	height: 100%;
 
@@ -177,17 +177,66 @@ footer {
 
 	}
     }
+    .iconsection {
+	position: absolute;
+	bottom: 1px;
+	height: 1.5em;
+	width: 100%;
+	display: none;
+	Background: rgba(50,50,50, 0.15);
+
+	ul {
+	    list-style: none;
+	    margin-bottom: 0;
+	    padding: 3px 8px;
+
+	    li {
+		display: inline;
+		color: white;
+		padding: 0px 4px;
+		cursor: pointer;
+		opacity: 0.5;
+		&:hover {
+		    opacity: 1;
+		}
+	    }
+	}
+    }
+
+    .bottombanner {
+	height: $box-bottom-border;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	transition: height 300ms ease-out 0ms;
+    }
+
+    .banner{
+	height: 50%;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	transition: height 300ms ease-in 0ms;
+
+    }
 }
 
 
 .box1x1 {
     width: $base_unit;
     height: $base_unit;
+    .banner {
+	height: 100%;
+    }
+
 }
 
 .box2x1 {
     width: $base_unit * 2;
     height: $base_unit;
+    .banner {
+	height: 100%;
+    }
 }
 
 .box1x2 {
@@ -215,6 +264,9 @@ footer {
 .box3x1 {
     width: $base_unit * 3;
     height: $base_unit;
+    .banner {
+	height: 100%;
+    }
 }
 
 .box1x3 {

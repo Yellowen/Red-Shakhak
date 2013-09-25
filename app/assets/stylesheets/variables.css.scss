@@ -31,6 +31,8 @@ $lightergray: #E3E3E3;
 
 $ultra_blue: #F4F4F4;
 
+$box-bottom-border: 4px;
+
 .emerald {
     background: $emerald;
 }
@@ -39,9 +41,6 @@ $ultra_blue: #F4F4F4;
     Background: $orange;
 }
 
-.employment {
-    border-top: 3px solid $nephritis;
-}
 
 .alizarin {
     Background: $alizarin;
@@ -79,4 +78,15 @@ $ultra_blue: #F4F4F4;
     h1, h2, h3, h4, h5, span, p {
 	color: white;
     }
+}
+
+.employment {
+    background: $nephritis;
+}
+
+.computer {
+    background: $orange;
+}
+.stock {
+    background: $alizarin;
 }

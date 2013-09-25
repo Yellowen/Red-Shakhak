@@ -1,19 +1,46 @@
-
 <%= link_to_function "click here", "load_page(3)" %>
 
 <script type="text/html" id="boxtemplate">
-  <div class='box box{{ print(ad.get("get_size")) }} {{ print(ad.get("category").cssclass) }}' id="ad{{ print(ad.get("id"))}}">
-    <div class='palette innerbox'>
-      {{ print(ad.get("title")) }} - {{ print(ad.get("cost_per_day")) }}
-    </div>
-  </div>
+
+      <div class="box box{{ print(ad.get("get_size")) }}" id="ad{{ print(ad.get("id"))}}">
+	<div>
+	  <h1 class="title">{{ print(ad.get("title")) }}</h1>
+	  {{ print(ad.get("cost_per_day")) }}
+	</div>
+
+	<div class="bottombanner {{ print(ad.get("category").cssclass) }}">
+	  <div class="iconsection">
+	    <ul>
+	      <li class="category"><i class="icon-sitemap"></i></li>
+	      <li class="tag"><i class="icon-tag"></i></li>
+	      <li class="user"><i class="icon-user"></i></li>
+	      <li class="filter"><i class="icon-filter"></i></li>
+	    </ul>
+	</div>
+
+	</div>
+      </div>
+
 </script>
 
 <div id="adbox">
     <% @advertises.each do |advertise| %>
-      <div id="previewad" class="box box<%= advertise.get_size %>">
-	<div id="innerbox" class="<%= advertise.category.cssclass %>">
+
+      <div id="ad<%= advertise.id %>" class="box box<%= advertise.get_size %>">
+	<div id="innerbox" >
 	  <h1 class="title"><%= advertise.title %></h1>
+
+	</div>
+
+	<div class="bottombanner <%= advertise.category.cssclass %>">
+	  <div class="iconsection">
+	    <ul>
+	      <li class="category"><i class="icon-sitemap"></i></li>
+	      <li class="tag"><i class="icon-tag"></i></li>
+	      <li class="user"><i class="icon-user"></i></li>
+	      <li class="filter"><i class="icon-filter"></i></li>
+	    </ul>
+	</div>
 
 	</div>
       </div>

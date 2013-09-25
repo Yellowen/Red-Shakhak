@@ -20,9 +20,7 @@ $(function (){
 	return Humanize.intComma(val);
     }
 
-    function check_range(element, value){
-	var warn = parseInt($(element).data("warning"));
-	var dang = parseInt($(element).data("danger"));
+    function check_range(element, value, warn, dang){
 
 	if ((value <= warn) & (value > dang)) {
 
@@ -52,7 +50,11 @@ $(function (){
     }
 
     function update_show_for_days(cost, sfd){
+	var credit = parseInt($("#credit").data("value"));
 	var res;
+	var warn = parseInt($(es_cost_per_day).data("warning"));
+	var dang = parseInt($(es_cost_per_day).data("danger"));
+
 	if (sfd == 0) {
 	    res = 0;
 	}
@@ -62,23 +64,28 @@ $(function (){
 
 	$(es_cost_per_day).data("value", res);
 	$(es_cost_per_day).find("h1").html(humanize(res));
-	check_range(es_cost_per_day, res);
+	check_range(es_cost_per_day, credit - res, warn, dang);
 	return res;
     }
 
     function update_credit(cpd){
 	var credit = parseInt($("#credit").data("value"));
-	console.log(credit);
+	var warn = parseInt($(es_credit).data("warning"));
+	var dang = parseInt($(es_credit).data("danger"));
+
 	credit = credit - cpd;
 	$(es_credit).find("h1").html(humanize(credit));
 	$(es_credit).data("value", credit);
-	check_range(es_credit, credit);
+	check_range(es_credit, credit, warn, dang);
     }
 
     function update_cost(cost) {
+	var credit = parseInt($("#credit").data("value"));
+	var warn = parseInt($(es_cost).data("warning"));
+	var dang = parseInt($(es_cost).data("danger"));
 	$(es_cost).find("h1").html(humanize(cost));
 	$(es_cost).data("value", cost);
-	check_range(es_cost, cost);
+	check_range(es_cost, credit - cost, warn, dang);
     }
 
 
@@ -137,4 +144,21 @@ $(function (){
 	$("#previewad").removeClass().addClass("box box" + classvalue);
     });
 
+    // Each advertise box events
+    $(document).on("mouseover", '.box', function(event) {
+	/*var height = $(this).height();
+	var hoverheight = height / 2;
+
+	if(height <= document.baseunit) {
+	    hoverheight = height;
+	}*/
+	//$('iconsection').not($(this).find('iconsection')).hide();
+	$(this).find(".bottombanner").removeClass("bottombanner").addClass("banner").find(".iconsection").fadeIn(300);
+
+    });
+
+    $(document).on("mouseleave", '.box', function(event) {
+	$(this).find(".iconsection").hide();
+	$(this).find(".banner").removeClass("banner").addClass("bottombanner");
+    });
 });
