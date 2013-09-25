@@ -99,7 +99,7 @@ $(function (){
 	// TODO: prevent hardcoding url in code.
 	$.ajax({url: "/dashboard/categories/" + $(this).val() + ".json"})
 	    .done(function(data){
-		$("#previewad div:first-child").removeClass().addClass(data.cssclass);
+		$("#banner").removeClass().addClass("bottombanner").addClass(data.cssclass);
 
 	    })
 	    .fail(function(err){
