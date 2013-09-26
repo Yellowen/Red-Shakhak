@@ -8,9 +8,12 @@
 *** TODO change advertise new and edit wizard (category change event) to use new flash UI
 ** TODO fix the compass issue and use compass transition instead of row css in advertises.css.scss
 ** TODO Show some error flash in case of endless script fails.
+
 * Bugs
 ** TODO Back button on advertise/index returns to dashboard
 ** TODO Infinite page script run on dashboard too
 ** TODO check oAuth urls
+** TODO categories should be unique
+
 * Releases
 ** TODO replace the omnit auth services keys with secure versions

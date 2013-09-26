@@ -88,7 +88,11 @@ $(function (){
 	check_range(es_cost, credit - cost, warn, dang);
     }
 
-
+    function fix_size() {
+        var total_height = $("#previewad").height();
+        var total_width = $("#previewad").width();
+        $("#banner").width(total_width);
+    }
 
     // Events & handlers -------------------------
     $("#advertise_title").on("input", function(event) {
@@ -142,6 +146,7 @@ $(function (){
     $("#advertise_size").on("change", function(event) {
 	var classvalue = $(this).find("option[value='" + $(this).val() + "']").text();
 	$("#previewad").removeClass().addClass("box box" + classvalue);
+        fix_size();
     });
 
     // Each advertise box events
