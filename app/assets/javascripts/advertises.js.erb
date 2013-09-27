@@ -163,7 +163,19 @@ $(function (){
     });
 
     $(document).on("mouseleave", '.box', function(event) {
+        var containers = $(this).data("container-class");
+        console.log(containers);
+        console.log($(this).find("." + containers));
+        $(this).find("." + containers).hide();
 	$(this).find(".iconsection").hide();
 	$(this).find(".banner").removeClass("banner").addClass("bottombanner");
+    });
+
+    $(".bannerbtn").on("click", function(event){
+        var cclass = $(this).data("container-class");
+        var target = $(this).data("target");
+        $("." + cclass).hide();
+        $("#" + target).fadeIn(300);
+
     });
 });

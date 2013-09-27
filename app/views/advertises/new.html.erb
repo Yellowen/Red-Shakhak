@@ -54,7 +54,7 @@
     <div id="preview-container"class="row"><div class="small-12 columns">
 
         <!-- adbox -->
-        <div id="previewad" class="box">
+        <div id="previewad" class="box" data-container-class="bannercontainers">
 	  <div id="innerbox">
 	    <h1 class="title"></h1>
 
@@ -62,12 +62,19 @@
 
 
 	  <div id="banner" class="bottombanner">
+
+
+            <div id="category-banner" class="bannercontainers">asdasdacsd</div>
+            <div id="tag-banner" class="bannercontainers">asdasd</div>
+            <div id="user-banner" class="bannercontainers">sdfsdfsd</div>
+            <div id="filter-banner" class="bannercontainers">xcvxcvxcv</div>
+
 	    <div class="iconsection">
 	      <ul>
-	        <li class="category"><i class="icon-sitemap"></i></li>
-	        <li class="tag"><i class="icon-tag"></i></li>
-	        <li class="user"><i class="icon-user"></i></li>
-	        <li class="filter"><i class="icon-filter"></i></li>
+	        <li class="bannerbtn category" data-container-class="bannercontainers" data-target="category-banner"><i class="icon-sitemap"></i></li>
+	        <li class="bannerbtn tag" data-container-class="bannercontainers" data-target="tag-banner"><i class="icon-tag"></i></li>
+	        <li class="bannerbtn user" data-container-class="bannercontainers" data-target="user-banner"><i class="icon-user"></i></li>
+	        <li class="bannerbtn filter" data-container-class="bannercontainers" data-target="filter-banner"><i class="icon-filter"></i></li>
 	      </ul>
 	    </div>
 	  </div>
