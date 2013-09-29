@@ -21,10 +21,24 @@
 //= require wizard/form_wizard
 //= require advertises
 //= require base
+//= require lib/jquery.qtip.min.js
 //= require_tree .
 
 
 $(function(){
     $("#wizard").wizard({});
     $(document).foundation();
+    $('[data-tip!=""]').qtip({ // Grab all elements with a non-blank data-tooltip attr.
+        content: {
+            attr: 'data-tip' // Tell qTip2 to look inside this attr for it's content
+        },
+        position: {
+            my: 'top center'
+        },
+        style: {
+            classes: 'qtip-dark qtip-shadow'
+        }
+    });
+
+
 });
