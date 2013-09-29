@@ -1,63 +1,36 @@
 <div class="row dashbody">
 
   <div class="large-12 small-12 columns">
-  <div class="section-container tabs" data-section>
-    <section>
-      <p class="title" data-section-title><a href="#panel1"><%= _("Advertises") %></a></p>
-      <div class="content" data-section-content>
+    <div class="section-container tabs" data-section>
+      <section>
+	<p class="title" data-section-title><a href="#panel1"><%= _("Advertises") %></a></p>
+	<div class="content" data-section-content>
 
 
-	<div class="row">
-	  <div class="small-12 columns large-9">
-	    <%= link_to _("New advertise"), new_advertise_path,  class: add_btn_class + " radius small", icons: add_btn_icon %>
+	  <div class="row">
+	    <div class="small-12 columns large-9">
+	      <%= link_to _("New advertise"), new_advertise_path,  class: add_btn_class + " radius small", icons: add_btn_icon %>
+	    </div>
 	  </div>
-	</div>
-	<div class="row">
-	  <div class="small-12 columns large-9">
-	    <% if not @advertises.empty? %>
-	      <table class="table table-striped span12">
-		<thead>
-		  <tr>
-		    <th>#</th>
-		    <th><%= _("title") %></th>
-		    <th><%= _("cost") %></th>
-		    <th><%= _("category") %></th>
-		    <th><%= _("show for days") %></th>
-		    <th><%= _("cost per day") %></th>
-		    <th><%= _("remaining days") %></th>
-		    <th class="hide-for-small"><%= _("size") %></th>
-		    <th class="hide-for-small"><%= _("active") %></th>
-		    <th></th>
-		    <th></th>
-		  </tr>
+	  <div class="row">
+	    <div class="small-12 columns large-12">
+	      <% if not @advertises.empty? %>
+		<div class="table-list advertise-list span12">
+		  <ul>
+		    <% @advertises.each do |advertise| %>
+		      <li>
+			<div class="inline right">"<%= advertise.title %></div>
+			<div class="inline left">
+			  <%= link_to '', advertise, method: :delete, data: { confirm: 'Are you sure?'}, class: del_btn_class, icons: del_btn_icon %>
+			</div>
+			<div class="inline left">
+			  <%= link_to "", edit_advertise_path(advertise), class: edit_btn_class, icons: edit_btn_icon %>
+			</div>
+		      </li>
+		    <% end %>
+		  </ul>
 
-		</thead>
-		<tbody>
-		  <% @advertises.each do |advertise| %>
-		    <% if advertise.is_active? and advertise.remaining_days < 3 %>
-		    <tr class="warning">
-		    <% elsif advertise.is_active? %>
-		    <tr>
-		    <% else %>
-		    <tr class="error">
-		  <% end %>
-
-		  <td><%= advertise.id %></td>
-		  <td><%= link_to advertise.title, advertise %></td>
-		  <td><%= advertise.cost %></td>
-		  <td><%= advertise.category.name %></td>
-		  <td><%= advertise.show_for_days %></td>
-		  <td><%= advertise.cost_per_day %></td>
-		  <td><%= advertise.remaining_days %></td>
-		  <td class="hide-for-small"><%= advertise.get_size %></td>
-		  <td class="hide-for-small"><%= advertise.is_active? %></td>
-		  <td><%= link_to "", edit_advertise_path(advertise), class: edit_btn_class, icons: edit_btn_icon %></td>
-		  <td><%= link_to '', advertise, method: :delete, data: { confirm: 'Are you sure?'}, class: del_btn_class, icons: del_btn_icon %></td>
-</tr>
-
-<% end %>
-</tbody>
-</table>
+	      </div>
 <%= paginate @advertises %>
 
 <% end %>
@@ -67,8 +40,6 @@
 
 
 
-
-</div>
 </section>
 <section>
   <p class="title" data-section-title><a href="#panel-renews"><%= _("Renews") %></a></p>
