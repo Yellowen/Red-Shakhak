@@ -114,17 +114,22 @@ $(function (){
 		$("#flash-alert").fadeIn(300).delay(5000).fadeOut(300);
 	    });
     });
+
+    $("#advertise_tag_list").on("input", function(event){
+        var tagstr = $(this).val();
+        if (tagstr.split(",").length > 1) {
+        }
+    });
     $("#advertise_show_for_days").on("input", function(event){
-	console.log("sfd changed");
 	var value = $(this).val();
 	var cost = $("#advertise_cost").val();
 	// TODO: handle invalid type value
 	var res = update_show_for_days(cost, value);
 	update_credit(res);
 	update_cost(cost);
+
     });
     $("#advertise_cost").on("input", function(event){
-	console.log("cost changed");
 	var value = $(this).val();
 	var sfd = $("#advertise_show_for_days").val();
 	// TODO: handle invalid type value
@@ -166,8 +171,6 @@ $(function (){
 
     $(document).on("mouseleave", '.box', function(event) {
         var containers = $(this).data("container-class");
-        console.log(containers);
-        console.log($(this).find("." + containers));
         $(this).find("." + containers).hide();
 	$(this).find(".iconsection").hide();
 	$(this).find(".banner").removeClass("banner").addClass("bottombanner");
