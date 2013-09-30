@@ -13,6 +13,6 @@
  *= require index
  *= require foundation_and_overrides
  *= require base
- *= require jquery.qtip.min.css
+ *= require jquery.qtip.css
  *= require font-awesome
  */

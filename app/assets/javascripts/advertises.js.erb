@@ -104,11 +104,13 @@ $(function (){
 	$.ajax({url: "/dashboard/categories/" + $(this).val() + ".json"})
 	    .done(function(data){
 		$("#banner").removeClass().addClass("bottombanner").addClass(data.cssclass);
-
+                $("#preview-category-id").data("tip", data.name);
+                var api = $("#preview-category-id").qtip('api');
+                api.set({"content.text": data.name, "content.title": "<%= _('category') %>"});
 	    })
 	    .fail(function(err){
 		console.dir(err);
-		$("#flash-alert p").text('<%= _("Some thing goes wrong please try again and select a category.") %>')
+		$("#flash-alert p").text('<%= _("Some thing goes wrong please try again and select a category.") %>');
 		$("#flash-alert").fadeIn(300).delay(5000).fadeOut(300);
 	    });
     });
@@ -171,11 +173,4 @@ $(function (){
 	$(this).find(".banner").removeClass("banner").addClass("bottombanner");
     });
 
-    $(".bannerbtn").on("click", function(event){
-        var cclass = $(this).data("container-class");
-        var target = $(this).data("target");
-        $("." + cclass).hide();
-        $("#" + target).fadeIn(300);
-
-    });
 });

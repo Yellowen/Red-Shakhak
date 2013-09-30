@@ -18,7 +18,7 @@
 //= require jquery.turbolinks
 //= require lib/humanize
 //= require advertises
-//= require lib/jquery.qtip.min.js
+//= require lib/jquery.qtip.js
 //= require_directory .
 
 $(document).foundation();
