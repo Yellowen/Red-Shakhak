@@ -226,11 +226,11 @@ footer {
 	list-style: none;
 	li {
 	    line-height:28px;
-	    height:28px;
+	    min-height:28px;
 	    margin:2px;
-	    border:solid 1px $lightgray;
-	    background-color:$lightergray;
-	    opacity: 0.7;
+	    border:solid 1px #E6E6E6;
+	    background-color:#EFEFEF;
+	    opacity: 0.8;
 	    &:hover {
 		opacity: 1;
 	    }
@@ -240,6 +240,11 @@ footer {
 	    }
 	}
     }
+}
+
+
+.overload{
+  display:none;
 }
 
 /* Advertisment boxes */
