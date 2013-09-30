@@ -221,7 +221,28 @@ footer {
     }
 }
 
+.table-list{
+    ul {
+	list-style: none;
+	li {
+	    line-height:28px;
+	    height:28px;
+	    margin:2px;
+	    border:solid 1px $lightgray;
+	    background-color:$lightergray;
+	    opacity: 0.7;
+	    &:hover {
+		opacity: 1;
+	    }
+	    div {
+		padding-right:10px;
+		padding-left:10px;
+	    }
+	}
+    }
+}
 
+/* Advertisment boxes */
 .box1x1 {
     width: $base_unit;
     height: $base_unit;
