@@ -14,5 +14,6 @@
  *= require wizard/wizard
  *= require base
  *= require advertises
+ *= require jquery.qtip.min.css
  *= require font-awesome
  */
