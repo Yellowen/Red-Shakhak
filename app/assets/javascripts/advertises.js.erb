@@ -115,10 +115,25 @@ $(function (){
 	    });
     });
 
+    // Tag input change event
     $("#advertise_tag_list").on("input", function(event){
         var tagstr = $(this).val();
+        $("#preview-tag").data("tip", tagstr);
+        var api = $("#preview-tag").qtip('api');
+        api.set({"content.text": tagstr, "content.title": "<%= _('tags list') %>"});
+
+        /*
         if (tagstr.split(",").length > 1) {
+            // if tags splited by comma
+
         }
+        else if (tagstr.split("،").length > 1) {
+            // if tags splited by persian comma
+        }
+        else {
+
+        }*/
+
     });
     $("#advertise_show_for_days").on("input", function(event){
 	var value = $(this).val();
