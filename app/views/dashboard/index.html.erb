@@ -19,15 +19,11 @@
 		  <ul>
 		    <% @advertises.each do |advertise| %>
 		      <li>
-<<<<<<< HEAD
 			<div class="inline right">
                           <a href="javascript:void(0);" class="dashboard-show-overload">
                             <%= advertise.title %>
                           </a>
                         </div>
-=======
-			<div class="inline right"><%= advertise.title %></div>
->>>>>>> add84021ecf1714f34f36919d0306d635be64612
 			<div class="inline left">
 			  <%= link_to '', advertise, method: :delete, data: { confirm: 'Are you sure?'}, class: del_btn_class, icons: del_btn_icon %>
 			</div>
