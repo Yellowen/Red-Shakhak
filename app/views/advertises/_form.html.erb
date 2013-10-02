@@ -45,7 +45,7 @@
     <p><%= _("details description") %></p>
     <div class="row">
       <div class="large-6 columns">
-	<%= f.input :tag_list, :label => _("Tags"), :placeholder => _("Use ',' as separator") + " ..." %>
+	<%= f.input :tag_list, :label => _("Tags"), :placeholder => _("Use ',' as separator").html_safe + " ..." %>
       </div>
       <div class="large-6 columns">
 	<%= f.input :picture, :label => _("Image"), :placeholder => _("Picture") + " ..." %>
@@ -53,7 +53,7 @@
     </div>
     <br />
     <div class="row">
-      <div class="large-6 columns">
+      <div class="large-12 columns">
 	<%= f.input :description, :label => _("Description"), :placeholder => _("Complete description of you advertise") + " ..." %>
       </div>
     </div>

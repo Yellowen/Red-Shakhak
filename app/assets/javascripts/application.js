@@ -20,5 +20,22 @@
 //= require advertises
 //= require lib/jquery.qtip.js
 //= require_directory .
-
-$(document).foundation();
+$(function(){
+    $(document).foundation();
+    var tooltip = $('[data-tip!=""]').qtip({ // Grab all elements with a non-blank data-tooltip attr.
+        content: {
+            attr: 'data-tip'
+        },
+        position: {
+            my: 'bottom center',
+            at: 'top center',
+            viewport: $(window)
+        },
+        style: {
+            classes: 'qtip-tipsy',
+            tip: {
+                corner: "bottom center"
+            }
+        }
+    });
+});

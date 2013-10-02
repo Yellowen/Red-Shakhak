@@ -46,6 +46,16 @@ class Advertise < ActiveRecord::Base
 
   validates_inclusion_of :size, :in => SIZES.keys
 
+  # TODO: implement views counts
+  def views
+    0
+  end
+
+  # impelement like counts
+  def likes
+    0
+  end
+
   def self.get_sizes
     SIZES.to_a.reverse_each {|x| x.reverse!}
   end

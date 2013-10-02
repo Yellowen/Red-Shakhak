@@ -287,7 +287,11 @@ footer {
     height: $base_unit;
     .banner {
 	height: 100%;
+        .ad-info {
+          padding-top: 10%;
+        }
     }
+
 }
 
 .box1x3 {
