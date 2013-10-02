@@ -1,12 +1,11 @@
 $base_unit: 150px;
 
-$headerbg: #242628;
+$headerbg: #3f4143;
 $darkbg: #202224;
 
 $clouds: #ecf0f1;
 $silver: #bdc3c7;
 
-$hover-box: #000000;
 $turquoise: #16a085;
 
 $emerald: #2ecc71;
@@ -32,6 +31,7 @@ $lightergray: #E3E3E3;
 $ultra_blue: #F4F4F4;
 
 $box-bottom-border: 4px;
+$hover-box: $emerald;
 
 .emerald {
     background: $emerald;

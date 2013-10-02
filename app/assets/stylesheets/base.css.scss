@@ -51,16 +51,17 @@ header {
 
       li {
 	 display: inline;
-	 min-width:58px;
+         min-width:58px;
+
 	 a {
-	    font-size:14px;
+	    font-size: 14px;
 	    color: $clouds !important;
 	    text-decoration: none;
-	    padding: 17px 20px;
-	    line-height:60px;
+	    padding: 17px 20px 12px;
+	    line-height: 60px;
 	 }
 	 a:hover {
-	    Background: $hover-box;
+           border-bottom: 5px solid $hover-box;
 	 }
       }
    }

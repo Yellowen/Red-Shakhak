@@ -1,4 +1,0 @@
-$(".dashboard-show-overload").click(function() {
-    alert("dfdf");
-    $(this).find(".overload").show();
-});
