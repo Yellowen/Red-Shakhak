@@ -304,11 +304,15 @@ table{
 }
 
 .box3x1 {
-   width: $base_unit * 3;
-   height: $base_unit;
-   .banner {
-      height: 100%;
-   }
+
+    width: $base_unit * 3;
+    height: $base_unit;
+    .banner {
+	height: 100%;
+        .ad-info {
+          padding-top: 10%;
+        }
+    }
 }
 
 .box1x3 {

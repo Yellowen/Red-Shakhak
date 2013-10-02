@@ -155,8 +155,10 @@ $(function (){
 
     $("#preview").on("click", function(event) {
 	event.preventDefault();
+        fix_size();
 	$("#newadvertise").fadeOut(400);
 	$("#adpreview").delay(400).fadeIn(400);
+
     });
 
     $("#backtowizard").on("click", function(event) {
@@ -180,7 +182,8 @@ $(function (){
 	    hoverheight = height;
 	}*/
 	//$('iconsection').not($(this).find('iconsection')).hide();
-	$(this).find(".bottombanner").removeClass("bottombanner").addClass("banner").find(".iconsection").fadeIn(300);
+	$(this).find(".bottombanner").removeClass("bottombanner").addClass("banner").find(".iconsection, .bannercontainers").fadeIn(500);
+
 
     });
 
@@ -191,4 +194,15 @@ $(function (){
 	$(this).find(".banner").removeClass("banner").addClass("bottombanner");
     });
 
+    // Set proper place for ad-info
+    $(".box").find(".ad-info").css("padding-top", function(){
+
+        var h = $(this).parent().parent().height();
+        // bannerheight 1 is for 1x1 2x1 and 3x1 boxes
+        var bannerheight = 1;
+        if (h > document.baseunit) {
+            bannerheight = 2;
+        }
+        return h / (3 * bannerheight);
+    });
 });

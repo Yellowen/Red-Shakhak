@@ -2,48 +2,61 @@
 
 <script type="text/html" id="boxtemplate">
 
-      <div class="box box{{ print(ad.get("get_size")) }}" id="ad{{ print(ad.get("id"))}}">
-	<div>
-	  <h1 class="title">{{ print(ad.get("title")) }}</h1>
-	  {{ print(ad.get("cost_per_day")) }}
-	</div>
+        <!-- adbox -->
+        <div id="ad{{ print(ad.get('id')) }}" class="box box{{ print(ad.get("get_size")) }}" data-container-class="bannercontainers">
+	  <div>
+	    <h1 class="title">{{ print(ad.get("title")) }}</h1>
+	  </div>
 
-	<div class="bottombanner {{ print(ad.get("category").cssclass) }}">
-	  <div class="iconsection">
-	    <ul>
-	      <li class="category"><i class="icon-sitemap"></i></li>
-	      <li class="tag"><i class="icon-tag"></i></li>
-	      <li class="user"><i class="icon-user"></i></li>
-	      <li class="filter"><i class="icon-filter"></i></li>
-	    </ul>
-	</div>
+          <div id="banner" class="bottombanner {{ print(ad.get("category").cssclass) }}">
+
+            <div class="ad-info bannercontainers">
+              <div><span><i  data-tip="likes" class="icon-thumbs-up"></i> {{ print(ad.get("likes") }}</span></div>
+              <div><span><i  data-tip="views" class="icon-eye-open"></i> {{ print(ad.get("views") }}</span></div>
+            </div>
+	    <div class="iconsection">
+	      <ul>
+	        <li id="preview-category-id" class="category" data-tip="{{ print(ad.get("category").name) }}" data-title="<%= _("category") %>"><i class="icon-sitemap"></i></li>
+	        <li id="preview-tag" class="tag" data-tip="{{ print(ad.get('tags')) }}" data-title=<%= _("tags list") %>><i class="icon-tag"></i></li>
+	        <!--<li class="user"><i class="icon-user"></i></li>-->
+	        <li class="filter" data-tip="<%= _("Filter similar advertises") %>"><i class="icon-filter"></i></li>
+	      </ul>
+	    </div>
+	  </div>
 
 	</div>
-      </div>
+        <!-- addbox -->
 
 </script>
 
 <div id="adbox">
     <% @advertises.each do |advertise| %>
 
-      <div id="ad<%= advertise.id %>" class="box box<%= advertise.get_size %>">
-	<div id="innerbox" >
-	  <h1 class="title"><%= advertise.title %></h1>
+        <!-- adbox -->
+        <div id="ad<%= advertise.id %>" class="box box<%= advertise.get_size %>" data-container-class="bannercontainers">
+	  <div>
+	    <h1 class="title"><%= advertise.title %></h1>
+	  </div>
+
+          <div id="banner" class="bottombanner <%= advertise.category.cssclass %>">
+
+            <div class="ad-info bannercontainers">
+              <div><span><i  data-tip="likes" class="icon-thumbs-up"></i> <%= advertise.likes %></span></div>
+              <div><span><i  data-tip="views" class="icon-eye-open"></i> <%= advertise.views %></span></div>
+            </div>
+	    <div class="iconsection">
+	      <ul>
+	        <li id="preview-category-id" class="category" data-tip="<%= advertise.category %>" data-title="<%= _("category") %>"><i class="icon-sitemap"></i></li>
+	        <li id="preview-tag" class="tag" data-tip="<%= advertise.tags.join(" ") %>" data-title=<%= _("tags list") %>><i class="icon-tag"></i></li>
+	        <!--<li class="user"><i class="icon-user"></i></li>-->
+	        <li class="filter" data-tip="<%= _("Filter similar advertises") %>"><i class="icon-filter"></i></li>
+	      </ul>
+	    </div>
+	  </div>
 
 	</div>
+        <!-- addbox -->
 
-	<div class="bottombanner <%= advertise.category.cssclass %>">
-	  <div class="iconsection">
-	    <ul>
-	      <li class="category"><i class="icon-sitemap"></i></li>
-	      <li class="tag"><i class="icon-tag"></i></li>
-	      <li class="user"><i class="icon-user"></i></li>
-	      <li class="filter"><i class="icon-filter"></i></li>
-	    </ul>
-	</div>
-
-	</div>
-      </div>
 
     <% end %>
 </div>
