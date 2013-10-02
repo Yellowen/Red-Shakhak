@@ -104,25 +104,47 @@ $(function (){
 	$.ajax({url: "/dashboard/categories/" + $(this).val() + ".json"})
 	    .done(function(data){
 		$("#banner").removeClass().addClass("bottombanner").addClass(data.cssclass);
-
+                $("#preview-category-id").data("tip", data.name);
+                var api = $("#preview-category-id").qtip('api');
+                api.set({"content.text": data.name, "content.title": "<%= _('category') %>"});
 	    })
 	    .fail(function(err){
 		console.dir(err);
-		$("#flash-alert p").text('<%= _("Some thing goes wrong please try again and select a category.") %>')
+		$("#flash-alert p").text('<%= _("Some thing goes wrong please try again and select a category.") %>');
 		$("#flash-alert").fadeIn(300).delay(5000).fadeOut(300);
 	    });
     });
+
+    // Tag input change event
+    $("#advertise_tag_list").on("input", function(event){
+        var tagstr = $(this).val();
+        $("#preview-tag").data("tip", tagstr);
+        var api = $("#preview-tag").qtip('api');
+        api.set({"content.text": tagstr, "content.title": "<%= _('tags list') %>"});
+
+        /*
+        if (tagstr.split(",").length > 1) {
+            // if tags splited by comma
+
+        }
+        else if (tagstr.split("،").length > 1) {
+            // if tags splited by persian comma
+        }
+        else {
+
+        }*/
+
+    });
     $("#advertise_show_for_days").on("input", function(event){
-	console.log("sfd changed");
 	var value = $(this).val();
 	var cost = $("#advertise_cost").val();
 	// TODO: handle invalid type value
 	var res = update_show_for_days(cost, value);
 	update_credit(res);
 	update_cost(cost);
+
     });
     $("#advertise_cost").on("input", function(event){
-	console.log("cost changed");
 	var value = $(this).val();
 	var sfd = $("#advertise_show_for_days").val();
 	// TODO: handle invalid type value
@@ -164,18 +186,9 @@ $(function (){
 
     $(document).on("mouseleave", '.box', function(event) {
         var containers = $(this).data("container-class");
-        console.log(containers);
-        console.log($(this).find("." + containers));
         $(this).find("." + containers).hide();
 	$(this).find(".iconsection").hide();
 	$(this).find(".banner").removeClass("banner").addClass("bottombanner");
     });
 
-    $(".bannerbtn").on("click", function(event){
-        var cclass = $(this).data("container-class");
-        var target = $(this).data("target");
-        $("." + cclass).hide();
-        $("#" + target).fadeIn(300);
-
-    });
 });
