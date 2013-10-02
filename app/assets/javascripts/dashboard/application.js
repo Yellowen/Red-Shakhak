@@ -43,6 +43,6 @@ $(function(){
             }
         }
     });
-    document.qtip2d = tooltip.qtip('api');
+
 
 });
