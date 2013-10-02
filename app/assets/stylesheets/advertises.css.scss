@@ -52,3 +52,16 @@
 .bannercontainers {
   display: none;
 }
+
+.ad-info {
+  text-align: center;
+  padding-top: 20%;
+
+  span {
+    font-size: 1em;
+    i {
+      padding: 0 0 0 4px;
+      font-size: 1.4em;
+    }
+  }
+}

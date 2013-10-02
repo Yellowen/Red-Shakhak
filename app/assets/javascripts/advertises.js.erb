@@ -155,8 +155,10 @@ $(function (){
 
     $("#preview").on("click", function(event) {
 	event.preventDefault();
+        fix_size();
 	$("#newadvertise").fadeOut(400);
 	$("#adpreview").delay(400).fadeIn(400);
+
     });
 
     $("#backtowizard").on("click", function(event) {
@@ -180,7 +182,7 @@ $(function (){
 	    hoverheight = height;
 	}*/
 	//$('iconsection').not($(this).find('iconsection')).hide();
-	$(this).find(".bottombanner").removeClass("bottombanner").addClass("banner").find(".iconsection").fadeIn(300);
+	$(this).find(".bottombanner").removeClass("bottombanner").addClass("banner").find(".iconsection, .bannercontainers").fadeIn(300);
 
     });
 
