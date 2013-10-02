@@ -19,13 +19,20 @@
 		  <ul>
 		    <% @advertises.each do |advertise| %>
 		      <li>
-			<div class="inline right"><%= advertise.title %></div>
+			<div class="inline right">
+                          <a href="javascript:void(0);" class="dashboard-show-overload">
+                            <%= advertise.title %>
+                          </a>
+                        </div>
 			<div class="inline left">
 			  <%= link_to '', advertise, method: :delete, data: { confirm: 'Are you sure?'}, class: del_btn_class, icons: del_btn_icon %>
 			</div>
 			<div class="inline left">
 			  <%= link_to "", edit_advertise_path(advertise), class: edit_btn_class, icons: edit_btn_icon %>
 			</div>
+                        <div class="overload">
+                          Some text comes here
+                        </div>
 		      </li>
 		    <% end %>
 		  </ul>
@@ -89,7 +96,7 @@
 
     <div class="row">
       <% if @logs.exists? %>
-	<p><%= _("latest activities") %></p>
+	<h2><%= _("latest activities") %></h2>
 	<table class="span12 table table-striped">
 	  <thead>
 	    <th><%= _("timestamp") %></th>
