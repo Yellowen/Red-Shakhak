@@ -1,8 +1,6 @@
 <%= link_to_function "click here", "load_page(3)" %>
 
 <script type="text/html" id="boxtemplate">
-
-        <!-- adbox -->
         <div id="ad{{ print(ad.get('id')) }}" class="box box{{ print(ad.get("get_size")) }}" data-container-class="bannercontainers">
 	  <div>
 	    <h1 class="title">{{ print(ad.get("title")) }}</h1>
@@ -11,13 +9,13 @@
           <div id="banner" class="bottombanner {{ print(ad.get("category").cssclass) }}">
 
             <div class="ad-info bannercontainers">
-              <div><span><i  data-tip="likes" class="icon-thumbs-up"></i> {{ print(ad.get("likes") }}</span></div>
-              <div><span><i  data-tip="views" class="icon-eye-open"></i> {{ print(ad.get("views") }}</span></div>
+              <div><span><i  data-tip="likes" class="icon-thumbs-up"></i> {{ print(ad.get("likes")) }}</span></div>
+              <div><span><i  data-tip="views" class="icon-eye-open"></i> {{ print(ad.get("views")) }}</span></div>
             </div>
 	    <div class="iconsection">
 	      <ul>
-	        <li id="preview-category-id" class="category" data-tip="{{ print(ad.get("category").name) }}" data-title="<%= _("category") %>"><i class="icon-sitemap"></i></li>
-	        <li id="preview-tag" class="tag" data-tip="{{ print(ad.get('tags')) }}" data-title=<%= _("tags list") %>><i class="icon-tag"></i></li>
+	        <li class="category-icon" data-tip="{{ print(ad.get("category").name) }}" data-title="<%= _("category") %>"><i class="icon-sitemap"></i></li>
+	        <li class="tag-icon" data-tip="{{ print(ad.get('tags')) }}" data-title=<%= _("tags list") %>><i class="icon-tag"></i></li>
 	        <!--<li class="user"><i class="icon-user"></i></li>-->
 	        <li class="filter" data-tip="<%= _("Filter similar advertises") %>"><i class="icon-filter"></i></li>
 	      </ul>
@@ -25,8 +23,6 @@
 	  </div>
 
 	</div>
-        <!-- addbox -->
-
 </script>
 
 <div id="adbox">
@@ -46,8 +42,8 @@
             </div>
 	    <div class="iconsection">
 	      <ul>
-	        <li id="preview-category-id" class="category" data-tip="<%= advertise.category %>" data-title="<%= _("category") %>"><i class="icon-sitemap"></i></li>
-	        <li id="preview-tag" class="tag" data-tip="<%= advertise.tags.join(" ") %>" data-title=<%= _("tags list") %>><i class="icon-tag"></i></li>
+	        <li class="category-icon" data-tip="<%= advertise.category.name %>" data-title="<%= _("category") %>"><i class="icon-sitemap"></i></li>
+	        <li class="tag-icon" data-tip="<%= advertise.tags.join(" ") %>" data-title=<%= _("tags list") %>><i class="icon-tag"></i></li>
 	        <!--<li class="user"><i class="icon-user"></i></li>-->
 	        <li class="filter" data-tip="<%= _("Filter similar advertises") %>"><i class="icon-filter"></i></li>
 	      </ul>

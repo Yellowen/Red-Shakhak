@@ -11,6 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require variables
+//= require functions
 //= require jquery
 //= require jquery_ujs
 //= require foundation
@@ -22,20 +23,6 @@
 //= require_directory .
 $(function(){
     $(document).foundation();
-    var tooltip = $('[data-tip!=""]').qtip({ // Grab all elements with a non-blank data-tooltip attr.
-        content: {
-            attr: 'data-tip'
-        },
-        position: {
-            my: 'bottom center',
-            at: 'top center',
-            viewport: $(window)
-        },
-        style: {
-            classes: 'qtip-tipsy',
-            tip: {
-                corner: "bottom center"
-            }
-        }
-    });
+    fist_page_ads_tooltip();
+    setup_global_tooltip();
 });

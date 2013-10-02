@@ -15,5 +15,6 @@
 ** TODO check oAuth urls
 ** TODO categories should be unique
 
+** TODO category tooltip did not show properly in first page if advertise be the most right ad
 * Releases
 ** TODO replace the omnit auth services keys with secure versions
