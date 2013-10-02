@@ -20,7 +20,7 @@
 		    <% @advertises.each do |advertise| %>
 		      <li>
 			<div class="inline right">
-                          <a href="#" class="dashboard-show-overload">
+                          <a href="javascript:void(0);" class="dashboard-show-overload">
                             <%= advertise.title %>
                           </a>
                         </div>
@@ -96,7 +96,7 @@
 
     <div class="row">
       <% if @logs.exists? %>
-	<p><%= _("latest activities") %></p>
+	<h2><%= _("latest activities") %></h2>
 	<table class="span12 table table-striped">
 	  <thead>
 	    <th><%= _("timestamp") %></th>

@@ -5,123 +5,123 @@
 @import "droidarabicnaskh.css";
 
 * {
-    font-family: 'Droid Arabic Naskh', tahoma;
+   font-family: 'Droid Arabic Naskh', tahoma;
 }
 
 header {
-    Background: $headerbg;
-    color: white;
-    width: 100%;
-    min-width: 1024px;
-    height: 60px;
-    margin-bottom: 25px;
+   Background: $headerbg;
+   color: white;
+   width: 100%;
+   min-width: 1024px;
+   height: 60px;
+   margin-bottom: 25px;
 
-    nav {
-	padding: 10px 0px;
-	width: 100%;
-	display:inline;
-	.logo{
-	    display:inline;
-	    float:right;
+   nav {
+      padding: 10px 0px;
+      width: 100%;
+      display:inline;
+      .logo{
+	 display:inline;
+	 float:right;
+	 width:190px;
+	 height:60px;
+	 h1 {
+	    display:block;
 	    width:190px;
 	    height:60px;
-	    h1 {
-		display:block;
-		width:190px;
-		height:60px;
-		background-image:url("/images/logo.png");
-		a{
-		    display:block;
-		    width:190px;
-		    height:60px;
-		    span {
-			display:none;
-		    }
-		}
-		a:hover{
-		    Background:none !important;
-		}
+	    background-image:url("/images/logo.png");
+	    a{
+	       display:block;
+	       width:190px;
+	       height:60px;
+	       span {
+		  display:none;
+	       }
 	    }
-	}
+	    a:hover{
+	       Background:none !important;
+	    }
+	 }
+      }
 
-    }
-    ul {
-	list-style: none;
-	margin: 0 30px 0 0;
+   }
+   ul {
+      list-style: none;
+      margin: 0 30px 0 0;
 
-	li {
-	    display: inline;
-	    min-width:58px;
-	    a {
-		font-size:14px;
-		color: $clouds !important;
-		text-decoration: none;
-		padding: 17px 20px;
-		line-height:60px;
-	    }
-	    a:hover {
-		Background: $hover-box;
-	    }
-	}
-    }
+      li {
+	 display: inline;
+	 min-width:58px;
+	 a {
+	    font-size:14px;
+	    color: $clouds !important;
+	    text-decoration: none;
+	    padding: 17px 20px;
+	    line-height:60px;
+	 }
+	 a:hover {
+	    Background: $hover-box;
+	 }
+      }
+   }
 
 }
 
 .main {
-    min-height:525px;
+   min-height:525px;
 }
 
 footer {
-    Background: $darkbg;
-    width:100%;
-    min-width: 1024px;
-    min-height:60px;
-    position:relative;
-    margin: 0 auto;
-    color:$lightgray;
+   Background: $darkbg;
+   width:100%;
+   min-width: 1024px;
+   min-height:60px;
+   position:relative;
+   margin: 0 auto;
+   color:$lightgray;
 
-    div{
-	padding:20px 60px;
-	font-size:14px;
-	a{
-	     color:$lightgray;
-	}
-    }
+   div{
+      padding:20px 60px;
+      font-size:14px;
+      a{
+	 color:$lightgray;
+      }
+   }
 }
 
 
 .form, .form_box{
-    border: solid 1px $lightergray;
-    background-color: $ultra_blue;
-    padding:10px;
+   border: solid 1px $lightergray;
+   background-color: $ultra_blue;
+   padding:10px;
     /*@include border-radius(5px);
     @include single-box-shadow(rgba(black, 0.4));
     */
 
-    img {
-	padding :5px;
-	border:#D9E3DC;
-    }
-    .submit{
-	text-align:center;
-    }
+   img {
+      padding :5px;
+      border:#D9E3DC;
+   }
+   .submit{
+      text-align:center;
+   }
 }
 
 
 .silver {
-    color: $silver;
+   color: $silver;
 }
 
 .dashbody {
-    padding: 0 20px 0 0;
+   padding: 0 20px 0 0;
 }
 
 .inline{
-    display:inline;
+   display:inline;
 }
 
 .justify{
-    text-align:justify;
+   text-align:justify;
 }
 
 .flash {
@@ -129,173 +129,189 @@ footer {
 }
 
 .flash-success {
-    @include alert-base;
-    color: white;
-    @include alert-style($emerald);
-    p {
-	display: inline;
-    }
-    .close {
-	@include alert-close;
-	cursor: pointer;
-    }
+   @include alert-base;
+   color: white;
+   @include alert-style($emerald);
+   p {
+      display: inline;
+   }
+   .close {
+      @include alert-close;
+      cursor: pointer;
+   }
 
 }
 .flash-alert {
-    @include alert-base;
-    color: white;
-    @include alert-style($alizarin);
-    p {
-	display: inline;
-    }
-    .close {
-	@include alert-close;
-	cursor: pointer;
-    }
+   @include alert-base;
+   color: white;
+   @include alert-style($alizarin);
+   p {
+      display: inline;
+   }
+   .close {
+      @include alert-close;
+      cursor: pointer;
+   }
 
 }
 
 .box {
-    background: #fafafa;
-    margin: 0 0px 4px 0;
-    padding: 0;
-    display: block;
-    overflow: hidden;
+   background: #fafafa;
+   margin: 0 0px 4px 0;
+   padding: 0;
+   display: block;
+   overflow: hidden;
 
-    & > div:first-child {
-	display: block;
-	height: 100%;
+   & > div:first-child {
+      display: block;
+      height: 100%;
 
-	.title {
-	    text-align: center;
-	    width: 100%;
-	    height: 2em;
-	    padding: 5px 10px;
-	    overflow: hidden;
-	    text-overflow: ellipsis;
-	    font-size: 1em;
+      .title {
+	 text-align: center;
+	 width: 100%;
+	 height: 2em;
+	 padding: 5px 10px;
+	 overflow: hidden;
+	 text-overflow: ellipsis;
+	 font-size: 1em;
 
-	}
-    }
-    .iconsection {
-	position: absolute;
-	bottom: 1px;
-	height: 1.5em;
-	width: 100%;
-	display: none;
-	Background: rgba(50,50,50, 0.15);
+      }
+   }
+   .iconsection {
+      position: absolute;
+      bottom: 1px;
+      height: 1.5em;
+      width: 100%;
+      display: none;
+      Background: rgba(50,50,50, 0.15);
 
-	ul {
-	    list-style: none;
-	    margin-bottom: 0;
-	    padding: 3px 8px;
+      ul {
+	 list-style: none;
+	 margin-bottom: 0;
+	 padding: 3px 8px;
 
-	    li {
-		display: inline;
-		color: white;
-		padding: 0px 4px;
-		cursor: pointer;
-		opacity: 0.5;
-		&:hover {
-		    opacity: 1;
-		}
+	 li {
+	    display: inline;
+	    color: white;
+	    padding: 0px 4px;
+	    cursor: pointer;
+	    opacity: 0.5;
+	    &:hover {
+	       opacity: 1;
 	    }
-	}
-    }
+	 }
+      }
+   }
 
-    .bottombanner {
-	height: $box-bottom-border;
-	position: absolute;
-	bottom: 0px;
-	width: 100%;
-	transition: height 300ms ease-out 0ms;
-    }
+   .bottombanner {
+      height: $box-bottom-border;
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      transition: height 300ms ease-out 0ms;
+   }
 
-    .banner{
-	height: 50%;
-	position: absolute;
-	bottom: 0px;
-	width: 100%;
-	transition: height 300ms ease-in 0ms;
+   .banner{
+      height: 50%;
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      transition: height 300ms ease-in 0ms;
 
-    }
+   }
 }
 
 .table-list{
-    ul {
-	list-style: none;
-	li {
-	    line-height:28px;
-	    min-height:28px;
-	    margin:2px;
-	    border:solid 1px #E6E6E6;
-	    background-color:#EFEFEF;
-	    opacity: 0.8;
-	    &:hover {
-		opacity: 1;
-	    }
-	    div {
-		padding-right:10px;
-		padding-left:10px;
-	    }
-	}
-    }
+   ul {
+      list-style: none;
+      li {
+	 min-height:35px;
+	 line-height:35px;
+	 border-left:solid 1px #E6E6E6;
+	 border-right:solid 1px #E6E6E6;
+         border-bottom:solid 1px #E6E6E6;
+	 background-color:#EFEFEF;
+	 opacity: 0.8;
+         .overload{
+            display:none;
+            height:300px;
+         }
+         &:first-child{
+	    border-top:solid 1px #E6E6E6;
+         }
+	 &:hover {
+	    opacity: 1;
+	 }
+	 div {
+	    padding-right:10px;
+	    padding-left:10px;
+	 }
+      }
+   }
 }
 
-
-.overload{
-  display:none;
+section .content{
+   min-height:600px;
 }
+table{
+   th{
+      text-align:center !important;
+   }
+   width:90%;
+   margin-left:auto ;
+   margin-right:auto ;
+}
+
 
 /* Advertisment boxes */
 .box1x1 {
-    width: $base_unit;
-    height: $base_unit;
-    .banner {
-	height: 100%;
-    }
+   width: $base_unit;
+   height: $base_unit;
+   .banner {
+      height: 100%;
+   }
 
 }
 
 .box2x1 {
-    width: $base_unit * 2;
-    height: $base_unit;
-    .banner {
-	height: 100%;
-    }
+   width: $base_unit * 2;
+   height: $base_unit;
+   .banner {
+      height: 100%;
+   }
 }
 
 .box1x2 {
-    width: $base_unit;
-    height: $base_unit * 2;
+   width: $base_unit;
+   height: $base_unit * 2;
 }
 
 .box2x2 {
-    width: $base_unit * 2;
-    height: $base_unit * 2;
+   width: $base_unit * 2;
+   height: $base_unit * 2;
 }
 .box3x2 {
-    width: $base_unit * 3;
-    height: $base_unit * 2;
+   width: $base_unit * 3;
+   height: $base_unit * 2;
 }
 .box2x3 {
-    width: $base_unit * 2;
-    height: $base_unit * 3;
+   width: $base_unit * 2;
+   height: $base_unit * 3;
 }
 .box3x3 {
-    width: $base_unit * 3;
-    height: $base_unit * 3;
+   width: $base_unit * 3;
+   height: $base_unit * 3;
 }
 
 .box3x1 {
-    width: $base_unit * 3;
-    height: $base_unit;
-    .banner {
-	height: 100%;
-    }
+   width: $base_unit * 3;
+   height: $base_unit;
+   .banner {
+      height: 100%;
+   }
 }
 
 .box1x3 {
-    width: $base_unit;
-    height: $base_unit * 3;
+   width: $base_unit;
+   height: $base_unit * 3;
 }
