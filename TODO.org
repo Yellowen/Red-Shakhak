@@ -3,12 +3,14 @@
 ** TODO create a rake task for release time
 ** DONE Use foundation js for top nav
 ** TODO create a message for logs and renews tabs in case of they were empty
-** TODO bind foundation to page:load event of turbolink
+** DONE bind foundation to page:load event of turbolink
 ** TODO add a flash UI in each layout
 *** TODO change advertise new and edit wizard (category change event) to use new flash UI
 ** TODO fix the compass issue and use compass transition instead of row css in advertises.css.scss
 ** TODO Show some error flash in case of endless script fails.
 
+** TODO Set the #adbox width via javascript to choose best width according to device width
+** TODO Create a suitable logo (compact mode) for header and normal one for other usage
 * Bugs
 ** TODO Back button on advertise/index returns to dashboard
 ** TODO Infinite page script run on dashboard too
