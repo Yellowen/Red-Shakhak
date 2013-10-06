@@ -55,3 +55,11 @@ function setup_global_tooltip() {
     });
 
 }
+
+function show_loading_sign(){
+    $("#mainloading").fadeIn(300);
+}
+
+function hide_loading_sign(){
+    $("#mainloading").fadeOut(300);
+}

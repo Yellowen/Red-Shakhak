@@ -2,7 +2,7 @@ var page = 1;
 
 function load_page(page_number) {
     var advertises = new Advertises();
-    $("#mainloading").fadeIn(300);
+    show_loading_sign();
     advertises.fetch({
 	data: {page: page},
 	success: function(data, res, opts){
@@ -21,7 +21,7 @@ function load_page(page_number) {
             //api.set({"attr": "data-tip", "content.title": "<%= _('category') %>"});
             //api = $(document).find('.tag-icon').qtip('api');
             //api.set({"attr": "data-tip", "content.title": "<%= _('tag') %>"});
-            $("#mainloading").fadeOut(300);
+            hide_loading_sign();
 	},
 	error: function(){
             console.log("Failed");
