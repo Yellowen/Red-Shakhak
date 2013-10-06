@@ -13,9 +13,9 @@ header {
    color: white;
    width: 100%;
    min-width: 1024px;
-   height: 40px;
+   height: 50px;
    margin-bottom: 25px;
-
+   padding-top: 5px;
    nav {
       padding: 10px 0px;
       width: 100%;
@@ -52,17 +52,21 @@ header {
       li {
 	 display: inline;
          min-width: 58px;
-         padding: 5px;
+         padding: 5px 5px 14px;
 
          #search {
            position: absolute;
+           top: 10px;
+           width: 18em;
+           margin-right: 116px;
+           padding-left: 20px;
 
          }
 	 a {
-	    font-size: 14px;
+	    font-size: 16px;
 	    color: $clouds !important;
 	    text-decoration: none;
-	    padding: 17px 10px 0px;
+	    padding: 0px 10px 3px;
 	    line-height: 44px;
 
 	 }
@@ -76,6 +80,7 @@ header {
 
 .main {
    min-height:525px;
+   margin-top: 70px;
 }
 
 footer {

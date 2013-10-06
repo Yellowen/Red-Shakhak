@@ -11,6 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require variables
+//= require functions
 //= require vendor/custom.modernizr
 //= require jquery
 //= require jquery_ujs

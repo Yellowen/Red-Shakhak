@@ -1,10 +1,20 @@
-<header>
+<header <% if page == "home" %>class="fixed"<% end %>>
     <nav>
       <div class="logo">
 	<h1><a href="<%= root_url %>"><span><%=_("Shakhak")%></span></a></h1>
       </div>
 
       <ul class="pull-right">
+        <li>
+          <input id="search" type="search" name="search" value="" placeholder="<%= _("Use a search keyword of a command") %>" />
+        </li>
+      </ul>
+
+      <ul class="pull-left">
+	<li>
+	  <span id="mainloading" class="loading hide"><i class="icon-refresh icon-spin"></i></span>
+	</li>
+
 	<li data-texttip="<%= _("Home") %>">
 	  <a href="<%= root_url %>"><i class="icon-home icon-large"></i></a>
 	</li>
@@ -12,20 +22,16 @@
 	  <a href="<%= dashboard_index_url %>"><i class="icon-th-large icon-large"></i></a>
 	</li>
 
-        <li>
-          <input id="search" type="search" name="search" value="" placeholder="<%= _("Use a search keyword of a command") %>" />
-        </li>
-      </ul>
 
-      <ul class="pull-left">
-	<li data-texttip="<%= _("Settings") %>">
-	  <a href="<%= root_url %>"><i class="icon-cog icon-large"></i></a>
-	</li>
 	<li data-texttip="<%= _("Filter") %>">
 	  <a href="<%= dashboard_index_url %>"><i class="icon-filter icon-large"></i></a>
 	</li>
 
         <% if user_signed_in? %>
+	  <li data-texttip="<%= _("Settings") %>">
+	    <a href="<%= root_url %>"><i class="icon-cog icon-large"></i></a>
+	  </li>
+
 	  <li data-texttip="<%= _("Sign out") %>">
 	    <a href="<%= destroy_user_session_path %>" data-method="delete" rel="nofollow"><i class="icon-signout icon-large"></i></a>
 	  </li>
