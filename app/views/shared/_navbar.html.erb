@@ -4,11 +4,21 @@
 	<h1><a href="<%= root_url %>"><span><%=_("Shakhak")%></span></a></h1>
       </div>
 
+      <% if page == "home" %>
       <ul class="pull-right">
         <li>
-          <input id="search" type="search" name="search" value="" placeholder="<%= _("Use a search keyword of a command") %>" />
+          <form class="custom">
+            <section class="search">
+              <span class="search-icon"><i class="icon-search"></i></span>
+              <input id="search" class="" type="text" name="search" value="" placeholder="<%= _("Search") %> ..."/>
+
+            </section>
+
+          </form>
         </li>
       </ul>
+      <% end %>
+
 
       <ul class="pull-left">
 	<li>
@@ -22,10 +32,11 @@
 	  <a href="<%= dashboard_index_url %>"><i class="icon-th-large icon-large"></i></a>
 	</li>
 
-
+        <% if page == "home" %>
 	<li data-texttip="<%= _("Filter") %>">
 	  <a href="<%= dashboard_index_url %>"><i class="icon-filter icon-large"></i></a>
 	</li>
+        <% end %>
 
         <% if user_signed_in? %>
 	  <li data-texttip="<%= _("Settings") %>">
