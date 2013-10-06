@@ -13,7 +13,7 @@ header {
    color: white;
    width: 100%;
    min-width: 1024px;
-   height: 60px;
+   height: 40px;
    margin-bottom: 25px;
 
    nav {
@@ -51,16 +51,23 @@ header {
 
       li {
 	 display: inline;
-	 min-width:58px;
+         min-width: 58px;
+         padding: 5px;
+
+         #search {
+           position: absolute;
+
+         }
 	 a {
-	    font-size:14px;
+	    font-size: 14px;
 	    color: $clouds !important;
 	    text-decoration: none;
-	    padding: 17px 20px;
-	    line-height:60px;
+	    padding: 17px 10px 0px;
+	    line-height: 44px;
+
 	 }
 	 a:hover {
-	    Background: $hover-box;
+           border-bottom: 5px solid $hover-box;
 	 }
       }
    }

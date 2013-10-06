@@ -50,7 +50,7 @@ function setup_global_tooltip() {
             viewport: $(window)
         },
         style: {
-            classes: 'qtip-blue'
+            classes: 'qtip-tipsy'
         }
     });
 
