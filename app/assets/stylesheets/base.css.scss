@@ -89,6 +89,12 @@ footer {
    }
 }
 
+fieldset {
+  background-color:#2ba6cb;
+  span {
+    margin-top:-30px;
+    }
+}
 
 .form, .form_box{
    border: solid 1px $lightergray;
