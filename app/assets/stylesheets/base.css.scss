@@ -21,7 +21,7 @@ header {
    color: white;
    width: 100%;
    min-width: 1024px;
-   height: 50px;
+   height: $header-height;
    margin-bottom: 25px;
    padding-top: 5px;
    nav {
@@ -113,6 +113,9 @@ header {
             line-height: 40px;
             display: inline-block;
 
+         }
+         a.active {
+           border-bottom: 5px solid $belize_hole;
          }
          a:hover {
            border-bottom: 5px solid $hover-box;

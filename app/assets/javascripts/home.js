@@ -18,4 +18,16 @@ $(function(){
 	isOriginLeft: false,
 	itemSelector: '.box'
     });
+
+    $("#filterbtn").on("click", function(event){
+        event.preventDefault();
+        $("#filter").slideToggle(300);
+
+        if ($(this).hasClass("active")) {
+            $(".top-nav a").removeClass("active");
+        }
+        else {
+            $(this).addClass("active");
+        }
+    });
 });

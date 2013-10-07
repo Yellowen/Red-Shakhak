@@ -20,7 +20,7 @@
       <% end %>
 
 
-      <ul class="pull-left">
+      <ul class="pull-left top-nav">
 	<li>
 	  <span id="mainloading" class="loading hide"><i class="icon-refresh icon-spin"></i></span>
 	</li>
@@ -34,7 +34,7 @@
 
         <% if page == "home" %>
 	<li data-texttip="<%= _("Filter") %>">
-	  <a href="<%= dashboard_index_url %>"><i class="icon-filter icon-large"></i></a>
+	  <a id="filterbtn" href="#"><i class="icon-filter icon-large"></i></a>
 	</li>
         <% end %>
 
