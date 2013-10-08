@@ -1,0 +1,5 @@
+<ul class="vertical categories-list">
+  <% @categories.each do |category| %>
+    <li><a href="#" class="<%= category.cssclass %>"><%= category.name %></a></li>
+  <% end %>
+</ul>

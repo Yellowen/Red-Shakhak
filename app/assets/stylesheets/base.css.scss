@@ -405,6 +405,12 @@ table{
    text-shadow:1px 2px 2px 1px black;
 }
 
+.vertical {
+  list-style: none;
+  li {
+    display: inline;
+  }
+}
 .icon-big {
    font-size:80px;
 }

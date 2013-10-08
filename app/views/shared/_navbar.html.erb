@@ -33,9 +33,12 @@
 	</li>
 
         <% if page == "home" %>
-	<li data-texttip="<%= _("Filter") %>">
-	  <a id="filterbtn" href="#"><i class="icon-filter icon-large"></i></a>
-	</li>
+          <li data-texttip="<%= _("Categories") %>">
+	    <a id="categorybtn" href="#"><i class="icon-sitemap icon-large"></i></a>
+	  </li>
+	  <li data-texttip="<%= _("Filter") %>">
+	    <a id="filterbtn" href="#"><i class="icon-filter icon-large"></i></a>
+	  </li>
         <% end %>
 
         <% if user_signed_in? %>

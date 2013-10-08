@@ -11,16 +11,18 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require variables
-//= require functions
 //= require jquery
 //= require jquery_ujs
+//= require functions
 //= require foundation
 //= require turbolinks
 //= require jquery.turbolinks
 //= require lib/humanize
+//= require drawer
 //= require advertises
 //= require lib/jquery.qtip.js
 //= require_directory .
+
 $(function(){
     $(document).foundation();
     fist_page_ads_tooltip();

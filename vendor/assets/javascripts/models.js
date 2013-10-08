@@ -8,5 +8,5 @@ var Advertise = Backbone.Model.extend({
 
 var Advertises = Backbone.Collection.extend({
     model: Advertise,
-    url: "/advertises",
+    url: "/advertises"
 });

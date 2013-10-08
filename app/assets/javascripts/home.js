@@ -19,15 +19,13 @@ $(function(){
 	itemSelector: '.box'
     });
 
-    $("#filterbtn").on("click", function(event){
+    $("#categorybtn").on("click", function(event){
         event.preventDefault();
-        $("#filter").slideToggle(300);
-
-        if ($(this).hasClass("active")) {
-            $(".top-nav a").removeClass("active");
-        }
-        else {
-            $(this).addClass("active");
-        }
+        document.drawer.load_remote_content({
+            url: "/filter/categories",
+            data: {}
+        });
     });
+
+
 });

@@ -6,12 +6,28 @@
 
 @import "variables";
 
-#filter {
-   height: 300px;
+#drawer {
    background: $belize_hole;
    position: fixed;
    top: $header-height;
    width: 100%;
    z-index: 999;
    color: white;
+
+   overflow: hidden;
+
+}
+
+.categories-list {
+   height: 60px;
+   margin: 0;
+   padding: 0;
+   li {
+      margin: 0;
+      padding: 0;
+      a {
+         padding: 20px 40px;
+         line-height: 20px;
+      }
+   }
 }
