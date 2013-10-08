@@ -22,5 +22,6 @@ module Shakhak
     ActsAsTaggableOn.force_lowercase = true
     config.ad_unit_size = 150
     config.autoload_paths += %W(#{Rails.root}/app/workers)
+    config.advertise_warning_limit = 10
   end
 end

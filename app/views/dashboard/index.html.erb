@@ -9,7 +9,7 @@
 
 	  <div class="row">
 	    <div class="small-12 columns large-9">
-	      <%= link_to _("New advertise"), new_advertise_path,  class: add_btn_class + " radius small", icons: add_btn_icon %>
+	      <%= link_to _("New advertise"), new_advertise_path,  class: add_btn_class + " small", icons: add_btn_icon %>
 	    </div>
 	  </div>
 	  <div class="row">
@@ -21,7 +21,9 @@
 		      <li>
 			<div class="inline right">
                           <a href="javascript:void(0);" class="dashboard-show-overload">
+                            <span class="<%= remainingDaysClass advertise.remaining_days %>">
                             <%= advertise.title %>
+                            </span>
                           </a>
                         </div>
 			<div class="inline left">
