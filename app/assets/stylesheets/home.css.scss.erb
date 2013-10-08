@@ -4,11 +4,14 @@
 
 //$base_unit: <%= base_width %>px;
 
+@import "variables";
 
-$text-direction: rtl;
-
-$base_unit: 150px;
-#adbox {
-    width: 90%;
-    margin: 0 auto;
+#filter {
+   height: 300px;
+   background: $belize_hole;
+   position: fixed;
+   top: $header-height;
+   width: 100%;
+   z-index: 999;
+   color: white;
 }

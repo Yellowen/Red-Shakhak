@@ -78,6 +78,7 @@ fieldset {
     .steps {
 	li {
 	    @include grid-column(4, false, false, false, false, false, false, right);
+            float: right;
 	}
     }
 }

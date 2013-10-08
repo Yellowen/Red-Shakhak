@@ -1,3 +1,13 @@
+<%= content_for :drawer do %>
+<section id="filter" class="hide">
+    <div class="row">
+      <div id="filter-content" class="small-12 columns">
+
+      </div>
+    </div>
+</section>
+<% end %>
+
 
 <script type="text/html" id="boxtemplate">
         <div id="ad{{ print(ad.get('id')) }}" class="box box{{ print(ad.get("get_size")) }}" data-container-class="bannercontainers">
