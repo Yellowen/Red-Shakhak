@@ -3,6 +3,7 @@ require "sidekiq/web"
 Shakhak::Application.routes.draw do
 
   get "filter/categories"
+  get "filter/" => "filter#index"
   get "dashboard" => "dashboard#index", :as => :dashboard_index
 
   scope "dashboard" do

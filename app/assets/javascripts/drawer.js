@@ -56,6 +56,8 @@ document.drawer = {
                 throw "url should not be empty";
             }
 
+            this.__tmp_data__ = escape(obj.url.toString());
+
             show_loading_sign();
             var that = this;
 
@@ -66,7 +68,6 @@ document.drawer = {
                 success: function(data){
                     // Data should be HTML
                     $(that.content).html(data);
-
                     that.open_drawer();
                     if ($.isFunction(obj.callback)) {
                         obj.callback.call(data);
@@ -84,6 +85,10 @@ document.drawer = {
         }
         else {
             this.close_drawer();
+
+            if (this.__tmp_data__ != escape(obj.url.toString())) {
+                this.load_remote_content(obj);
+            }
         }
     }
 

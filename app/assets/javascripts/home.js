@@ -21,8 +21,18 @@ $(function(){
 
     $("#categorybtn").on("click", function(event){
         event.preventDefault();
+        //document.drawer.close_drawer();
         document.drawer.load_remote_content({
             url: "/filter/categories",
+            data: {}
+        });
+    });
+
+    $("#filterbtn").on("click", function(event){
+        event.preventDefault();
+        //document.drawer.close_drawer();
+        document.drawer.load_remote_content({
+            url: "/filter/",
             data: {}
         });
     });

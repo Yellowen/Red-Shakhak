@@ -1,0 +1,12 @@
+<div class="row">
+  <ul class="vertical categories-list">
+    <% @categories.each do |category| %>
+      <li><a href="#" class="<%= category.cssclass %>"><%= category.name %></a></li>
+    <% end %>
+  </ul>
+</div>
+<div class="row">
+    <form action="">
+      <input type="text" name="tags" value="" />
+    </form>
+</div>
