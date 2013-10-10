@@ -7,27 +7,34 @@
 @import "variables";
 
 #drawer {
-   background: $belize_hole;
+   #background: #585a5d;
+   background: $lightgray;
+   border-bottom: solid $silver 3px;
    position: fixed;
    top: $header-height;
    width: 100%;
    z-index: 999;
    color: white;
-
    overflow: hidden;
 
 }
 
 .categories-list {
-   height: 60px;
+   height: $header-height;
+   font-size:1.2em;
    margin: 0;
    padding: 0;
+
    li {
+      float:right;
       margin: 0;
       padding: 0;
       a {
-         padding: 20px 40px;
-         line-height: 20px;
+         padding: 8px 40px 8px 40px;
+         line-height:50px;
+         &:hover{
+            color:$darkergray;
+         }
       }
    }
 }
