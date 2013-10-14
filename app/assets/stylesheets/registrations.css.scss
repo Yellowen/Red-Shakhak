@@ -16,9 +16,10 @@
     background-color:rgba(white, 0.7);
 
     .big_box {
-	overflow:visible;
-	height:310px;
-	padding-top:20px;
+       text-align:center;
+       p{
+          text-align:justify;
+       }
     }
 
     .icon-big{
